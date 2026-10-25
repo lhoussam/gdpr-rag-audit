@@ -48,7 +48,7 @@ Le principe retenu est de **privilégier les défenses d'architecture**, qui ne 
 
 Le corpus est constitué de textes publics, ajoutés par étapes :
 
-1. Le RGPD, les clauses contractuelles types de la Commission européenne pour l'article 28, les lignes directrices de l'EDPB sur les notions de responsable de traitement et de sous-traitant, et le guide de la CNIL pour les sous-traitants.
+1. Le RGPD, les clauses contractuelles types de la Commission européenne pour l'article 28, et les lignes directrices de l'EDPB sur les notions de responsable de traitement et de sous-traitant.
 2. Les principales lignes directrices de l'EDPB, la loi Informatique et Libertés et les guides de la CNIL.
 3. Éventuellement, les décisions de sanction de la CNIL.
 
