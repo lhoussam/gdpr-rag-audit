@@ -2,16 +2,15 @@ import re
 
 from bs4 import BeautifulSoup
 
+from gdpr_rag_audit.corpus import DATA_DIR, write_jsonl
 from gdpr_rag_audit.eurlex import (
     ARTICLE_ID,
-    DATA_DIR,
     content_text,
-    download,
+    download_celex,
     heading,
     load,
     recitals,
     table_text,
-    write_jsonl,
 )
 
 CELEX = "32016R0679"
@@ -62,7 +61,7 @@ def parse(soup: BeautifulSoup) -> list[dict]:
 
 
 def main() -> None:
-    download(CELEX, RAW_PATH)
+    download_celex(CELEX, RAW_PATH)
     write_jsonl(parse(load(RAW_PATH)), OUT_PATH)
 
 
