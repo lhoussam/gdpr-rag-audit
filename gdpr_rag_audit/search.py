@@ -4,7 +4,7 @@ import psycopg
 from pgvector.psycopg import register_vector
 from sentence_transformers import SentenceTransformer
 
-from gdpr_rag_audit.index import DATABASE_URL, MODEL
+from gdpr_rag_audit.index import DATABASE_URL, EMBEDDING_MODEL
 
 
 def search(conn: psycopg.Connection, model: SentenceTransformer, question: str, k: int = 5) -> list[tuple]:
@@ -17,7 +17,7 @@ def search(conn: psycopg.Connection, model: SentenceTransformer, question: str, 
 
 def main() -> None:
     question = " ".join(sys.argv[1:])
-    model = SentenceTransformer(MODEL)
+    model = SentenceTransformer(EMBEDDING_MODEL)
     with psycopg.connect(DATABASE_URL) as conn:
         register_vector(conn)
         for id_, context, text, distance in search(conn, model, question):

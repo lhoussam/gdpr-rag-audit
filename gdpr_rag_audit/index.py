@@ -7,7 +7,7 @@ from sentence_transformers import SentenceTransformer
 from gdpr_rag_audit.corpus import DATA_DIR
 
 DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/postgres"
-MODEL = "BAAI/bge-m3"
+EMBEDDING_MODEL = "BAAI/bge-m3"
 SOURCES = ["rgpd.jsonl", "cct_2021_915.jsonl", "edpb_07_2020.jsonl"]
 
 
@@ -21,7 +21,7 @@ def load_passages() -> list[dict]:
 
 def main() -> None:
     passages = load_passages()
-    model = SentenceTransformer(MODEL)
+    model = SentenceTransformer(EMBEDDING_MODEL)
     embeddings = model.encode(
         [f"{p['context']}\n{p['text']}" for p in passages],
         batch_size=8,
