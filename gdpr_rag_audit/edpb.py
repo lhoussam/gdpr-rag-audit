@@ -22,6 +22,9 @@ MIN_BODY_SIZE = 10.5
 # Paragraph numbers sit in the left margin.
 MARGIN = 60
 
+# Word bullet and dash glyphs from a private-use font.
+SYMBOLS = str.maketrans({"": "•", "": "•", "": "-"})
+
 PARAGRAPH = re.compile(r"^(\d{1,3})\. ")
 SECTION = re.compile(r"^(\d+(?:\.\d+)*) (.+)$")
 PART = re.compile(r"^PARTIE ([IV]+) [–-] (.+)$")
@@ -47,7 +50,7 @@ def join(lines: list[str]) -> str:
     text = ""
     for line in lines:
         text += line if text.endswith("-") or not text else " " + line
-    text = clean(text.replace("", "•"))
+    text = clean(text.translate(SYMBOLS))
     # Removing footnote call marks leaves a space before the punctuation that followed them.
     return re.sub(r" ([.,])", r"\1", text)
 
