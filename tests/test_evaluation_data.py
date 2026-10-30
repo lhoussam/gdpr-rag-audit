@@ -1,9 +1,8 @@
-import json
-
-from gdpr_rag_audit.split import EVALUATION_DIR, GROUPS, load_questions
+from gdpr_rag_audit.questions import load_questions, load_split
+from gdpr_rag_audit.split import GROUPS
 
 QUESTIONS = load_questions()
-SPLIT = json.loads((EVALUATION_DIR / "split.json").read_text(encoding="utf-8"))
+SPLIT = load_split()
 
 
 def test_questions_are_well_formed():

@@ -13,20 +13,12 @@ from sentence_transformers import SentenceTransformer
 
 from gdpr_rag_audit.ask import LLM, UNKNOWN, answer, citations
 from gdpr_rag_audit.index import DATABASE_URL, EMBEDDING_MODEL
+from gdpr_rag_audit.questions import EVALUATION_DIR, load_subset
 from gdpr_rag_audit.search import K, search
-from gdpr_rag_audit.split import EVALUATION_DIR, load_questions
 
 RESULTS_DIR = EVALUATION_DIR.parent / "results"
 RETRIEVAL_CATEGORIES = {"complete", "partial"}
 EXPECTED = {"complete": "answer", "partial": "answer", "out_of_corpus": "refusal"}
-
-
-def load_subset(name: str) -> list[dict]:
-    split = json.loads((EVALUATION_DIR / "split.json").read_text(encoding="utf-8"))
-    if name not in split:
-        sys.exit(f"unknown subset {name!r}, expected one of {', '.join(split)}")
-    ids = set(split[name])
-    return [q for q in load_questions() if q["id"] in ids]
 
 
 def check_ids(conn: psycopg.Connection, questions: list[dict]) -> int:

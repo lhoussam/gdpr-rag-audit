@@ -1,9 +1,9 @@
 import json
 import random
 from collections import Counter
-from pathlib import Path
 
-EVALUATION_DIR = Path(__file__).resolve().parent.parent / "evaluation"
+from gdpr_rag_audit.questions import SPLIT_PATH, load_questions
+
 SEED = 2026
 # Questions whose reference answers largely overlap stay on the same side.
 GROUPS = [
@@ -21,11 +21,6 @@ GROUPS = [
     ["COM-17", "COM-18"],
     ["COM-01", "COM-02"],
 ]
-
-
-def load_questions() -> list[dict]:
-    with (EVALUATION_DIR / "questions.jsonl").open(encoding="utf-8") as lines:
-        return [json.loads(line) for line in lines]
 
 
 def features(unit: list[str], strata: dict[str, tuple[str, str]]) -> Counter:
@@ -66,14 +61,13 @@ def split(strata: dict[str, tuple[str, str]]) -> dict[str, list[str]]:
 
 
 def main() -> None:
-    path = EVALUATION_DIR / "split.json"
-    if path.exists():
-        print(f"{path} already exists, the split is frozen")
+    if SPLIT_PATH.exists():
+        print(f"{SPLIT_PATH} already exists, the split is frozen")
         return
     strata = {q["id"]: (q["category"], q["origin"]) for q in load_questions()}
     result = split(strata)
-    path.write_text(json.dumps(result, indent=1) + "\n", encoding="utf-8")
-    print(f"{len(result['dev'])} dev and {len(result['test'])} test questions written to {path}")
+    SPLIT_PATH.write_text(json.dumps(result, indent=1) + "\n", encoding="utf-8")
+    print(f"{len(result['dev'])} dev and {len(result['test'])} test questions written to {SPLIT_PATH}")
 
 
 if __name__ == "__main__":
