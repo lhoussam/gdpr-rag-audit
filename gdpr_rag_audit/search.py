@@ -6,8 +6,10 @@ from sentence_transformers import SentenceTransformer
 
 from gdpr_rag_audit.index import DATABASE_URL, EMBEDDING_MODEL
 
+K = 5
 
-def search(conn: psycopg.Connection, model: SentenceTransformer, question: str, k: int = 5) -> list[tuple]:
+
+def search(conn: psycopg.Connection, model: SentenceTransformer, question: str, k: int = K) -> list[tuple]:
     embedding = model.encode(question, normalize_embeddings=True)
     return conn.execute(
         "SELECT id, context, text, embedding <=> %s AS distance FROM passages ORDER BY distance LIMIT %s",
