@@ -10,3 +10,11 @@ dependencies = [
     "psycopg[binary]>=3.3.6",
     "sentence-transformers>=6.2.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

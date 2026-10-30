@@ -47,14 +47,22 @@ def mean(values: list[float]) -> float:
     return sum(values) / len(values)
 
 
+def retrieval_scores(results: dict[str, list[int]], k: int) -> dict:
+    recall = {qid: sum(r <= k for r in found) / len(found) for qid, found in results.items()}
+    return {
+        "recall": mean(list(recall.values())),
+        "ceiling": mean([min(k, len(found)) / len(found) for found in results.values()]),
+        "hit": mean([r > 0 for r in recall.values()]),
+        "no_passage_found": [qid for qid, r in recall.items() if r == 0],
+    }
+
+
 def report(results: dict[str, list[int]], k: int) -> None:
     for qid, found in results.items():
         print(f"{qid:8} {len(found):2} passages, ranks {' '.join(map(str, found))}")
-    recall = {qid: sum(r <= k for r in found) / len(found) for qid, found in results.items()}
-    ceiling = mean([min(k, len(found)) / len(found) for found in results.values()])
-    hit = mean([recall[qid] > 0 for qid in results])
-    print(f"\nk = {k}: recall {mean(list(recall.values())):.2f} (ceiling {ceiling:.2f}), hit {hit:.2f}")
-    print(f"No passage found: {', '.join(qid for qid, r in recall.items() if r == 0) or 'none'}")
+    scores = retrieval_scores(results, k)
+    print(f"\nk = {k}: recall {scores['recall']:.2f} (ceiling {scores['ceiling']:.2f}), hit {scores['hit']:.2f}")
+    print(f"No passage found: {', '.join(scores['no_passage_found']) or 'none'}")
 
 
 def generate(conn: psycopg.Connection, model: SentenceTransformer, client: Mistral, questions: list[dict]) -> list[dict]:
@@ -84,20 +92,34 @@ def state(text: str) -> str:
     return "refusal" if text.strip() == UNKNOWN else "answer"
 
 
-def report_answers(records: list[dict]) -> None:
-    print("\nAnswers by category:")
+def answer_scores(records: list[dict]) -> dict:
+    by_category = {}
     for category, expected in EXPECTED.items():
         group = [r for r in records if r["category"] == category]
-        counts = Counter(state(r["answer"]) for r in group)
-        unexpected = [r["id"] for r in group if state(r["answer"]) != expected]
-        print(f"  {category:13} {len(group):2} questions: {', '.join(f'{s} {n}' for s, n in sorted(counts.items()))}"
-              f"; not {expected}: {', '.join(unexpected) or 'none'}")
+        by_category[category] = {
+            "states": Counter(state(r["answer"]) for r in group),
+            "unexpected": [r["id"] for r in group if state(r["answer"]) != expected],
+        }
     answered = [r for r in records if state(r["answer"]) != "refusal"]
     cited = {r["id"]: citations(r["answer"]) for r in answered}
-    invalid = [r["id"] for r in answered if cited[r["id"]] - set(r["provided"])]
-    unsourced = [r["id"] for r in answered if not cited[r["id"]] & set(r["provided"])]
-    print(f"Invalid citations: {len(invalid)}/{len(answered)} answers ({', '.join(invalid) or 'none'})")
-    print(f"No valid citation: {len(unsourced)}/{len(answered)} answers ({', '.join(unsourced) or 'none'})")
+    return {
+        "by_category": by_category,
+        "answered": len(answered),
+        "invalid_citations": [r["id"] for r in answered if cited[r["id"]] - set(r["provided"])],
+        "no_valid_citation": [r["id"] for r in answered if not cited[r["id"]] & set(r["provided"])],
+    }
+
+
+def report_answers(records: list[dict]) -> None:
+    scores = answer_scores(records)
+    print("\nAnswers by category:")
+    for category, expected in EXPECTED.items():
+        states = scores["by_category"][category]["states"]
+        unexpected = scores["by_category"][category]["unexpected"]
+        print(f"  {category:13} {states.total():2} questions: {', '.join(f'{s} {n}' for s, n in sorted(states.items()))}"
+              f"; not {expected}: {', '.join(unexpected) or 'none'}")
+    for label, key in [("Invalid citations", "invalid_citations"), ("No valid citation", "no_valid_citation")]:
+        print(f"{label}: {len(scores[key])}/{scores['answered']} answers ({', '.join(scores[key]) or 'none'})")
 
 
 def main() -> None:
