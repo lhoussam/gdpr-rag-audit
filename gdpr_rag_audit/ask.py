@@ -12,12 +12,18 @@ from gdpr_rag_audit.search import search
 
 # A dated version rather than an alias, so that results stay comparable over time.
 LLM = "ministral-14b-2512"
-CITATION = re.compile(r"\[([\w.-]+)\]")
+BRACKETS = re.compile(r"\[([^\]]+)\]")
+PASSAGE_ID = re.compile(r"\w+-[\w.-]+")
 UNKNOWN = "Je ne sais pas : les sources disponibles ne couvrent pas cette question."
 
 INSTRUCTIONS = f"""Tu es un assistant d'analyse RGPD. Tu réponds en français, uniquement à partir des extraits fournis.
 Après chaque affirmation, cite l'identifiant de l'extrait qui la justifie entre crochets, un identifiant par crochet, par exemple [RGPD-art28-2].
 Si les extraits ne permettent pas de répondre, réponds exactement : « {UNKNOWN} »"""
+
+
+# Brackets also hold ellipses and placeholders; only passage ids count, alone or separated by commas.
+def citations(text: str) -> set[str]:
+    return {part.strip() for group in BRACKETS.findall(text) for part in group.split(",") if PASSAGE_ID.fullmatch(part.strip())}
 
 
 def build_prompt(question: str, passages: list[tuple]) -> str:
@@ -48,7 +54,7 @@ def main() -> None:
     print(text)
 
     contexts = {id_: context for id_, context, _, _ in passages}
-    cited = set(CITATION.findall(text))
+    cited = citations(text)
     print("\nSources citées :")
     for id_ in sorted(cited & contexts.keys()):
         print(f"  [{id_}] {contexts[id_]}")
