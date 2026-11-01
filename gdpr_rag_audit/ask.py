@@ -26,9 +26,12 @@ def citations(text: str) -> set[str]:
     return {part.strip() for group in BRACKETS.findall(text) for part in group.split(",") if PASSAGE_ID.fullmatch(part.strip())}
 
 
+def excerpts(passages: list[tuple]) -> str:
+    return "\n\n".join(f"[{id_}] {context}\n{text}" for id_, context, text, *_ in passages)
+
+
 def build_prompt(question: str, passages: list[tuple]) -> str:
-    excerpts = "\n\n".join(f"[{id_}] {context}\n{text}" for id_, context, text, _ in passages)
-    return f"Extraits :\n\n{excerpts}\n\nQuestion : {question}"
+    return f"Extraits :\n\n{excerpts(passages)}\n\nQuestion : {question}"
 
 
 def answer(client: Mistral, question: str, passages: list[tuple]) -> str:
