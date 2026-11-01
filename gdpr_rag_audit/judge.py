@@ -1,11 +1,12 @@
 import argparse
 import json
 import os
+import time
 from collections import Counter
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
-from groq import Groq
+from groq import Groq, RateLimitError
 
 from gdpr_rag_audit.ask import excerpts
 from gdpr_rag_audit.evaluate import RESULTS_DIR, state
@@ -92,13 +93,22 @@ def parse(content: str, fields: list[str]) -> dict:
 
 
 def ask(client: Groq, instructions: str, message: str, fields: list[str]) -> dict:
-    response = client.chat.completions.create(
-        model=JUDGE,
-        temperature=0,
-        response_format={"type": "json_object"},
-        messages=[{"role": "system", "content": instructions}, {"role": "user", "content": message}],
-    )
-    return parse(response.choices[0].message.content, fields)
+    # The free tier limits tokens per minute: wait as long as Groq asks, then try again.
+    while True:
+        try:
+            response = client.chat.completions.create(
+                model=JUDGE,
+                temperature=0,
+                response_format={"type": "json_object"},
+                messages=[{"role": "system", "content": instructions}, {"role": "user", "content": message}],
+            )
+            return parse(response.choices[0].message.content, fields)
+        except RateLimitError as error:
+            wait = float(error.response.headers["retry-after"])
+            # Per-minute limits never ask for more than a minute: a longer wait is another limit, such as the daily one.
+            if wait > 60:
+                print(f"Groq limit reached, waiting until {datetime.now() + timedelta(seconds=wait):%H:%M}: {error.message}", flush=True)
+            time.sleep(wait)
 
 
 def judge(client: Groq, record: dict, question: dict, passages: dict[str, dict]) -> dict:
@@ -139,13 +149,18 @@ def main() -> None:
     questions = {q["id"]: q for q in load_questions()}
     passages = {p["id"]: p for p in load_passages()}
     records = [r for r in answers["answers"] if state(r["answer"]) == "answer"]
-    with Groq(api_key=os.environ["GROQ_API_KEY"]) as client:
-        runs = [[judge(client, r, questions[r["id"]], passages) for r in records] for _ in range(args.runs)]
-
     now = datetime.now()
     config = {"answers": args.answers.name, "date": now.isoformat(timespec="seconds"), "judge": JUDGE, "runs": args.runs}
     path = RESULTS_DIR / f"judge-{args.answers.stem}-{now:%Y%m%d-%H%M%S}.json"
-    path.write_text(json.dumps({"config": config, "runs": runs}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    runs = []
+    # Rate limits make a run long: the file is rewritten after each answer so that an interruption loses little.
+    with Groq(api_key=os.environ["GROQ_API_KEY"], max_retries=0) as client:
+        for number in range(1, args.runs + 1):
+            runs.append([])
+            for r in records:
+                runs[-1].append(judge(client, r, questions[r["id"]], passages))
+                path.write_text(json.dumps({"config": config, "runs": runs}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+                print(f"Run {number}/{args.runs}: {len(runs[-1])}/{len(records)} answers", flush=True)
     report(runs)
     print(f"\nVerdicts written to {path}")
 
