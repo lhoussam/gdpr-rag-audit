@@ -17,9 +17,9 @@ JUDGE = "qwen/qwen3.8-27b"
 
 FAITHFULNESS = """Tu évalues la fidélité d'une réponse produite par un assistant RGPD à partir d'extraits de textes juridiques.
 
-Une affirmation est un énoncé sur le droit ou sur les faits, réponse directe (« oui », « non ») comprise, lue avec la question.
+Une affirmation est un énoncé sur le droit ou sur les faits, réponse directe (« oui », « non ») comprise, lue avec la question. Un conseil (consulter un professionnel, vérifier un point) et le signalement d'une limite des sources ne sont pas des affirmations.
 
-Une affirmation est appuyée si les extraits fournis, seuls ou ensemble, l'établissent sans connaissance extérieure. Toutes les affirmations de la réponse sont concernées, exemples compris. On juge ce que disent les extraits, pas ce qui est vrai : une affirmation exacte mais absente des extraits n'est pas appuyée, une affirmation qui va plus loin qu'eux non plus. L'emplacement des citations entre crochets n'est pas jugé.
+Une affirmation est appuyée si les extraits fournis, seuls ou ensemble, l'établissent sans connaissance extérieure. Une reformulation fidèle ou une déduction directe est appuyée. Toutes les affirmations de la réponse sont concernées, exemples compris. On juge ce que disent les extraits, pas ce qui est vrai : une affirmation exacte mais absente des extraits n'est pas appuyée, une affirmation qui va plus loin qu'eux non plus (condition ou exception omise, « peut » devenu « doit », cas particulier présenté comme règle générale). L'emplacement des citations entre crochets n'est pas jugé.
 
 Exemples :
 - Appuyée : un extrait dit que le responsable tient un registre des activités de traitement, un autre que ce registre est mis à la disposition de l'autorité sur demande. « Le responsable doit pouvoir présenter son registre à l'autorité qui le demande. »
@@ -27,13 +27,13 @@ Exemples :
 - Non appuyée, car plus forte que les extraits : un extrait rend la désignation d'un délégué obligatoire dans certains cas, la réponse dit que tout organisme doit en désigner un.
 
 Réponds uniquement par un objet JSON, avec ces champs dans cet ordre :
-- "justification" : ton examen des affirmations de la réponse face aux extraits ;
+- "justification" : chaque affirmation de la réponse, une ligne brève par affirmation, avec « appuyée » ou « non appuyée » et l'extrait qui l'établit ou la raison du refus ;
 - "affirmation_en_cause" : une affirmation non appuyée, recopiée telle quelle depuis la réponse (la plus nette s'il y en a plusieurs), ou null ;
 - "verdict" : "appuyee" si toutes les affirmations sont appuyées, sinon "affirmation_non_appuyee"."""
 
 ACCURACY = """Tu évalues l'exactitude d'une réponse produite par un assistant RGPD, en la comparant à une réponse de référence.
 
-Une affirmation de fond est une obligation, une condition ou un droit ; un détail ou un exemple n'en est pas une. Seules les affirmations de fond comptent.
+Une affirmation de fond est une obligation, une condition (délai et exception compris) ou un droit ; un détail ou un exemple n'en est pas une. Seules les affirmations de fond comptent.
 
 {criteria}
 
@@ -41,7 +41,7 @@ Exemples :
 {examples}
 
 Réponds uniquement par un objet JSON, avec ces champs dans cet ordre :
-- "justification" : ta comparaison des affirmations de fond de la réponse et de la référence ;
+- "justification" : chaque affirmation de fond de la référence, une ligne brève par affirmation, avec « présente » ou « absente » dans la réponse, puis toute affirmation de fond de la réponse incompatible avec la référence ;
 {fields}"""
 
 # For each accuracy question: its definition, its example if any, and its output field.
@@ -52,7 +52,7 @@ CRITERIA = {
         '- "contradiction" : "presente" ou "absente"',
     ),
     "couverture": (
-        '- Couverture : "complete" si chaque affirmation de fond de la référence se retrouve dans la réponse, quelle que soit la formulation, "incomplete" sinon.',
+        '- Couverture : "complete" si chaque affirmation de fond de la référence se retrouve dans la réponse, quelle que soit la formulation, "incomplete" sinon. Une seule affirmation de fond absente suffit, même si l\'essentiel est couvert.',
         None,
         '- "couverture" : "complete" ou "incomplete"',
     ),
