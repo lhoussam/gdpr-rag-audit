@@ -99,6 +99,8 @@ def ask(client: Groq, instructions: str, message: str, fields: list[str]) -> dic
             response = client.chat.completions.create(
                 model=JUDGE,
                 temperature=0,
+                # Without a cap Groq may expect more output than the free tier's 1000 tokens per minute and refuse outright.
+                max_completion_tokens=1000,
                 response_format={"type": "json_object"},
                 messages=[{"role": "system", "content": instructions}, {"role": "user", "content": message}],
             )
@@ -141,26 +143,38 @@ def report(runs: list[list[dict]]) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("answers", type=Path, help="answers file written by evaluate --answers")
+    parser.add_argument("answers", type=Path, nargs="?", help="answers file written by evaluate --answers")
     parser.add_argument("--runs", type=int, default=1)
+    parser.add_argument("--resume", type=Path, help="verdicts file of an interrupted launch, completed where it stopped")
     args = parser.parse_args()
 
-    answers = json.loads(args.answers.read_text(encoding="utf-8"))
+    now = datetime.now()
+    if args.resume:
+        path = args.resume
+        saved = json.loads(path.read_text(encoding="utf-8"))
+        config, runs = saved["config"], saved["runs"]
+        config.setdefault("resumed", []).append(now.isoformat(timespec="seconds"))
+        answers_path = RESULTS_DIR / config["answers"]
+    else:
+        config = {"answers": args.answers.name, "date": now.isoformat(timespec="seconds"), "judge": JUDGE, "runs": args.runs}
+        path = RESULTS_DIR / f"judge-{args.answers.stem}-{now:%Y%m%d-%H%M%S}.json"
+        runs = []
+        answers_path = args.answers
+
+    answers = json.loads(answers_path.read_text(encoding="utf-8"))
     questions = {q["id"]: q for q in load_questions()}
     passages = {p["id"]: p for p in load_passages()}
     records = [r for r in answers["answers"] if state(r["answer"]) == "answer"]
-    now = datetime.now()
-    config = {"answers": args.answers.name, "date": now.isoformat(timespec="seconds"), "judge": JUDGE, "runs": args.runs}
-    path = RESULTS_DIR / f"judge-{args.answers.stem}-{now:%Y%m%d-%H%M%S}.json"
-    runs = []
     # Rate limits make a run long: the file is rewritten after each answer so that an interruption loses little.
     with Groq(api_key=os.environ["GROQ_API_KEY"], max_retries=0) as client:
-        for number in range(1, args.runs + 1):
-            runs.append([])
-            for r in records:
-                runs[-1].append(judge(client, r, questions[r["id"]], passages))
+        for number in range(1, config["runs"] + 1):
+            if len(runs) < number:
+                runs.append([])
+            run = runs[number - 1]
+            for r in records[len(run):]:
+                run.append(judge(client, r, questions[r["id"]], passages))
                 path.write_text(json.dumps({"config": config, "runs": runs}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-                print(f"Run {number}/{args.runs}: {len(runs[-1])}/{len(records)} answers", flush=True)
+                print(f"Run {number}/{config['runs']}: {len(run)}/{len(records)} answers", flush=True)
     report(runs)
     print(f"\nVerdicts written to {path}")
 
