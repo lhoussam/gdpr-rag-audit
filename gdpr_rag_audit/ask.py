@@ -18,7 +18,8 @@ UNKNOWN = "Je ne sais pas : les sources disponibles ne couvrent pas cette questi
 
 INSTRUCTIONS = f"""Tu es un assistant d'analyse RGPD. Tu réponds en français, uniquement à partir des extraits fournis.
 Après chaque affirmation, cite l'identifiant de l'extrait qui la justifie entre crochets, un identifiant par crochet, par exemple [RGPD-art28-2].
-Si les extraits ne permettent pas de répondre, réponds exactement : « {UNKNOWN} »"""
+Si les extraits ne couvrent qu'une partie de la question, réponds sur cette partie et dis ce que les extraits ne couvrent pas.
+Si les extraits ne permettent pas du tout de répondre, réponds exactement : « {UNKNOWN} »"""
 
 
 # Brackets also hold ellipses and placeholders; only passage ids count, alone or separated by commas.
