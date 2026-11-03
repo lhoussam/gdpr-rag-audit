@@ -14,6 +14,8 @@ from gdpr_rag_audit.index import load_passages
 from gdpr_rag_audit.questions import load_questions
 
 JUDGE = "qwen/qwen3.8-27b"
+# Free tier output tokens per minute, for the judges that have such a limit: without a cap Groq assumes more output and refuses outright.
+OUTPUT_CAPS = {"qwen/qwen3.8-27b": 1000}
 
 FAITHFULNESS = """Tu évalues la fidélité d'une réponse produite par un assistant RGPD à partir d'extraits de textes juridiques.
 
@@ -92,15 +94,14 @@ def parse(content: str, fields: list[str]) -> dict:
         return {"error": str(error), "content": content}
 
 
-def ask(client: Groq, instructions: str, message: str, fields: list[str]) -> dict:
+def ask(client: Groq, model: str, instructions: str, message: str, fields: list[str]) -> dict:
     # The free tier limits tokens per minute: wait as long as Groq asks, then try again.
     while True:
         try:
             response = client.chat.completions.create(
-                model=JUDGE,
+                model=model,
                 temperature=0,
-                # Without a cap Groq may expect more output than the free tier's 1000 tokens per minute and refuse outright.
-                max_completion_tokens=1000,
+                **({"max_completion_tokens": OUTPUT_CAPS[model]} if model in OUTPUT_CAPS else {}),
                 response_format={"type": "json_object"},
                 messages=[{"role": "system", "content": instructions}, {"role": "user", "content": message}],
             )
@@ -118,14 +119,15 @@ def ask(client: Groq, instructions: str, message: str, fields: list[str]) -> dic
             time.sleep(wait)
 
 
-def judge(client: Groq, record: dict, question: dict, passages: dict[str, dict]) -> dict:
+def judge(client: Groq, model: str, record: dict, question: dict, passages: dict[str, dict]) -> dict:
     provided = [(pid, passages[pid]["context"], passages[pid]["text"]) for pid in record["provided"]]
     message = f"Question : {question['question']}\n\nExtraits fournis :\n\n{excerpts(provided)}\n\nRéponse à évaluer :\n{record['answer']}"
-    verdicts = {"id": record["id"], "faithfulness": ask(client, FAITHFULNESS, message, ["verdict"])}
+    verdicts = {"id": record["id"], "faithfulness": ask(client, model, FAITHFULNESS, message, ["verdict"])}
     if record["category"] in QUESTIONS_BY_CATEGORY:
         message = (f"Question : {question['question']}\n\nRéponse de référence :\n{question['reference_answer']}"
                    f"\n\nRéponse à évaluer :\n{record['answer']}")
-        verdicts["accuracy"] = ask(client, accuracy_instructions(record["category"]), message, QUESTIONS_BY_CATEGORY[record["category"]])
+        verdicts["accuracy"] = ask(client, model, accuracy_instructions(record["category"]), message,
+                                   QUESTIONS_BY_CATEGORY[record["category"]])
     return verdicts
 
 
@@ -149,6 +151,7 @@ def report(runs: list[list[dict]]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("answers", type=Path, nargs="?", help="answers file written by evaluate --answers")
+    parser.add_argument("--judge", default=JUDGE)
     parser.add_argument("--runs", type=int, default=1)
     parser.add_argument("--resume", type=Path, help="verdicts file of an interrupted launch, completed where it stopped")
     args = parser.parse_args()
@@ -161,7 +164,7 @@ def main() -> None:
         config.setdefault("resumed", []).append(now.isoformat(timespec="seconds"))
         answers_path = RESULTS_DIR / config["answers"]
     else:
-        config = {"answers": args.answers.name, "date": now.isoformat(timespec="seconds"), "judge": JUDGE, "runs": args.runs}
+        config = {"answers": args.answers.name, "date": now.isoformat(timespec="seconds"), "judge": args.judge, "runs": args.runs}
         path = RESULTS_DIR / f"judge-{args.answers.stem}-{now:%Y%m%d-%H%M%S}.json"
         runs = []
         answers_path = args.answers
@@ -177,7 +180,7 @@ def main() -> None:
                 runs.append([])
             run = runs[number - 1]
             for r in records[len(run):]:
-                run.append(judge(client, r, questions[r["id"]], passages))
+                run.append(judge(client, config["judge"], r, questions[r["id"]], passages))
                 path.write_text(json.dumps({"config": config, "runs": runs}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
                 print(f"Run {number}/{config['runs']}: {len(run)}/{len(records)} answers", flush=True)
     report(runs)

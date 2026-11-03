@@ -4,7 +4,7 @@ from types import SimpleNamespace
 import httpx
 from groq import BadRequestError
 
-from gdpr_rag_audit.judge import FAITHFULNESS, accuracy_instructions, ask, judge, parse
+from gdpr_rag_audit.judge import FAITHFULNESS, JUDGE, accuracy_instructions, ask, judge, parse
 
 
 def test_parse_keeps_valid_verdicts():
@@ -26,7 +26,7 @@ def test_failed_json_generation_is_a_malformed_verdict():
         raise error
 
     client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
-    assert "error" in ask(client, FAITHFULNESS, "…", ["verdict"])
+    assert "error" in ask(client, JUDGE, FAITHFULNESS, "…", ["verdict"])
 
 
 def test_accuracy_instructions_follow_the_category():
@@ -41,6 +41,6 @@ def test_out_of_corpus_answers_are_only_judged_on_faithfulness():
     client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=lambda **kw: calls.append(kw) or reply)))
     record = {"id": "O1", "category": "out_of_corpus", "provided": ["RGPD-art5-1"], "answer": "Oui [RGPD-art5-1]."}
     passages = {"RGPD-art5-1": {"context": "RGPD, article 5", "text": "Les données sont traitées de manière licite."}}
-    verdicts = judge(client, record, {"question": "Q ?", "reference_answer": "R."}, passages)
+    verdicts = judge(client, JUDGE, record, {"question": "Q ?", "reference_answer": "R."}, passages)
     assert len(calls) == 1 and "accuracy" not in verdicts
     assert "[RGPD-art5-1] RGPD, article 5\nLes données sont traitées" in calls[0]["messages"][1]["content"]
