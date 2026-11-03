@@ -6,7 +6,7 @@ from collections import Counter
 from datetime import datetime, timedelta
 from pathlib import Path
 
-from groq import Groq, RateLimitError
+from groq import BadRequestError, Groq, RateLimitError
 
 from gdpr_rag_audit.ask import excerpts
 from gdpr_rag_audit.evaluate import RESULTS_DIR, state
@@ -105,6 +105,11 @@ def ask(client: Groq, instructions: str, message: str, fields: list[str]) -> dic
                 messages=[{"role": "system", "content": instructions}, {"role": "user", "content": message}],
             )
             return parse(response.choices[0].message.content, fields)
+        except BadRequestError as error:
+            # JSON mode can run past the output cap without closing the document: the verdict is malformed.
+            if error.body["error"]["code"] != "json_validate_failed":
+                raise
+            return {"error": error.body["error"]["failed_generation"], "content": None}
         except RateLimitError as error:
             wait = float(error.response.headers["retry-after"])
             # Per-minute limits never ask for more than a minute: a longer wait is another limit, such as the daily one.

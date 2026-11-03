@@ -1,7 +1,10 @@
 import json
 from types import SimpleNamespace
 
-from gdpr_rag_audit.judge import accuracy_instructions, judge, parse
+import httpx
+from groq import BadRequestError
+
+from gdpr_rag_audit.judge import FAITHFULNESS, accuracy_instructions, ask, judge, parse
 
 
 def test_parse_keeps_valid_verdicts():
@@ -13,6 +16,17 @@ def test_parse_reports_malformed_verdicts():
     for content in ["pas du JSON", '{"verdict": "oui"}', '{"justification": "…"}']:
         result = parse(content, ["verdict"])
         assert "error" in result and result["content"] == content
+
+
+def test_failed_json_generation_is_a_malformed_verdict():
+    body = {"error": {"code": "json_validate_failed", "failed_generation": "max completion tokens reached"}}
+    error = BadRequestError("400", response=httpx.Response(400, request=httpx.Request("POST", "https://groq")), body=body)
+
+    def create(**kwargs):
+        raise error
+
+    client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
+    assert "error" in ask(client, FAITHFULNESS, "…", ["verdict"])
 
 
 def test_accuracy_instructions_follow_the_category():
