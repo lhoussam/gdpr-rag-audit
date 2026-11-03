@@ -14,8 +14,9 @@ from gdpr_rag_audit.index import load_passages
 from gdpr_rag_audit.questions import load_questions
 
 JUDGE = "qwen/qwen3.8-27b"
-# Free tier output tokens per minute, for the judges that have such a limit: without a cap Groq assumes more output and refuses outright.
-OUTPUT_CAPS = {"qwen/qwen3.8-27b": 1000}
+# qwen's free tier allows 1000 output tokens per minute, and Groq refuses a request that may need more.
+# gpt-oss has no such limit: its cap only stops a runaway generation (longest verdict measured: about 2500 tokens).
+OUTPUT_CAPS = {"qwen/qwen3.8-27b": 1000, "openai/gpt-oss-120b": 4000}
 
 FAITHFULNESS = """Tu évalues la fidélité d'une réponse produite par un assistant RGPD à partir d'extraits de textes juridiques.
 
@@ -152,7 +153,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("answers", type=Path, nargs="?", help="answers file written by evaluate --answers")
     parser.add_argument("--judge", default=JUDGE)
-    parser.add_argument("--runs", type=int, default=1)
+    parser.add_argument("--runs", type=int, help="1 by default; with --resume, raises the number of runs of the launch")
     parser.add_argument("--resume", type=Path, help="verdicts file of an interrupted launch, completed where it stopped")
     args = parser.parse_args()
 
@@ -162,9 +163,10 @@ def main() -> None:
         saved = json.loads(path.read_text(encoding="utf-8"))
         config, runs = saved["config"], saved["runs"]
         config.setdefault("resumed", []).append(now.isoformat(timespec="seconds"))
+        config["runs"] = max(config["runs"], args.runs or 0)
         answers_path = RESULTS_DIR / config["answers"]
     else:
-        config = {"answers": args.answers.name, "date": now.isoformat(timespec="seconds"), "judge": args.judge, "runs": args.runs}
+        config = {"answers": args.answers.name, "date": now.isoformat(timespec="seconds"), "judge": args.judge, "runs": args.runs or 1}
         path = RESULTS_DIR / f"judge-{args.answers.stem}-{now:%Y%m%d-%H%M%S}.json"
         runs = []
         answers_path = args.answers
