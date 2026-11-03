@@ -16,7 +16,7 @@ BRACKETS = re.compile(r"\[([^\]]+)\]")
 PASSAGE_ID = re.compile(r"\w+-[\w.-]+")
 UNKNOWN = "Je ne sais pas : les sources disponibles ne couvrent pas cette question."
 
-INSTRUCTIONS = f"""Tu es un assistant d'analyse RGPD. Tu réponds en français, uniquement à partir des extraits fournis.
+INSTRUCTIONS = f"""Tu es un assistant d'analyse RGPD. Tu réponds en français, uniquement à partir des extraits fournis, sans connaissances extérieures.
 Après chaque affirmation, cite l'identifiant de l'extrait qui la justifie entre crochets, un identifiant par crochet, par exemple [RGPD-art28-2].
 Si les extraits ne couvrent qu'une partie de la question, réponds sur cette partie et dis ce que les extraits ne couvrent pas.
 Si les extraits ne permettent pas du tout de répondre, réponds exactement : « {UNKNOWN} »"""
