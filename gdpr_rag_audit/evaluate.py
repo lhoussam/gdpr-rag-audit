@@ -11,7 +11,7 @@ from mistralai.client import Mistral
 from pgvector.psycopg import register_vector
 from sentence_transformers import SentenceTransformer
 
-from gdpr_rag_audit.ask import LLM, UNKNOWN, answer, citations
+from gdpr_rag_audit.ask import LLM, RETRIES, UNKNOWN, answer, citations
 from gdpr_rag_audit.index import DATABASE_URL, EMBEDDING_MODEL
 from gdpr_rag_audit.questions import EVALUATION_DIR, load_subset
 from gdpr_rag_audit.search import K, search
@@ -129,7 +129,7 @@ def main() -> None:
         print(f"{args.subset}: {len(questions)} questions, {size} indexed passages\n")
         results = {q["id"]: ranks(conn, model, q, size) for q in questions}
         if args.answers:
-            with Mistral(api_key=os.environ["MISTRAL_API_KEY"]) as client:
+            with Mistral(api_key=os.environ["MISTRAL_API_KEY"], retry_config=RETRIES) as client:
                 records = generate(conn, model, client, subset)
     report(results, K)
     if args.answers:

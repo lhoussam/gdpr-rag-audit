@@ -4,6 +4,7 @@ import sys
 
 import psycopg
 from mistralai.client import Mistral
+from mistralai.client.utils import BackoffStrategy, RetryConfig
 from pgvector.psycopg import register_vector
 from sentence_transformers import SentenceTransformer
 
@@ -15,6 +16,9 @@ LLM = "ministral-14b-2512"
 BRACKETS = re.compile(r"\[([^\]]+)\]")
 PASSAGE_ID = re.compile(r"\w+-[\w.-]+")
 UNKNOWN = "Je ne sais pas : les sources disponibles ne couvrent pas cette question."
+# The free tier is sometimes out of capacity (429): retry with growing waits, for up to half an hour.
+RETRIES = RetryConfig("backoff", BackoffStrategy(initial_interval=1_000, max_interval=60_000, exponent=2, max_elapsed_time=1_800_000),
+                      retry_connection_errors=False)
 
 INSTRUCTIONS = f"""Tu es un assistant d'analyse RGPD. Tu réponds en français, uniquement à partir des extraits fournis, sans connaissances extérieures.
 Après chaque affirmation, cite l'identifiant de l'extrait qui la justifie entre crochets, un identifiant par crochet, par exemple [RGPD-art28-2].
@@ -53,7 +57,7 @@ def main() -> None:
     with psycopg.connect(DATABASE_URL) as conn:
         register_vector(conn)
         passages = search(conn, model, question)
-    with Mistral(api_key=os.environ["MISTRAL_API_KEY"]) as client:
+    with Mistral(api_key=os.environ["MISTRAL_API_KEY"], retry_config=RETRIES) as client:
         text = answer(client, question, passages)
     print(text)
 
