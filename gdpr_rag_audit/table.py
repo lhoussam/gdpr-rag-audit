@@ -47,19 +47,19 @@ def column(config: dict, records: list[dict], verdicts: dict[str, dict]) -> tupl
     states = {category: s["states"] for category, s in answers["by_category"].items()}
     all_categories = set(states)
     measures = [
-        ("Fidélité : réponses appuyées", "fidélité", "faithfulness", "verdict", "appuyee", all_categories),
-        ("Contradiction absente", "contradiction", "accuracy", "contradiction", "absente", {"complete", "partial"}),
-        ("Couverture complète (complètes)", "couverture", "accuracy", "couverture", "complete", {"complete"}),
-        ("Limite signalée (partielles)", "limite", "accuracy", "limite", "signalee", {"partial"}),
+        ("Faithful answers (judge)", "faithfulness", "faithfulness", "verdict", "appuyee", all_categories),
+        ("No contradiction (judge)", "contradiction", "accuracy", "contradiction", "absente", {"complete", "partial"}),
+        ("Complete coverage, complete questions (judge)", "coverage", "accuracy", "couverture", "complete", {"complete"}),
+        ("Limits signalled, partial questions (judge)", "limit", "accuracy", "limite", "signalee", {"partial"}),
     ]
     rows = [
-        (f"Recherche : rappel@{config['k']} (plafond)", f"{search['recall']:.2f} ({search['ceiling']:.2f})"),
-        (f"Recherche : hit@{config['k']}", f"{search['hit']:.2f}"),
-        ("Réponse donnée (complètes)", count(states["complete"]["answer"], states["complete"].total())),
-        ("Réponse donnée (partielles)", count(states["partial"]["answer"], states["partial"].total())),
-        ("Refus (hors corpus)", count(states["out_of_corpus"]["refusal"], states["out_of_corpus"].total())),
-        ("Citation invalide", count(len(answers["invalid_citations"]), answers["answered"])),
-        ("Aucune citation valide", count(len(answers["no_valid_citation"]), answers["answered"])),
+        (f"Retrieval: recall@{config['k']} (ceiling)", f"{search['recall']:.2f} ({search['ceiling']:.2f})"),
+        (f"Retrieval: hit@{config['k']}", f"{search['hit']:.2f}"),
+        ("Answered, complete questions", count(states["complete"]["answer"], states["complete"].total())),
+        ("Answered, partial questions", count(states["partial"]["answer"], states["partial"].total())),
+        ("Refused, out-of-corpus questions", count(states["out_of_corpus"]["refusal"], states["out_of_corpus"].total())),
+        ("Answers with an invalid citation", count(len(answers["invalid_citations"]), answers["answered"])),
+        ("Answers without a valid citation", count(len(answers["no_valid_citation"]), answers["answered"])),
     ]
     unjudged = []
     for label, name, call, field, good, categories in measures:
@@ -76,14 +76,14 @@ def main() -> None:
 
     loaded = [load(path) for path in args.verdicts]
     columns = [column(*data) for data in loaded]
-    print(f"| Mesure | {' | '.join(config['subset'] for config, _, _ in loaded)} |")
+    print(f"| Measure | {' | '.join(config['subset'] for config, _, _ in loaded)} |")
     print(f"|---|{'---|' * len(loaded)}")
     for i, (label, _) in enumerate(columns[0][0]):
         print(f"| {label} | {' | '.join(rows[i][1] for rows, _ in columns)} |")
     print()
     for (config, _, _), (_, unjudged) in zip(loaded, columns):
-        print(f"{config['subset']} : générateur {config['llm']}, embeddings {config['embedding_model']}, k = {config['k']}, "
-              f"juge {config['judge']}, réponses du {config['date'][:10]} ; non jugées : {', '.join(unjudged) or 'aucune'}")
+        print(f"{config['subset']}: generator {config['llm']}, embeddings {config['embedding_model']}, k = {config['k']}, "
+              f"judge {config['judge']}, answers of {config['date'][:10]}; not judged: {', '.join(unjudged) or 'none'}")
 
 
 if __name__ == "__main__":
