@@ -1,0 +1,479 @@
+{
+ "config": {
+  "subset": "dev",
+  "date": "2026-10-30T15:17:11",
+  "llm": "ministral-14b-2512",
+  "embedding_model": "BAAI/bge-m3",
+  "k": 5
+ },
+ "answers": [
+  {
+   "id": "FAQ-03",
+   "category": "complete",
+   "provided": [
+    "EDPB-07-2020-124",
+    "RGPD-art7-2",
+    "RGPD-art34-2",
+    "RGPD-art86",
+    "RGPD-cons39"
+   ],
+   "answer": "Je ne sais pas : les sources disponibles ne couvrent pas cette question."
+  },
+  {
+   "id": "FAQ-05",
+   "category": "complete",
+   "provided": [
+    "RGPD-art12-3",
+    "RGPD-art36-2",
+    "RGPD-art12-4",
+    "RGPD-cons59",
+    "RGPD-art61-2"
+   ],
+   "answer": "Vous avez un délai maximal d'**un mois** pour répondre à une demande d’accès formulée par une personne concernée, conformément à l’article 12 du RGPD.\n\n[RGPD-art12-3]\n[RGPD-art12-4]\n[RGPD-cons59]"
+  },
+  {
+   "id": "FAQ-06",
+   "category": "complete",
+   "provided": [
+    "RGPD-cons91",
+    "CCT-annexeII",
+    "RGPD-cons49",
+    "RGPD-cons39",
+    "CCT-clause7.5"
+   ],
+   "answer": "Oui, il est possible de traiter des données sensibles, mais sous des conditions strictes et avec des garanties supplémentaires.\n\nLes extraits montrent que :\n- Le traitement de **données sensibles** (comme définies dans la clause 7.5 du CCT 2021/915) est autorisé **à condition d'appliquer des limitations ou garanties spécifiques** (ex. : restriction des accès, formation spécialisée, registre d'accès, mesures de sécurité renforcées, etc.) [CCT-annexeII].\n- Ces garanties doivent **tenir pleinement compte de la nature des données et des risques encourus** [CCT-annexeII].\n\nCependant, le RGPD impose aussi une **évaluation des risques** (notamment via une **analyse d'impact relative à la protection des données** si le traitement est à grande échelle ou engendre un risque élevé) [RGPD-cons91].\n\n---\n**À noter** : Le traitement doit aussi respecter les principes généraux du RGPD (licéité, transparence, minimisation des données, etc.) [RGPD-cons39]. Une justification légale (consentement, intérêt légitime, obligation légale, etc.) est nécessaire."
+  },
+  {
+   "id": "FAQ-07",
+   "category": "complete",
+   "provided": [
+    "RGPD-cons39",
+    "RGPD-cons63",
+    "RGPD-cons61",
+    "CCT-clause9.1",
+    "RGPD-art15-1"
+   ],
+   "answer": "Vous devez fournir à la personne concernée des informations **transparentes, claires et précises** sur le traitement de ses données, conformément aux principes du RGPD. Voici les obligations principales à respecter, basées sur les extraits fournis :\n\n1. **Informer sur l’identité du responsable du traitement** et les **finalités du traitement** (explicites et légitimes) [RGPD-cons39].\n2. **Préciser les catégories de données collectées** et leur **nécessité** (adéquation, pertinence et limitation) [RGPD-cons39].\n3. **Indiquer les destinataires** (y compris les pays tiers ou organisations internationales) et, si possible, **la durée de conservation** des données [RGPD-art15-1].\n4. **Expliquer les risques, règles, garanties et droits** liés au traitement, ainsi que les modalités d’exercice de ses droits (ex. : rectification, effacement, opposition) [RGPD-cons39].\n5. **Mentionner l’existence d’un traitement automatisé ou de profilage** (si applicable) et ses conséquences [RGPD-art15-1].\n6. **Informer sur la source des données** si elles ne sont pas collectées directement auprès de la personne [RGPD-art15-1].\n7. **Fournir ces informations** :\n   - **Au moment de la collecte** (si les données sont obtenues directement auprès de la personne) [RGPD-cons61].\n   - **Dans un délai raisonnable** (si les données proviennent d’une autre source) [RGPD-cons61].\n   - **Avant tout traitement ultérieur** pour une finalité différente de celle initialement déclarée [RGPD-cons61].\n\n**Exemple concret** :\nSi un utilisateur demande comment ses données sont traitées, vous devez lui communiquer :\n- *\"Vos données (ex. : nom, email) sont collectées pour gérer votre compte et vous envoyer des newsletters. Elles sont conservées [durée] et partagées avec [destinataires]. Vous pouvez exercer vos droits (accès, rectification, etc.) via [lien/email].\"*\n\n---\n**Cas particulier** : Si la demande porte sur un **grand volume de données**, vous pouvez demander à la personne de préciser sa requête [RGPD-cons63]."
+  },
+  {
+   "id": "FAQ-09",
+   "category": "out_of_corpus",
+   "provided": [
+    "RGPD-cons32",
+    "RGPD-art43-3",
+    "RGPD-cons42",
+    "RGPD-art70-1",
+    "RGPD-cons30"
+   ],
+   "answer": "Oui, vous avez généralement besoin d’un **consentement** pour utiliser des **cookies** (ou autres traceurs) sur le site web de votre organisme, sauf si leur utilisation relève d’une autre base légale (comme l’exécution d’un contrat ou une obligation légale).\n\nLe **consentement doit être libre, spécifique, éclairé et univoque**, et ne peut pas être implicite (ex. : cases cochées par défaut, silence ou inactivité). Il doit également être **facilement accessible, compréhensible et formulée en termes clairs** [RGPD-cons32][RGPD-cons42].\n\nDe plus, le **consentement doit être donné avant l’utilisation des cookies** (principe de *privacy by design*), et la personne concernée doit pouvoir **retirer son consentement aussi facilement qu’elle l’a donné** [RGPD-cons42].\n\n---\n**Exceptions possibles** (non couvertes par les extraits fournis) :\n- Cookies strictement nécessaires au fonctionnement du site (ex. : panier d’achat).\n- Cookies utilisés dans le cadre d’une **obligation légale** ou pour **protéger les intérêts vitaux** de la personne concernée.\n\n*« Je ne sais pas : les sources disponibles ne couvrent pas les exceptions précises ou les modalités techniques de mise en œuvre (comme les bannières de consentement). »*"
+  },
+  {
+   "id": "FAQ-10",
+   "category": "complete",
+   "provided": [
+    "RGPD-cons28",
+    "RGPD-art4-5",
+    "RGPD-cons26",
+    "RGPD-cons29",
+    "RGPD-art25-1"
+   ],
+   "answer": "Voici la différence entre les **données pseudonymisées** et les **données anonymisées**, telle qu'elle ressort des extraits fournis :\n\n1. **Données pseudonymisées** :\n   - Elles sont traitées de manière à ne plus pouvoir être attribuées à une personne précise **sans informations supplémentaires** (qui doivent être conservées séparément et protégées).\n   - Elles restent des **données à caractère personnel** (car identifiables avec des moyens supplémentaires), et le RGPD s'applique toujours à leur traitement.\n   - Exemple : Un identifiant numérique remplaçant un nom, avec une clé de correspondance stockée séparément.\n   - Justification :\n     [RGPD-art4-5] (définition légale de la pseudonymisation),\n     [RGPD-cons26] (elles sont considérées comme des données identifiables si les informations supplémentaires existent),\n     [RGPD-cons28] (la pseudonymisation réduit les risques mais ne les élimine pas).\n\n2. **Données anonymisées** :\n   - Elles ne concernent **plus une personne physique identifiable**, même avec des moyens raisonnables (coût, temps, technologies disponibles).\n   - Le RGPD **ne s'applique pas** à leur traitement, car elles ne relèvent plus de la notion de \"données à caractère personnel\".\n   - Exemple : Des statistiques agrégées sans possibilité de retracer un individu.\n   - Justification :\n     [RGPD-cons26] (distinction claire entre données identifiables et anonymes : *\"il n'y a dès lors pas lieu d'appliquer les principes relatifs à la protection des données aux informations anonymes\"*).\n\n**En résumé** :\n- **Pseudonymisation** = Protection partielle (données toujours personnelles, mais moins accessibles).\n- **Anonymisation** = Suppression totale de l'identifiabilité (données hors champ RGPD).\n\n---\n*Remarque* : L'anonymisation est irréversible (ou du moins, techniquement impossible à inverser), tandis que la pseudonymisation peut être levée si les informations supplémentaires sont accessibles."
+  },
+  {
+   "id": "FAQ-12",
+   "category": "complete",
+   "provided": [
+    "CCT-clause7.5",
+    "CCT-annexeII",
+    "RGPD-cons51",
+    "RGPD-cons10",
+    "RGPD-art4-1"
+   ],
+   "answer": "Une **donnée sensible** (ou *catégorie particulière de données à caractère personnel*) est définie comme suit :\n\n- Les données révélant **l'origine raciale ou ethnique**,\n- Les **opinions politiques**,\n- Les **convictions religieuses ou philosophiques**,\n- L'**appartenance syndicale**,\n- Les **données génétiques**,\n- Les **données biométriques** (uniquement si elles permettent d'identifier une personne de manière unique),\n- Les **données concernant la santé**,\n- Les **données concernant la vie sexuelle ou l'orientation sexuelle**,\n- Les **données relatives aux condamnations pénales et aux infractions**.\n\n[RGPD-art4-1] [RGPD-cons51] [CCT-clause7.5]"
+  },
+  {
+   "id": "FAQ-14",
+   "category": "complete",
+   "provided": [
+    "RGPD-art4-1",
+    "RGPD-cons26",
+    "RGPD-cons35",
+    "RGPD-cons34",
+    "RGPD-art5-1"
+   ],
+   "answer": "Une **donnée à caractère personnel** est définie comme toute information se rapportant à une personne physique identifiée ou identifiable, directement ou indirectement, notamment par référence à un identifiant (nom, numéro, données de localisation, identifiant en ligne, ou tout élément spécifique à son identité physique, physiologique, génétique, psychique, économique, culturelle ou sociale).\n\nCela inclut également des informations qui pourraient être attribuées à une personne physique par le recours à des informations supplémentaires (comme des données pseudonymisées).\n\n[RGPD-art4-1]\n[RGPD-cons26]"
+  },
+  {
+   "id": "FAQ-15",
+   "category": "complete",
+   "provided": [
+    "RGPD-cons108",
+    "CCT-clause9.1",
+    "RGPD-art13-3",
+    "EDPB-07-2020-92",
+    "RGPD-art15-3"
+   ],
+   "answer": "Pour être conforme au RGPD lorsque vous collectez des données personnelles auprès d’un tiers, vous devez fournir à la personne concernée les informations prévues à l’**[RGPD-art13-3]**.\n\nCependant, si vous prévoyez un **traitement ultérieur des données pour une autre finalité** que celle initialement déclarée, vous devez informer la personne concernée **au préalable** de cette autre finalité et de toute autre information pertinente **[RGPD-art13-3]**.\n\nJe ne sais pas : les sources disponibles ne couvrent pas les obligations spécifiques liées à la collecte auprès d’un tiers (comme la vérification de la légitimité de la collecte ou les droits du tiers fournisseur)."
+  },
+  {
+   "id": "FAQ-17",
+   "category": "partial",
+   "provided": [
+    "CCT-annexeIII",
+    "RGPD-cons77",
+    "RGPD-cons100",
+    "RGPD-cons87",
+    "RGPD-cons83"
+   ],
+   "answer": "Pour déterminer quelles mesures de sécurité mettre en place, voici les éléments clés à considérer selon les extraits fournis :\n\n1. **Évaluation des risques** :\n   Les mesures doivent être **appropriées** en fonction de la **nature, de la portée, du contexte et de la finalité du traitement**, ainsi que des **risques pour les droits et libertés des personnes physiques** [CCT-annexeIII].\n   Une **analyse des risques** (origine, nature, probabilité et gravité) est essentielle pour identifier les meilleures pratiques à appliquer [RGPD-cons77].\n\n2. **Mesures concrètes et non génériques** :\n   Les mesures doivent être **décrites de manière précise** et adaptées au traitement spécifique. Voici des exemples de mesures à envisager selon le contexte :\n   - Chiffrement et pseudonymisation des données [CCT-annexeIII].\n   - Confidentialité, intégrité, disponibilité et résilience des systèmes [CCT-annexeIII].\n   - Procédures de test, analyse et évaluation régulière des mesures [CCT-annexeIII].\n   - Identification et autorisation des utilisateurs, protection des données en transmission et stockage [CCT-annexeIII].\n   - Sécurité physique des sites, enregistrement des événements, configuration des systèmes [CCT-annexeIII].\n   - Minimisation, qualité et conservation limitée des données [CCT-annexeIII].\n   - Portabilité et effacement des données [CCT-annexeIII].\n\n3. **Références aux bonnes pratiques** :\n   Des **codes de conduite, certifications ou lignes directrices** (par exemple, celles du Comité européen de la protection des données) peuvent guider le choix des mesures [RGPD-cons77].\n   Des **certifications ou labels** peuvent aussi faciliter l’évaluation par les personnes concernées [RGPD-cons100].\n\n4. **Adaptation aux transferts de données** :\n   Si des **sous-traitants** sont impliqués, des mesures spécifiques doivent être décrites pour garantir leur assistance au responsable du traitement [CCT-annexeIII].\n\n5. **Préparation aux violations de données** :\n   Les mesures doivent permettre de **détecter rapidement les incidents** et d’informer les autorités et les personnes concernées [RGPD-cons87].\n\n**Résumé** :\n- **Évaluez les risques** liés à votre traitement.\n- **Appliquez des mesures techniques et organisationnelles adaptées** (exemples dans [CCT-annexeIII]).\n- **Documentez-les de manière concrète**.\n- **Utilisez des références externes** (certifications, lignes directrices) si nécessaire.\n\nSi votre traitement est complexe ou sensible, consultez un **Délégué à la Protection des Données (DPO)** ou une autorité de protection des données."
+  },
+  {
+   "id": "FAQ-18",
+   "category": "partial",
+   "provided": [
+    "EDPB-07-2020-92",
+    "RGPD-cons116",
+    "RGPD-art50",
+    "RGPD-art47-2",
+    "RGPD-art48"
+   ],
+   "answer": "Non, vous ne pouvez pas simplement partager une liste de données personnelles avec vos partenaires commerciaux (tiers) sans respecter les conditions du RGPD.\n\nD'après l'extrait **[EDPB-07-2020-92]**, un tiers destinataire est considéré comme un **responsable du traitement** pour tout traitement qu'il effectue pour ses propres finalités après réception des données. Ainsi, le partage de données personnelles avec un tiers implique que ce dernier devient également responsable du traitement des données qu'il reçoit, et non un simple sous-traitant.\n\nPour partager des données personnelles avec un tiers, il faut :\n1. **Vérifier la base légale** du traitement (consentement, exécution d'un contrat, obligation légale, etc.) conformément à l’**article 6 du RGPD** (non cité ici, mais essentiel).\n2. **Informer les personnes concernées** des transferts de données (article 13 et 14 du RGPD).\n3. **S'assurer que le tiers respecte les obligations RGPD** (sécurité, droits des personnes, etc.).\n4. **Documenter le transfert** (notamment si le tiers est dans un pays tiers, en vérifiant les garanties comme les clauses contractuelles types ou les décisions d'adéquation).\n\nSi le tiers agit pour vos propres finalités (et non les siennes), il doit être considéré comme un **co-responsable du traitement** (et non un simple destinataire), ce qui implique une **convention de co-responsabilité** (article 26 du RGPD, non cité ici).\n\n*« Je ne sais pas : les sources disponibles ne couvrent pas cette question. »* concernant les détails précis d'une convention de co-responsabilité ou les modalités exactes de partage selon votre cas spécifique."
+  },
+  {
+   "id": "FAQ-21",
+   "category": "complete",
+   "provided": [
+    "RGPD-cons32",
+    "RGPD-cons42",
+    "RGPD-cons43",
+    "RGPD-art7-2",
+    "RGPD-art7-4"
+   ],
+   "answer": "Pour obtenir un **consentement valide** au sens du RGPD, voici les conditions à respecter, basées sur les extraits fournis :\n\n1. **Acte positif, clair et univoque** :\n   Le consentement doit être donné par une action **explicite** (ex. : cocher une case, une déclaration écrite ou orale, un paramètre technique choisi). Le silence, les cases pré-cochées ou l'inactivité ne suffisent pas.\n   *[RGPD-cons32]*\n\n2. **Libre, spécifique et éclairé** :\n   - La personne concernée doit comprendre **l'identité du responsable du traitement** et **les finalités** du traitement.\n   - Le consentement doit être **libre** : la personne ne doit pas subir de pression (ex. : déséquilibre de pouvoir, contrat subordonné à un consentement non nécessaire).\n   - Il doit être **distinct** pour chaque finalité de traitement (ex. : impossible de mélanger des consentements pour des usages différents sans option de refus séparée).\n   *[RGPD-cons32, RGPD-cons42, RGPD-cons43, RGPD-art7-4]*\n\n3. **Forme compréhensible et accessible** :\n   - Si le consentement est demandé dans un document ou une interface (ex. : site web), il doit être **isolé des autres éléments**, rédigé en **termes clairs et simples**, et **facilement identifiable**.\n   - Éviter les clauses abusives ou les formulations trompeuses.\n   *[RGPD-cons42, RGPD-art7-2]*\n\n4. **Preuve du consentement** :\n   Le responsable du traitement doit pouvoir **démontrer** que le consentement a été donné librement (ex. : enregistrement de la date, méthode d'obtention, possibilité de retrait).\n   *[RGPD-cons42]*\n\n5. **Pas de lien avec l'exécution d'un contrat (sauf si nécessaire)** :\n   - Un contrat ne peut pas être conditionné à un consentement **non essentiel** à sa réalisation (ex. : accepter le marketing pour obtenir un service).\n   - Si le consentement est lié à un contrat, il doit être **facultatif** et **séparé** des éléments obligatoires.\n   *[RGPD-cons43, RGPD-art7-4]*\n\n---\n**Exemple concret** :\nSur un site web, proposez une **case à cocher explicite** (non pré-cochée) pour l'envoi de newsletters, avec une **information claire** sur :\n- Qui traite les données (votre entreprise),\n- À quoi elles serviront (ex. : envoi d'offres promotionnelles),\n- La possibilité de **retirer son consentement facilement** (lien vers une page dédiée).\nÉvitez de lier l'accès au service à ce consentement si ce n'est pas strictement nécessaire.\n\n---\n**À éviter** :\n- Cases cochées par défaut.\n- Consentement \"global\" pour tous les usages sans option de granularité.\n- Formulations floues ou cachées dans des CGU illisibles.\n- Subordonner un service essentiel à un consentement non nécessaire (ex. : \"Acceptez notre politique de données pour créer un compte\")."
+  },
+  {
+   "id": "FAQ-26",
+   "category": "complete",
+   "provided": [
+    "EDPB-07-2020-2",
+    "EDPB-07-2020-6",
+    "RGPD-art5-1",
+    "EDPB-07-2020-34",
+    "EDPB-07-2020-8"
+   ],
+   "answer": "Voici les principes de base du traitement des données à caractère personnel en vertu du RGPD, tels que définis à l’**article 5, paragraphe 1** :\n\n1. **Licéité, loyauté et transparence** : Les données doivent être traitées de manière licite, loyale et transparente au regard de la personne concernée [RGPD-art5-1a].\n2. **Limitation des finalités** : Les données doivent être collectées pour des finalités **déterminées, explicites et légitimes**, et ne pas être traitées ultérieurement de manière incompatible avec ces finalités [RGPD-art5-1b].\n3. **Minimisation des données** : Les données doivent être **adéquates, pertinentes et limitées** à ce qui est nécessaire au regard des finalités pour lesquelles elles sont traitées [RGPD-art5-1c].\n4. **Exactitude** : Les données doivent être **exactes et, si nécessaire, tenues à jour**. Toutes les mesures raisonnables doivent être prises pour effacer ou rectifier les données inexactes sans tarder [RGPD-art5-1d].\n5. **Limitation de la conservation** : Les données doivent être conservées sous une forme permettant l’identification des personnes concernées **pendant une durée n’excédant pas celle nécessaire** aux finalités pour lesquelles elles sont traitées [RGPD-art5-1e].\n6. **Intégrité et confidentialité** : Les données doivent être traitées de manière à garantir une **sécurité appropriée**, y compris la protection contre les traitements non autorisés ou illicites, ainsi que contre la perte, la destruction ou les dégâts accidentels [RGPD-art5-1f].\n\nCes principes sont renforcés par le **principe de responsabilité** (article 5, paragraphe 2), qui impose au responsable du traitement de **veiller à leur respect** et d’en **démontrer la conformité** [EDPB-07-2020-6]."
+  },
+  {
+   "id": "FAQ-27",
+   "category": "complete",
+   "provided": [
+    "RGPD-cons65",
+    "RGPD-cons39",
+    "RGPD-art5-1",
+    "RGPD-art13-2",
+    "RGPD-art15-1"
+   ],
+   "answer": "La durée de conservation des données personnelles doit être **limitée au strict minimum nécessaire** pour les finalités pour lesquelles elles sont traitées [RGPD-art5-1-e].\n\nCependant, des exceptions existent, notamment pour :\n- des **finalités archivistiques dans l'intérêt public**,\n- des **fins de recherche scientifique ou historique**,\n- des **fins statistiques**,\nà condition que des **mesures techniques et organisationnelles appropriées** soient mises en place pour garantir les droits et libertés des personnes concernées [RGPD-art5-1-e].\n\nDe plus, le responsable du traitement doit **informer la personne concernée de la durée de conservation** ou, si ce n'est pas possible, des **critères utilisés pour déterminer cette durée** [RGPD-art13-2-a] et [RGPD-art15-1-d].\n\n**Je ne sais pas : les sources disponibles ne couvrent pas cette question** concernant les durées précises applicables à chaque cas concret (ex. : données clients, données RH, etc.). Ces durées dépendent des réglementations sectorielles ou des bonnes pratiques du secteur."
+  },
+  {
+   "id": "FAQ-29",
+   "category": "complete",
+   "provided": [
+    "RGPD-cons78",
+    "RGPD-cons2",
+    "RGPD-cons4",
+    "RGPD-cons10",
+    "RGPD-cons11"
+   ],
+   "answer": "Pour respecter les droits des individus en matière de protection des données conformément au RGPD, voici les éléments clés à mettre en œuvre, basés sur les extraits fournis :\n\n1. **Adopter des mesures techniques et organisationnelles appropriées** :\n   - Mettre en place des règles internes et des mesures respectant les principes de **protection des données dès la conception** (*privacy by design*) et **par défaut** (*privacy by default*).\n   - Réduire au minimum le traitement des données à caractère personnel et **pseudonymiser les données dès que possible** [RGPD-cons78].\n   - Garantir la **transparence** sur les fonctions et le traitement des données, ainsi que permettre aux personnes concernées de **contrôler le traitement** de leurs données [RGPD-cons78].\n\n2. **Respecter les droits fondamentaux et la proportionnalité** :\n   - Le traitement des données doit servir l'humanité et être **proportionné** par rapport à sa fonction dans la société, en équilibrant le droit à la protection des données avec d'autres droits fondamentaux [RGPD-cons4].\n\n3. **S'assurer de la conformité dans toute l'Union européenne** :\n   - Appliquer les règles de manière cohérente pour garantir un niveau élevé de protection des données, en particulier en ce qui concerne les **catégories particulières de données** (données sensibles) [RGPD-cons10].\n\n4. **Renforcer les droits des personnes concernées** :\n   - Clarifier et faciliter l'exercice des droits des individus (accès, rectification, effacement, etc.) [RGPD-cons11].\n\n5. **Collaborer avec les fabricants et prestataires** :\n   - Inciter les acteurs (fabricants, prestataires) à intégrer la protection des données dès la conception de leurs produits, services ou applications [RGPD-cons78].\n\nSi vous souhaitez des précisions sur un aspect spécifique (comme les obligations des sous-traitants ou les sanctions), je peux compléter avec d'autres extraits si disponibles."
+  },
+  {
+   "id": "FAQ-33",
+   "category": "complete",
+   "provided": [
+    "EDPB-07-2020-2",
+    "EDPB-07-2020-74",
+    "EDPB-07-2020-34",
+    "EDPB-07-2020-93",
+    "EDPB-07-2020-103"
+   ],
+   "answer": "Je ne sais pas : les sources disponibles ne couvrent pas cette question de manière exhaustive. Cependant, les extraits montrent que le **RGPD (Règlement Général sur la Protection des Données)** est un cadre juridique qui :\n\n- **Détermine les rôles clés** (responsable du traitement et sous-traitant) et leurs obligations respectives en matière de protection des données [EDPB-07-2020-2].\n- **Impose des règles spécifiques** aux sous-traitants, qui peuvent être tenus responsables ou sanctionnés en cas de non-respect [EDPB-07-2020-74].\n- **Encadre strictement les finalités et moyens** du traitement des données [EDPB-07-2020-34].\n- **Établit des obligations directes** pour les sous-traitants (confidentialité, registre des traitements, sécurité, notification des violations, etc.) [EDPB-07-2020-93].\n- **Exige un contrat écrit** entre responsable et sous-traitant pour garantir la conformité [EDPB-07-2020-103].\n\nPour une définition complète, il faudrait consulter le texte officiel du RGPD (UE 2016/679) ou des sources générales."
+  },
+  {
+   "id": "FAQ-35",
+   "category": "complete",
+   "provided": [
+    "RGPD-cons13",
+    "EDPB-07-2020-114",
+    "CCT-annexeIII",
+    "RGPD-cons110",
+    "RGPD-cons132"
+   ],
+   "answer": "Je ne sais pas : les sources disponibles ne couvrent pas cette question."
+  },
+  {
+   "id": "FAQ-37",
+   "category": "complete",
+   "provided": [
+    "EDPB-07-2020-51",
+    "RGPD-art26-1",
+    "EDPB-07-2020-46",
+    "EDPB-07-2020-49",
+    "EDPB-07-2020-47"
+   ],
+   "answer": "Un **responsable conjoint du traitement** est défini comme suit :\n\nUn responsable conjoint du traitement est une situation où **deux ou plusieurs responsables du traitement déterminent conjointement les finalités et les moyens d’un traitement de données personnelles**. Cela signifie qu’ils agissent **ensemble** (et non individuellement) pour définir ces éléments clés, ce qui les rend solidairement responsables du respect des obligations du RGPD pour ce traitement spécifique.\n\n**Justifications :**\n- [RGPD-art26-1] : L’article 26 du RGPD précise que *« lorsque deux responsables du traitement ou plus déterminent conjointement les finalités et les moyens du traitement, ils sont les responsables conjoints du traitement »*.\n- [EDPB-07-2020-51] : L’EDPB (Autorité européenne de protection des données) explique que *« le terme \"conjointement\" doit être interprété comme signifiant \"ensemble\" ou \"pas seul\" »*.\n- [EDPB-07-2020-46] : *« Il peut y avoir des responsables conjoints du traitement lorsque plus d’un acteur intervient dans le traitement »*, soulignant que la responsabilité conjointe naît d’une **collaboration active** dans la définition des finalités et moyens."
+  },
+  {
+   "id": "FAQ-42",
+   "category": "partial",
+   "provided": [
+    "RGPD-cons13",
+    "RGPD-cons7",
+    "RGPD-cons19",
+    "RGPD-art47-2",
+    "RGPD-cons100"
+   ],
+   "answer": "Je ne sais pas : les sources disponibles ne couvrent pas cette question."
+  },
+  {
+   "id": "FAQ-43",
+   "category": "complete",
+   "provided": [
+    "RGPD-cons101",
+    "RGPD-cons116",
+    "RGPD-art45-1",
+    "RGPD-art49-1",
+    "RGPD-cons112"
+   ],
+   "answer": "Oui, vous pouvez transférer des données personnelles en dehors de l’Espace économique européen (EEE), mais sous certaines conditions strictes :\n\n1. **Si le pays tiers ou l’organisation internationale offre un niveau de protection adéquat** :\n   Le transfert est autorisé sans autorisation spécifique si la Commission européenne a adopté une décision d’adéquation pour ce pays ou cette organisation.\n   *[RGPD-art45-1]*\n\n2. **En l’absence de décision d’adéquation**, le transfert peut avoir lieu sous l’une des conditions suivantes :\n   - Consentement explicite de la personne concernée, après information sur les risques.\n   - Exécution d’un contrat ou de mesures précontractuelles avec la personne concernée.\n   - Conclusion ou exécution d’un contrat dans l’intérêt de la personne concernée.\n   - Motifs importants d’intérêt public.\n   - Constatation, exercice ou défense de droits en justice.\n   - Sauvegarde des intérêts vitaux de la personne concernée ou d’autres personnes.\n   - Transferts depuis un registre public (sous conditions).\n   *[RGPD-art49-1]*\n\n3. **Cas particuliers** :\n   Les transferts pour des motifs importants d’intérêt public (ex. : échanges entre autorités fiscales, douanières, ou de santé publique) ou pour la sauvegarde des intérêts vitaux sont explicitement mentionnés comme dérogations possibles.\n   *[RGPD-cons112]*\n\n4. **Autres garanties** :\n   Si aucune des conditions ci-dessus n’est remplie, le transfert peut avoir lieu sous conditions strictes (non répétitif, limité en nombre, intérêts légitimes impérieux, évaluation des risques, garanties appropriées, et information de l’autorité de contrôle et de la personne concernée).\n   *[RGPD-art49-1]*\n\n---\n**À noter** : Les transferts doivent toujours respecter le niveau de protection garanti par le RGPD, même après un transfert initial vers un pays tiers.\n*[RGPD-cons101]*"
+  },
+  {
+   "id": "FAQ-44",
+   "category": "complete",
+   "provided": [
+    "EDPB-07-2020-93",
+    "EDPB-07-2020-74",
+    "EDPB-07-2020-125",
+    "RGPD-cons81",
+    "EDPB-07-2020-126"
+   ],
+   "answer": "Oui, les sous-traitants doivent également respecter le RGPD, car celui-ci impose **directement des obligations** aux sous-traitants, notamment en matière de :\n- Confidentialité des données (article 28, paragraphe 3) [EDPB-07-2020-93]\n- Tenue d’un registre des activités de traitement (article 30, paragraphe 2) [EDPB-07-2020-93]\n- Mise en œuvre de mesures techniques et organisationnelles appropriées (article 32) [EDPB-07-2020-93, EDPB-07-2020-125]\n- Désignation d’un DPO dans certains cas (article 37) [EDPB-07-2020-93]\n- Notification des violations de données (article 33, paragraphe 2) [EDPB-07-2020-93]\n- Respect des règles sur les transferts de données vers des pays tiers (chapitre V) [EDPB-07-2020-93].\n\nDe plus, un sous-traitant peut être **tenu responsable** ou **sanctionné** en cas de non-respect de ces obligations [EDPB-07-2020-74]."
+  },
+  {
+   "id": "FAQ-47",
+   "category": "complete",
+   "provided": [
+    "EDPB-07-2020-103",
+    "RGPD-art83-4",
+    "RGPD-cons148",
+    "RGPD-art83-5",
+    "RGPD-art41-4"
+   ],
+   "answer": "Si votre organisme ne respecte pas le RGPD ou si un traitement est en infraction avec celui-ci, les sanctions peuvent inclure :\n\n1. **Amendes administratives** pouvant aller jusqu’à :\n   - **10 000 000 EUR** (ou 2 % du chiffre d'affaires annuel mondial total de l'exercice précédent, le montant le plus élevé étant retenu) pour les violations des obligations incombant au responsable du traitement ou au sous-traitant (comme celles liées à l’**article 28** sur les contrats avec les sous-traitants) [RGPD-art83-4].\n   - **20 000 000 EUR** (ou 4 % du chiffre d'affaires annuel mondial total) pour des violations plus graves, comme celles concernant les principes de base du traitement, les droits des personnes concernées, ou les transferts de données vers des pays tiers [RGPD-art83-5].\n\n2. **Un rappel à l'ordre** peut être adressé en cas de violation mineure ou si l'amende serait disproportionnée, en tenant compte de la gravité, de l'intention, des mesures correctives prises, etc. [RGPD-cons148].\n\n3. **Des mesures correctives** (comme des injonctions, des limitations de traitement, ou des suspensions) peuvent être imposées par l'autorité de contrôle compétente [RGPD-art83-5].\n\n4. **Des sanctions supplémentaires** peuvent être prises par un organisme chargé du suivi d'un code de conduite (comme une suspension ou exclusion du code), qui doit informer l'autorité de contrôle [RGPD-art41-4].\n\n*Note* : L’absence de contrat écrit ou d’acte juridique conforme à l’**article 28** (obligation entre responsable et sous-traitant) est explicitement sanctionnée [EDPB-07-2020-103]."
+  },
+  {
+   "id": "FAQ-48",
+   "category": "out_of_corpus",
+   "provided": [
+    "RGPD-cons30",
+    "RGPD-art4-6",
+    "EDPB-07-2020-82",
+    "EDPB-07-2020-92",
+    "RGPD-art70-1"
+   ],
+   "answer": "Un cookie est un identifiant en ligne qui peut être associé à une personne physique, souvent utilisé par les appareils, applications ou outils pour laisser des traces permettant, notamment lorsqu'ils sont combinés avec d'autres identifiants et informations, de créer des profils et d'identifier cette personne.\n\n[RGPD-cons30]"
+  },
+  {
+   "id": "FAQ-49",
+   "category": "complete",
+   "provided": [
+    "RGPD-cons61",
+    "RGPD-art12-1",
+    "EDPB-07-2020-181",
+    "RGPD-cons60",
+    "RGPD-cons86"
+   ],
+   "answer": "Voici les informations que vous devez communiquer aux personnes concernées, conformément aux extraits fournis :\n\n1. **Informations sur le traitement des données** :\n   - L'existence du traitement et ses **finalités** [RGPD-cons60].\n   - Les **modalités** du traitement (par exemple, la durée de conservation, les catégories de données concernées) [RGPD-cons61].\n   - Si les données sont collectées directement auprès de la personne concernée, elle doit être informée de l'**obligation ou non de fournir ces données** et des **conséquences** en cas de refus [RGPD-cons60].\n   - Si les données sont obtenues d'une **autre source**, les informations doivent être fournies dans un **délai raisonnable** [RGPD-cons61].\n   - Si les données sont destinées à être **communiquées à un tiers**, la personne concernée doit en être informée **au moment de la première communication** [RGPD-cons61].\n   - Si les données sont utilisées pour un **traitement ultérieur différent de la finalité initiale**, la personne concernée doit en être informée **avant ce traitement** [RGPD-cons61].\n   - En cas de **profilage**, la personne concernée doit être informée de son **existence et de ses conséquences** [RGPD-cons60].\n\n2. **Modalités de communication** :\n   - Les informations doivent être **concises, transparentes, compréhensibles, aisément accessibles, claires et simples** [RGPD-art12-1].\n   - Elles doivent être fournies **par écrit ou par d'autres moyens** (y compris électroniques), et **oralement sur demande** (sous réserve de vérification de l'identité) [RGPD-art12-1].\n   - En cas de **violation de données susceptible d'engendrer un risque élevé**, la personne concernée doit être informée **rapidement** (nature de la violation + recommandations pour atténuer les risques) [RGPD-cons86].\n\n3. **Cas particulier des responsables conjoints du traitement** :\n   - Les informations sur la **répartition des responsabilités** (accord entre responsables conjoints) doivent être mises à disposition des personnes concernées, mais **sans obligation légale de modalités spécifiques** (ex. : via les informations des articles 13/14, la politique de confidentialité, ou sur demande) [EDPB-07-2020-181].\n\n---\n**Exemples concrets d'informations à fournir** (selon les articles 13 et 14 du RGPD, non détaillés ici mais évoqués dans les extraits) :\n- Identité et coordonnées du responsable de traitement.\n- Base légale du traitement.\n- Durée de conservation des données.\n- Droits de la personne concernée (accès, rectification, opposition, etc.).\n- Existence d'un **délégué à la protection des données (DPO)** si applicable.\n\n---\n*Remarque* : Les articles **13** (données collectées auprès de la personne) et **14** (données obtenues auprès d'une autre source) du RGPD détaillent précisément le contenu des informations à fournir, mais ne sont pas reproduits dans vos extraits. Pour une liste exhaustive, consultez ces articles."
+  },
+  {
+   "id": "COM-03",
+   "category": "out_of_corpus",
+   "provided": [
+    "CCT-cons7",
+    "CCT-cons6",
+    "CCT-art2",
+    "EDPB-07-2020-107",
+    "CCT-cons10"
+   ],
+   "answer": "Voici les avantages des clauses contractuelles types (CCT) tels qu'ils ressortent des extraits fournis :\n\n1. **Conformité aux exigences légales** :\n   Les CCT permettent de satisfaire aux exigences de l’**article 46, paragraphe 1, du RGPD** (transfert de données hors UE) et de l’**article 28, paragraphes 3 et 4, du RGPD** (relations entre responsable du traitement et sous-traitant), tout en offrant une solution validée par la Commission européenne [CCT-cons10].\n\n2. **Flexibilité d’intégration** :\n   Elles peuvent être incluses dans un **contrat plus large** (ex. : clauses financières, juridiques) sans contredire les CCT, à condition que les ajouts ne compromettent pas les droits des personnes concernées ni la protection des données [CCT-cons6] [EDPB-07-2020-107].\n\n3. **Simplification de la rédaction** :\n   Les CCT fournissent des **modèles préétablis** (champs à compléter ou options à choisir), réduisant ainsi la charge administrative pour les parties [EDPB-07-2020-107].\n\n4. **Cadre structuré pour les obligations** :\n   Elles imposent des **règles claires** sur :\n   - La définition précise de l’**objet, durée, nature et finalité** du traitement,\n   - Le **type de données** et les **catégories de personnes concernées**,\n   - Les **obligations et droits** du responsable du traitement [CCT-cons7].\n\n5. **Validité juridique renforcée** :\n   Leur adoption par la Commission européenne leur confère une **reconnaissance officielle**, limitant les risques de non-conformité en cas de contrôle [CCT-cons10].\n\n---\n*Note* : Les extraits ne mentionnent pas explicitement d’autres avantages (ex. : réduction des risques juridiques ou facilitation des audits), mais ces points découlent implicitement de leur rôle central dans le RGPD."
+  },
+  {
+   "id": "COM-05",
+   "category": "complete",
+   "provided": [
+    "CCT-cons12",
+    "CCT-art3",
+    "CCT-cons10",
+    "RGPD-art28-7",
+    "CCT-cons7"
+   ],
+   "answer": "Oui, la Commission européenne évaluera le fonctionnement pratique des clauses contractuelles types dans le cadre de l’évaluation périodique prévue à l’article 97 du RGPD.\n\n[CCT-cons12]\n[CCT-art3]"
+  },
+  {
+   "id": "COM-07",
+   "category": "partial",
+   "provided": [
+    "CCT-clause2",
+    "CCT-cons6",
+    "CCT-cons7",
+    "RGPD-art28-7",
+    "CCT-art1"
+   ],
+   "answer": "Non, le texte des clauses contractuelles types **ne peut pas être modifié** dans son contenu essentiel, sauf pour ajouter des informations aux annexes ou les mettre à jour.\n\n**Justification :**\n- *« Les parties s’engagent à ne pas modifier les clauses, sauf en ce qui concerne l’ajout d’informations aux annexes ou la mise à jour des informations qui y figurent. »* [CCT-clause2-a]\n- *« Les parties ne sont pour autant pas empêchées [...] d’ajouter d’autres clauses ou des garanties supplémentaires, à condition que celles-ci ne contredisent pas [...] les clauses [...] »* [CCT-clause2-b] (mais cela ne s'applique pas à la modification du texte principal).\n\n**Exception possible** : L’ajout de clauses complémentaires est autorisé, **à condition qu’elles ne contredisent pas les clauses types** et ne portent pas atteinte aux droits fondamentaux [CCT-clause2-b] [CCT-cons6]."
+  },
+  {
+   "id": "COM-09",
+   "category": "partial",
+   "provided": [
+    "CCT-cons6",
+    "RGPD-cons109",
+    "EDPB-07-2020-107",
+    "CCT-clause2",
+    "CCT-cons7"
+   ],
+   "answer": "Oui, il est possible d'ajouter des clauses supplémentaires aux clauses contractuelles types (CCT) ou de les intégrer dans un contrat commercial plus large, **à condition que** :\n\n- Ces clauses supplémentaires **ne contredisent pas, directement ou indirectement, les CCT** et **ne portent pas atteinte aux libertés et droits fondamentaux des personnes concernées** [CCT-cons6] [RGPD-cons109] [EDPB-07-2020-107] [CCT-clause2].\n- Les CCT restent **inchangées** dans leur substance, sauf pour les ajouts d’informations aux annexes ou la mise à jour des données qui y figurent [CCT-clause2].\n\nLes extraits confirment cette possibilité pour les contrats entre responsables de traitement et sous-traitants, ainsi que pour les accords entre sous-traitants."
+  },
+  {
+   "id": "COM-10",
+   "category": "partial",
+   "provided": [
+    "CCT-clause10",
+    "EDPB-07-2020-140",
+    "RGPD-art40-2",
+    "RGPD-art45-5",
+    "CCT-clause1"
+   ],
+   "answer": "Je ne sais pas : les sources disponibles ne couvrent pas cette question."
+  },
+  {
+   "id": "COM-11",
+   "category": "partial",
+   "provided": [
+    "CCT-cons7",
+    "CCT-cons6",
+    "CCT-art1",
+    "EDPB-07-2020-107",
+    "CCT-art2"
+   ],
+   "answer": "Les clauses contractuelles types (CCT) doivent être intégrées dans un contrat commercial de la manière suivante :\n\n1. **Intégration fidèle et complète** : Les clauses relatives à la protection des données doivent être **identiques** à celles des CCT, y compris les champs à compléter ou les options choisies [EDPB-07-2020-107].\n\n2. **Possibilité d’inclusion dans un contrat plus large** : Les CCT peuvent être intégrées dans un accord global couvrant d’autres aspects (financiers, juridiques, etc.), à condition que :\n   - Les clauses supplémentaires **ne contredisent pas** les CCT, ni directement ni indirectement [CCT-cons6] [EDPB-07-2020-107].\n   - Elles **ne portent pas atteinte** aux droits des personnes concernées ni à la protection RGPD [CCT-cons6] [EDPB-07-2020-107].\n\n3. **Respect des obligations légales** : Les CCT doivent satisfaire aux exigences des **articles 28 (RGPD) et 29 (règlement UE 2018/1725)**, notamment en définissant les éléments clés (finalité, durée, type de données, etc.) [CCT-cons7] [CCT-art1].\n\n4. **Utilisation exclusive pour les sous-traitants** : Les CCT sont conçues pour les contrats entre un **responsable du traitement et un sous-traitant** [CCT-art2].\n\n---\n*Exemple de structure possible* :\n- **Partie 1** : Clauses RGPD (CCT intégrées *in extenso*, sans modification).\n- **Partie 2** : Autres clauses contractuelles (ex. : prix, durée, droit applicable), **sous réserve de non-contradiction** avec les CCT."
+  },
+  {
+   "id": "COM-16",
+   "category": "complete",
+   "provided": [
+    "EDPB-07-2020-127",
+    "EDPB-07-2020-116",
+    "EDPB-07-2020-41",
+    "EDPB-07-2020-130",
+    "EDPB-07-2020-118"
+   ],
+   "answer": "Le responsable du traitement doit donner ses instructions au sous-traitant **de manière documentée** [EDPB-07-2020-116].\n\nCes instructions peuvent figurer :\n- Dans le contrat ou un autre acte juridique [EDPB-07-2020-116],\n- Dans une annexe au contrat [EDPB-07-2020-116, EDPB-07-2020-127],\n- Sous forme écrite (par exemple, par courrier électronique) ou toute autre forme documentée permettant d'en conserver la trace [EDPB-07-2020-118].\n\nIl est recommandé de conserver les instructions avec le contrat ou l'acte juridique pour éviter toute difficulté de preuve [EDPB-07-2020-118]."
+  },
+  {
+   "id": "COM-17",
+   "category": "complete",
+   "provided": [
+    "EDPB-07-2020-156",
+    "EDPB-07-2020-154",
+    "EDPB-07-2020-152",
+    "EDPB-07-2020-160",
+    "EDPB-07-2020-155"
+   ],
+   "answer": "Oui, le sous-traitant est tenu de communiquer au responsable du traitement les informations concernant les sous-traitants ultérieurs, notamment leurs noms et autres détails pertinents (comme leur localisation, les activités qu'ils effectueront et les garanties mises en œuvre).\n\nCela s'applique dans les deux cas :\n- **Autorisation générale** : le sous-traitant doit informer le responsable du traitement en temps utile de tout ajout ou remplacement envisagé de sous-traitants ultérieurs [EDPB-07-2020-156].\n- **Autorisation spécifique** : le responsable du traitement doit être informé des sous-traitants ultérieurs envisagés pour évaluer et autoriser leur recours [EDPB-07-2020-152].\n\nDe plus, une liste des sous-traitants ultérieurs agréés doit figurer dans le contrat ou une annexe et être tenue à jour [EDPB-07-2020-154]."
+  },
+  {
+   "id": "COM-18",
+   "category": "complete",
+   "provided": [
+    "EDPB-07-2020-155",
+    "EDPB-07-2020-156",
+    "EDPB-07-2020-154",
+    "EDPB-07-2020-152",
+    "EDPB-07-2020-157"
+   ],
+   "answer": "Si le responsable du traitement s'oppose à un changement de sous-traitants ultérieurs dans le cadre d'une **autorisation générale**, le sous-traitant ne peut pas procéder à ce changement. Le responsable du traitement conserve ainsi son droit de contrôle et d'opposition, conformément aux exigences de l'article 28 du RGPD et aux lignes directrices de l'EDPB.\n\n[EDPB-07-2020-156]\n[EDPB-07-2020-152]"
+  },
+  {
+   "id": "COM-19",
+   "category": "complete",
+   "provided": [
+    "CCT-clause9.2",
+    "RGPD-art33-2",
+    "EDPB-07-2020-136",
+    "RGPD-art33-1",
+    "CCT-clause9.1"
+   ],
+   "answer": "Le sous-traitant doit notifier une violation de données à caractère personnel au responsable du traitement **dans les meilleurs délais après en avoir pris connaissance** [RGPD-art33-2] [CCT-clause9.2].\n\nL'EDPB précise que cette notification doit être faite **sans délai inutile** et suggère même d’inclure dans le contrat un délai spécifique (par exemple, un nombre d’heures) pour adapter cette obligation aux caractéristiques du traitement [EDPB-07-2020-136]."
+  },
+  {
+   "id": "COM-24",
+   "category": "out_of_corpus",
+   "provided": [
+    "CCT-clause7.8",
+    "CCT-cons10",
+    "CCT-clause1",
+    "RGPD-art49-1",
+    "CCT-art2"
+   ],
+   "answer": "Les clauses contractuelles types (CCT) de l'extrait **ne peuvent être utilisées que pour les transferts suivants** :\n\n1. **Transferts de données entre un responsable du traitement (sous RGPD) et un sous-traitant ne relevant pas du champ d’application territorial du RGPD** [CCT-cons10].\n2. **Transferts de données entre un sous-traitant (sous RGPD) et un sous-traitant ultérieur ne relevant pas du champ d’application territorial du RGPD** [CCT-cons10].\n3. **Transferts couverts par l’article 28, paragraphes 3 et 4, du RGPD** (obligations contractuelles entre responsable et sous-traitant) [CCT-clause1-a, CCT-clause1-b].\n\n**Elles ne peuvent pas être utilisées pour les transferts internationaux couverts par le chapitre V du RGPD** (ex. : transferts vers des pays tiers sans adéquation ou garanties appropriées) [CCT-cons10, CCT-clause1-f].\n\n---\n*Remarque* : Les CCT visent spécifiquement les obligations contractuelles entre parties (responsable/sous-traitant) et **ne remplacent pas les mécanismes du chapitre V** (comme les clauses types de l’article 46, paragraphe 2, du RGPD). [CCT-cons10]."
+  },
+  {
+   "id": "COM-30",
+   "category": "out_of_corpus",
+   "provided": [
+    "CCT-cons7",
+    "CCT-art2",
+    "CCT-clause1",
+    "RGPD-art46-2",
+    "RGPD-art45-1"
+   ],
+   "answer": "Oui, les clauses contractuelles types peuvent être utilisées pour transférer des données à caractère personnel vers une organisation internationale, conformément à l’article 46, paragraphe 2, point c) du RGPD, qui mentionne explicitement les *« clauses types de protection des données adoptées par la Commission »* comme garanties appropriées pour de tels transferts [RGPD-art46-2].\n\nDe plus, les clauses contractuelles types visées dans les extraits sont conçues pour garantir la conformité avec les règles de protection des données, y compris dans le cadre de transferts internationaux [CCT-cons7]."
+  },
+  {
+   "id": "PIEGE-01",
+   "category": "out_of_corpus",
+   "provided": [
+    "RGPD-art42-7",
+    "EDPB-07-2020-114",
+    "RGPD-art43-4",
+    "RGPD-cons137",
+    "CCT-clause7.3"
+   ],
+   "answer": "Je ne sais pas : les sources disponibles ne couvrent pas cette question."
+  },
+  {
+   "id": "PIEGE-02",
+   "category": "out_of_corpus",
+   "provided": [
+    "RGPD-art83-4",
+    "RGPD-art83-5",
+    "RGPD-art83-6",
+    "EDPB-07-2020-67",
+    "CCT-cons13"
+   ],
+   "answer": "Je ne sais pas : les sources disponibles ne couvrent pas cette question."
+  },
+  {
+   "id": "PIEGE-03",
+   "category": "out_of_corpus",
+   "provided": [
+    "CCT-clause7.4",
+    "RGPD-art46-2",
+    "CCT-clause8",
+    "RGPD-art42-2",
+    "EDPB-07-2020-138"
+   ],
+   "answer": "Je ne sais pas : les sources disponibles ne couvrent pas cette question."
+  }
+ ]
+}
