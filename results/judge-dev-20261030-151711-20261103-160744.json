@@ -1,0 +1,1331 @@
+{
+ "config": {
+  "answers": "dev-20261030-151711.json",
+  "date": "2026-11-03T16:07:44",
+  "judge": "openai/gpt-oss-120b",
+  "runs": 3,
+  "resumed": [
+   "2026-11-03T16:46:48",
+   "2026-11-03T22:58:26",
+   "2026-11-04T11:23:17",
+   "2026-11-04T12:37:17",
+   "2026-11-04T13:20:30",
+   "2026-11-04T14:21:50",
+   "2026-11-04T16:15:11",
+   "2026-11-04T18:07:51",
+   "2026-11-04T18:52:00",
+   "2026-11-04T20:07:15",
+   "2026-11-04T20:42:53",
+   "2026-11-04T23:00:14",
+   "2026-11-05T11:01:35"
+  ]
+ },
+ "runs": [
+  [
+   {
+    "id": "FAQ-05",
+    "faithfulness": {
+     "justification": "Vous avez un délai maximal d'un mois pour répondre à une demande d’accès formulée par une personne concernée: non appuyée – l’extrait RGPD-art12-3 indique un délai d’un mois « en tout état de cause », mais précise qu’il peut être prolongé de deux mois, donc la règle n’est pas strictement limitée à un mois.; conformément à l’article 12 du RGDP: appuyée – les extraits cités (RGPD-art12-3, RGPD-art12-4, RGPD-cons59) proviennent bien de l’article 12 du RGPD.",
+     "affirmation_en_cause": "Vous avez un délai maximal d'un mois pour répondre à une demande d’accès formulée par une personne concernée, conformément à l’article 12 du RGPD.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Répondre dans un délai d’un mois – présente\n2. Possibilité de prolongation de deux mois si complexe, avec information – absente\n3. Réponse gratuite – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-06",
+    "faithfulness": {
+     "justification": "Oui, il est possible de traiter des données sensibles, mais sous des conditions strictes et avec des garanties supplémentaires. – appuyée – déduction directe des extraits CCT‑annexeII et CCT‑clause7.5 qui imposent des limitations/garanties lorsque des données sensibles sont traitées.\nLe traitement de données sensibles (comme définies dans la clause 7.5 du CCT 2021/915) est autorisé à condition d'appliquer des limitations ou garanties spécifiques. – appuyée – extrait CCT‑annexeII indique que les données sensibles traitées sont accompagnées de limitations ou garanties appliquées.\nCes garanties doivent tenir pleinement compte de la nature des données et des risques encourus. – appuyée – extrait CCT‑annexeII.\nLe RGPD impose aussi une évaluation des risques (analyse d'impact) si le traitement est à grande échelle ou engendre un risque élevé. – appuyée – extrait RGPD‑cons91.\nLe traitement doit aussi respecter les principes généraux du RGPD (licéité, transparence, minimisation, etc.). – appuyée – extrait RGPD‑cons39.\nUne justification légale (consentement, intérêt légitime, obligation légale, etc.) est nécessaire. – non appuyée – aucun des extraits fournis ne mentionne ces bases légales spécifiques.",
+     "affirmation_en_cause": "Une justification légale (consentement, intérêt légitime, obligation légale, etc.) est nécessaire.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Général interdit sauf circonstances spécifiques : absente; Consentement explicite de la personne : présente; Nécessaire pour obligations du responsable (emploi, sécurité sociale) : absente; Intérêts vitaux lorsque la personne ne peut consentir : absente; Activités légitimes d’organisations à but non lucratif (politique, philosophique, religieux, syndical) : absente; Données rendues manifestement publiques par les individus : absente; Nécessaire dans le cadre d’une procédure judiciaire : absente; Nécessaire pour intérêt public substantiel : absente; Nécessaire dans la médecine préventive ou du travail : absente; Nécessaire pour santé publique sur base du droit de l’UE ou national : absente; Nécessaire à des fins d’archivage, recherche scientifique/historique ou statistiques : absente; Affirmation contradictoire : le texte indique que l’intérêt légitime peut justifier le traitement des données sensibles, ce qui n’est pas prévu par la référence : présente",
+     "contradiction": "presente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-07",
+    "faithfulness": {
+     "justification": "Informer sur l’identité du responsable du traitement et les finalités du traitement – appuyée (RGPD-cons39)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "- Les particuliers peuvent demander si vous traitez leurs données et ont le droit d’accès : absente\n- Vous devez fournir une copie de leurs données personnelles gratuitement ainsi que toute information supplémentaire nécessaire : absente\n- En cas de demande électronique, vous devez fournir les renseignements dans un format électronique couramment utilisé ou autre format demandé : absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-09",
+    "faithfulness": {
+     "justification": "A1: non appuyée – les extraits définissent le consentement mais ne précisent pas qu’il est généralement requis sauf si une autre base légale s’applique; A2: appuyée – RGPD-cons32 décrit le consentement comme libre, spécifique, éclairé et univoque, excluant le silence ou les cases cochées par défaut; A3: appuyée – RGPD-cons42 indique que le consentement doit être formulé en termes clairs, compréhensibles et accessibles; A4: non appuyée – aucun extrait ne stipule que le consentement doit être donné avant l’utilisation des cookies; A5: non appuyée – RGPD-cons42 mentionne la possibilité de retirer le consentement sans préjudice, mais ne précise pas qu’il doit être retiré « aussi facilement qu’il a été donné »; A6: non appuyée – les extraits ne traitent pas des cookies strictement nécessaires comme exception; A7: non appuyée – les extraits ne mentionnent pas les cookies utilisés pour une obligation légale ou la protection d’intérêts vitaux comme exception.",
+     "affirmation_en_cause": "Vous avez généralement besoin d’un consentement pour utiliser des cookies sur le site web de votre organisme, sauf si leur utilisation relève d’une autre base légale (comme l’exécution d’un contrat ou une obligation légale).",
+     "verdict": "affirmation_non_appuyee"
+    }
+   },
+   {
+    "id": "FAQ-10",
+    "faithfulness": {
+     "justification": [
+      "Elles sont traitées de manière à ne plus pouvoir être attribuées à une personne précise sans informations supplémentaires (qui doivent être conservées séparément et protégées) – appuyée (RGPD-art4-5, RGPD-cons26)",
+      "Elles restent des données à caractère personnel (car identifiables avec des moyens supplémentaires), et le RGPD s’applique toujours à leur traitement – appuyée (RGPD-cons26)",
+      "Elles ne concernent plus une personne physique identifiable, même avec des moyens raisonnables (coût, temps, technologies disponibles) – appuyée (RGPD-cons26)",
+      "Le RGPD ne s’applique pas à leur traitement, car elles ne relèvent plus de la notion de \"données à caractère personnel\" – appuyée (RGPD-cons26)",
+      "L’anonymisation est irréversible (ou du moins, techniquement impossible à inverser) – non appuyée (aucune disposition des extraits ne mentionne l’irréversibilité)",
+      "La pseudonymisation peut être levée si les informations supplémentaires sont accessibles – appuyée (RGPD-art4-5)",
+      "Pseudonymisation = protection partielle (données toujours personnelles, mais moins accessibles) – appuyée (déduite des définitions et du considérant 28)",
+      "Anonymisation = suppression totale de l’identifiabilité (données hors champ RGPD) – appuyée (RGPD-cons26)"
+     ],
+     "affirmation_en_cause": "L’anonymisation est irréversible (ou du moins, techniquement impossible à inverser)",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "- Pseudonymisation transforme des données personnelles de façon à ce qu’elles ne puissent plus être attribuées à une personne spécifique sans informations supplémentaires conservées séparément et protégées : présente\n- Les données pseudonymisées restent des données à caractère personnel et sont soumises au RGPD : présente\n- Les données anonymisées sont rendues anonymes de sorte que l’individu n’est pas ou plus identifiable par tout moyen raisonnablement susceptible d’être utilisé : présente\n- Lorsque l’anonymisation est correctement mise en œuvre, le RGPD ne s’applique plus aux données anonymisées : présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-12",
+    "faithfulness": {
+     "justification": "Les données révélant l'origine raciale ou ethnique – appuyée (CCT-clause7.5); Les opinions politiques – appuyée (CCT-clause7.5); Les convictions religieuses ou philosophiques – appuyée (CCT-clause7.5); L'appartenance syndicale – appuyée (CCT-clause7.5); Les données génétiques – appuyée (CCT-clause7.5); Les données biométriques (uniquement si elles permettent d'identifier une personne de manière unique) – appuyée (CCT-clause7.5); Les données concernant la santé – appuyée (CCT-clause7.5); Les données concernant la vie sexuelle ou l'orientation sexuelle – appuyée (CCT-clause7.5); Les données relatives aux condamnations pénales et aux infractions – appuyée (CCT-clause7.5)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Les données sensibles méritent plus de protection : absente\nLes données de santé sont sensibles : présente\nL'orientation sexuelle (ou vie sexuelle) est sensible : présente\nL'origine raciale ou ethnique est sensible : présente\nLes opinions politiques sont sensibles : présente\nLes convictions religieuses ou philosophiques sont sensibles : présente\nL'appartenance syndicale est sensible : présente\nLes données biométriques sont sensibles : présente\nLes données génétiques sont sensibles : présente\nLe traitement des données sensibles est généralement interdit, sauf circonstances spécifiques : absente\nInclusion des données relatives aux condamnations pénales et aux infractions comme sensibles : contradiction",
+     "contradiction": "presente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-14",
+    "faithfulness": {
+     "justification": "Affirmation 1: Une donnée à caractère personnel est toute information se rapportant à une personne physique identifiée ou identifiable, directement ou indirectement, notamment par référence à un identifiant (nom, numéro, données de localisation, identifiant en ligne, ou tout élément spécifique à son identité physique, physiologique, génétique, psychique, économique, culturelle ou sociale) – appuyée (RGPD-art4-1).\nAffirmation 2: Cela inclut également des informations qui pourraient être attribuées à une personne physique par le recours à des informations supplémentaires (comme des données pseudonymisées) – appuyée (RGPD-cons26).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "A1: présente; A2: présente; A3: présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-15",
+    "faithfulness": {
+     "justification": "Non appuyée – L’extrait RGPD‑art13‑3 porte sur les informations à fournir lorsque les données sont collectées auprès de la personne concernée, il ne mentionne pas l’obligation de fournir ces informations lorsqu’on collecte les données auprès d’un tiers. ; Appuyée – L’extrait RGPD‑art13‑3 indique que le responsable doit informer préalablement la personne concernée de toute finalité supplémentaire envisagée pour le traitement des données.",
+     "affirmation_en_cause": "Pour être conforme au RGPD lorsque vous collectez des données personnelles auprès d’un tiers, vous devez fournir à la personne concernée les informations prévues à l’article 13 §3.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Assurez-vous que les données reçues ont été collectées légitimement et que les personnes concernées ont été informées du traitement – absente; Mettez en place un contrat avec le sous-traitant détaillant les opérations de traitement et les moyens – absente; Respectez toutes vos obligations de responsable de traitement – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-17",
+    "faithfulness": {
+     "justification": "Les mesures doivent être appropriées en fonction de la nature, de la portée, du contexte et de la finalité du traitement, ainsi que des risques pour les droits et libertés des personnes physiques – appuyée (CCT-annexeIII)\nUne analyse des risques (origine, nature, probabilité et gravité) est essentielle pour identifier les meilleures pratiques à appliquer – appuyée (RGPD-cons77)\nLes mesures doivent être décrites de manière précise et adaptées au traitement spécifique – appuyée (CCT-annexeIII)\nChiffrement et pseudonymisation des données – appuyée (CCT-annexeIII)\nConfidentialité, intégrité, disponibilité et résilience des systèmes – appuyée (CCT-annexeIII)\nProcédures de test, analyse et évaluation régulière des mesures – appuyée (CCT-annexeIII)\nIdentification et autorisation des utilisateurs, protection des données en transmission et stockage – appuyée (CCT-annexeIII)\nSécurité physique des sites, enregistrement des événements, configuration des systèmes – appuyée (CCT-annexeIII)\nMinimisation, qualité et conservation limitée des données – appuyée (CCT-annexeIII)\nPortabilité et effacement des données – appuyée (CCT-annexeIII)\nCodes de conduite, certifications ou lignes directrices peuvent guider le choix des mesures – appuyée (RGPD-cons77)\nCertifications ou labels peuvent faciliter l’évaluation par les personnes concernées – appuyée (RGPD-cons100)\nSi des sous-traitants sont impliqués, des mesures spécifiques doivent être décrites pour garantir leur assistance au responsable du traitement – appuyée (CCT-annexeIII)\nLes mesures doivent permettre de détecter rapidement les incidents et d’informer les autorités et les personnes concernées – appuyée (RGPD-cons87)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Sécuriser l’accès aux locaux – présente\nUtiliser un logiciel antivirus régulièrement mis à jour – absente\nChoisir soigneusement vos mots de passe – absente\nAuthentifier les utilisateurs avant d’utiliser les installations informatiques – présente\nDisposer d’une politique de sauvegarde et de récupération des données en cas d’incident – absente\nVerrouiller votre écran pendant votre absence – absente\nVerrouiller votre bureau à la fin de la journée – absente\nLes mesures de sécurité varient selon la nature des données et les risques – présente",
+     "contradiction": "absente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "FAQ-18",
+    "faithfulness": {
+     "justification": "Vous ne pouvez pas simplement partager une liste de données personnelles avec vos partenaires commerciaux (tiers) sans respecter les conditions du RGPD. – non appuyée, aucun extrait ne stipule une interdiction générale de partage sans conditions. Un tiers destinataire est considéré comme un responsable du traitement pour tout traitement qu’il effectue pour ses propres finalités après réception des données. – appuyée, extrait [EDPB-07-2020-92] le précise. Le partage de données personnelles avec un tiers implique que ce dernier devient également responsable du traitement des données qu’il reçoit, et non un simple sous‑traitant. – appuyée, même extrait [EDPB-07-2020-92] indique qu’il n’y a pas de relation responsable/sous‑traitant. Il faut vérifier la base légale du traitement (article 6 du RGPD). – non appuyée, l’article 6 n’est pas présent dans les extraits fournis. Il faut informer les personnes concernées des transferts de données (articles 13 et 14 du RGPD). – non appuyée, aucun extrait ne mentionne ces articles. Il faut s’assurer que le tiers respecte les obligations RGPD (sécurité, droits des personnes, etc.). – non appuyée, les extraits ne couvrent pas cette exigence. Il faut documenter le transfert, notamment si le tiers est dans un pays tiers, en vérifiant les garanties comme les clauses contractuelles types ou les décisions d’adéquation. – non appuyée, aucune mention de documentation ou de garanties dans les extraits. Si le tiers agit pour vos propres finalités, il doit être considéré comme un co‑responsable du traitement, ce qui implique une convention de co‑responsabilité (article 26 du RGPD). – non appuyée, l’article 26 n’est pas cité dans les extraits.",
+     "affirmation_en_cause": "Non, vous ne pouvez pas simplement partager une liste de données personnelles avec vos partenaires commerciaux (tiers) sans respecter les conditions du RGPD.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Vous pouvez partager des données personnelles avec un tiers : présente\nVous devez informer les personnes que vous partagerez leurs données avec un tiers : présente\nVous devez informer des finalités poursuivies : présente\nVous devez informer des mesures de sécurité, d’accès et de conservation qui s’appliqueront : présente\nAucune affirmation de fond de la réponse n’est incompatible avec la référence",
+     "contradiction": "absente",
+     "limite": "signalee"
+    }
+   },
+   {
+    "id": "FAQ-21",
+    "faithfulness": {
+     "justification": "Acte positif, clair et univoque requis (ex. cocher une case, déclaration écrite ou orale) – appuyée par [RGPD-cons32]; Le silence, les cases pré‑cochées ou l’inactivité ne suffisent pas – appuyée par [RGPD-cons32]; La personne doit connaître l’identité du responsable et les finalités du traitement – appuyée par [RGPD-cons42]; Le consentement doit être libre, sans pression ni déséquilibre de pouvoir – appuyée par [RGPD-cons42] et [RGPD-cons43]; Le consentement doit être distinct pour chaque finalité de traitement – appuyée par [RGPD-cons43]; Le consentement demandé dans un document ou une interface doit être isolé, rédigé en termes clairs et simples, et facilement identifiable – appuyée par [RGPD-cons42] et [RGPD-art7-2]; Éviter les clauses abusives ou formulations trompeuses – appuyée par [RGPD-cons42]; Le responsable doit pouvoir démontrer le consentement (ex. enregistrement, date, méthode) – appuyée par [RGPD-cons42]; Un contrat ne peut pas être conditionné à un consentement non essentiel – appuyée par [RGPD-cons43] et [RGPD-art7-4]; Si le consentement est lié à un contrat, il doit être facultatif et séparé des obligations contractuelles – appuyée par [RGPD-cons43] et [RGPD-art7-4]; Exemple concret : case à cocher non pré‑cochée, information claire sur le responsable, les finalités et possibilité de retrait facile – appuyée par [RGPD-cons32], [RGPD-cons42] et le principe de retrait sans préjudice dans [RGPD-cons42]; Éviter de lier l’accès au service à ce consentement si ce n’est pas strictement nécessaire – appuyée par [RGPD-cons43] et [RGPD-art7-4]; Cases cochées par défaut à éviter – appuyée par [RGPD-cons32]; Consentement global sans granularité à éviter – appuyée par [RGPD-cons43]; Formulations floues ou cachées dans des CGU illisibles à éviter – appuyée par le principe de termes clairs et simples dans [RGPD-cons42] et [RGPD-art7-2]; Subordonner un service essentiel à un consentement non nécessaire (ex. accepter la politique pour créer un compte) – appuyée par [RGPD-cons43] et [RGPD-art7-4]",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Consent must be free → présente\nConsent must be specific → présente\nConsent must be informed → présente\nConsent must be univocal → présente\nClear positive action required (non‑pre‑checked, separate) → présente\nRight to withdraw consent freely without negative consequences → présente\nNo contradictory affirmation found in the response.",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-26",
+    "faithfulness": {
+     "justification": "Licéité, loyauté et transparence : appuyée (RGPD-art5-1a); Limitation des finalités : appuyée (RGPD-art5-1b); Minimisation des données : appuyée (RGPD-art5-1c); Exactitude : appuyée (RGPD-art5-1d); Limitation de la conservation : appuyée (RGPD-art5-1e); Intégrité et confidentialité : appuyée (RGPD-art5-1f); Le principe de responsabilité impose au responsable de veiller au respect des principes et d’en démontrer la conformité : appuyée (EDPB-07-2020-6)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Licite, équitable et transparent – présente\nCollecte à des fins spécifiées, explicites et légitimes – présente\nLimitation aux finalités initiales, pas de traitements incompatibles – présente\nMinimisation des données nécessaires et proportionnées – présente\nExactitude et mise à jour, rectification/effacement – présente\nLimitation du stockage dans le temps, suppression ou anonymisation quand non nécessaire – présente\nSécurité du traitement, contrôles de cybersécurité – présente\nResponsabilité du responsable, démonstration du respect – présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-27",
+    "faithfulness": {
+     "error": "{\"justification\":\"La durée de conservation des données personnelles doit être limitée au strict minimum nécessaire pour les finalités pour lesquelles elles sont traitées – appuyée (RGPD-art5-1-e et RGPD-cons39 mentionnent la durée limitée au strict minimum).\",\"Des exceptions existent, notamment pour des finalités archivistiques dans l'intérêt public, des fins de recherche scientifique ou historique, des fins statistiques, à condition que des mesures techniques et organisationnelles appropriées soient mises en place – appuyée (RGPD-art5-1-e décrit ces exceptions et la condition de mesures appropriées).\",\"Le responsable du traitement doit informer la personne concernée de la durée de conservation ou, si ce n'est pas possible, des critères utilisés pour déterminer cette durée – appuyée (RGPD-art13-2-a et RGPD-art15-1-d imposent cette information).\",\"Je ne sais pas : les sources disponibles ne couvrent pas cette question concernant les durées précises applicables à chaque cas concret – appuyée (les extraits fournis ne donnent que des principes généraux, aucune durée précise).\",\"Ces durées dépendent des réglementations sectorielles ou des bonnes pratiques du secteur – non appuyée (aucun extrait ne mentionne de dépendance aux réglementations sectorielles ou aux bonnes pratiques).\",\"affirmation_en_cause\":\"Ces durées dépendent des réglementations sectorielles ou des bonnes pratiques du secteur.\",\"verdict\":\"affirmation_non_appuyee\"}",
+     "content": null
+    },
+    "accuracy": {
+     "justification": "Vous ne pouvez pas stocker des données personnelles pour toujours – présente; En règle générale, les données personnelles ne peuvent être conservées que le temps nécessaire pour atteindre les objectifs – présente; Dans certains cas, la durée de conservation peut être déterminée par des lois spécifiques – absente; Les organismes devraient mettre en place des politiques de conservation – absente; Les données doivent être supprimées ou anonymisées une fois inutiles – absente; Aucun énoncé de la réponse n’est incompatible avec la référence – aucune contradiction",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-29",
+    "faithfulness": {
+     "justification": "Mettre en place des règles internes et des mesures respectant les principes de protection des données dès la conception et par défaut – appuyée (RGPD-cons78); Réduire au minimum le traitement des données à caractère personnel et pseudonymiser les données dès que possible – appuyée (RGPD-cons78); Garantir la transparence sur les fonctions et le traitement des données, ainsi que permettre aux personnes concernées de contrôler le traitement de leurs données – appuyée (RGPD-cons78); Le traitement des données doit servir l'humanité et être proportionné par rapport à sa fonction dans la société, en équilibrant le droit à la protection des données avec d'autres droits fondamentaux – appuyée (RGPD-cons4); Appliquer les règles de manière cohérente pour garantir un niveau élevé de protection des données, en particulier en ce qui concerne les catégories particulières de données (données sensibles) – appuyée (RGPD-cons10); Clarifier et faciliter l'exercice des droits des individus (accès, rectification, effacement, etc.) – non appuyée (RGPD-cons11 ne mentionne pas ces droits spécifiques); Inciter les acteurs (fabricants, prestataires) à intégrer la protection des données dès la conception de leurs produits, services ou applications – appuyée (RGPD-cons78)",
+     "affirmation_en_cause": "Clarifier et faciliter l'exercice des droits des individus (accès, rectification, effacement, etc.)",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Le RGPD prévoit des droits spécifiques pour les personnes qui doivent être respectés – présente\nInformer les personnes dont vous traitez les données de vos opérations de traitement et de ses finalités lors de la collecte, par exemple via une déclaration de confidentialité sur votre site web – absente\nRépondre aux demandes d’exercice des droits des individus : accès, rectification, opposition, effacement ou portabilité – absente (l'answer ne mentionne pas opposition ni portabilité)\nLes organismes transparents quant à leur utilisation des données personnelles et qui respectent les droits des personnes sont moins susceptibles de faire l’objet de plaintes – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-33",
+    "faithfulness": {
+     "justification": "Détermine les rôles clés (responsable du traitement et sous-traitant) et leurs obligations respectives en matière de protection des données – appuyée (extrait [EDPB-07-2020-2])",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "RGPD crée un ensemble harmonisé de règles applicables à tous les traitements de données personnelles effectués par des organisations (publiques ou privées, toute taille) établies dans l’EEE ou ciblant des personnes physiques dans l’UE : absente\nObjectif principal du RGPD (protection élevée, sécurité juridique, degré élevé de protection aux individus) : absente\nLe règlement est entré en vigueur le 24 mai 2016 et s’applique depuis le 25 mai 2018 : absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-37",
+    "faithfulness": {
+     "justification": "Un responsable conjoint du traitement est une situation où deux ou plusieurs responsables du traitement déterminent conjointement les finalités et les moyens d’un traitement de données personnelles. – appuyée (RGPD-art26-1 §1, EDPB-07-2020-51 §51); Cela signifie qu’ils agissent ensemble (et non individuellement) pour définir ces éléments clés – appuyée (EDPB-07-2020-51 §51); ce qui les rend solidairement responsables du respect des obligations du RGPD pour ce traitement spécifique. – non appuyée (aucun extrait ne mentionne la responsabilité solidaire)",
+     "affirmation_en_cause": "ce qui les rend solidairement responsables du respect des obligations du RGPD pour ce traitement spécifique.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Lorsque deux ou plusieurs responsables du traitement déterminent conjointement la finalité et les moyens du traitement : présente\nIls décident ensemble de traiter les données personnelles à des fins communes : présente\nCette responsabilité conjointe peut prendre de nombreuses formes et la participation des différents responsables de traitement peut être inégale : absente\nLes responsables conjoints du traitement doivent déterminer leurs responsabilités respectives en ce qui concerne le respect du RGPD : absente\nÊtre responsable de traitement conjoint implique la responsabilité partagée d’une activité de traitement : présente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-43",
+    "faithfulness": {
+     "justification": "Oui, vous pouvez transférer des données personnelles en dehors de l’EEE, mais sous certaines conditions strictes – appuyée (RGPD-cons101); Le transfert est autorisé sans autorisation spécifique si la Commission a adopté une décision d’adéquation – appuyée (RGPD-art45-1); En l’absence de décision d’adéquation, le transfert peut avoir lieu sous l’une des conditions suivantes – appuyée (RGPD-art49-1); Consentement explicite de la personne concernée, après information sur les risques – appuyée (RGPD-art49-1); Exécution d’un contrat ou de mesures précontractuelles avec la personne concernée – appuyée (RGPD-art49-1); Conclusion ou exécution d’un contrat dans l’intérêt de la personne concernée – appuyée (RGPD-art49-1); Motifs importants d’intérêt public – appuyée (RGPD-art49-1; RGPD-cons112); Constatation, exercice ou défense de droits en justice – appuyée (RGPD-art49-1); Sauvegarde des intérêts vitaux de la personne concernée ou d’autres personnes – appuyée (RGPD-art49-1); Transferts depuis un registre public (sous conditions) – appuyée (RGPD-art49-1); Les transferts pour des motifs importants d’intérêt public ou pour la sauvegarde des intérêts vitaux sont explicitement mentionnés comme dérogations possibles – appuyée (RGPD-cons112); Si aucune des conditions ci‑dessus n’est remplie, le transfert peut avoir lieu sous conditions strictes (non répétitif, limité, intérêts légitimes impérieux, évaluation des risques, garanties appropriées, information de l’autorité de contrôle et de la personne concernée) – appuyée (RGPD-art49-1); Les transferts doivent toujours respecter le niveau de protection garanti par le RGPD, même après un transfert initial vers un pays tiers – appuyée (RGPD-cons101)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation 1 : existence de deux mécanismes principaux (décision d’adéquation ou garanties appropriées) – présente dans la réponse (points 1 et 4).",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-44",
+    "faithfulness": {
+     "justification": "1. Les sous‑traitants doivent également respecter le RGPD – appuyée (extraits : [EDPB-07-2020-93] et [EDPB-07-2020-74]).\n2. Le RGPD impose directement des obligations aux sous‑traitants – appuyée ([EDPB-07-2020-93]; [EDPB-07-2020-74]).\n3. Confidentialité des données (art. 28 §3) – appuyée ([EDPB-07-2020-93]).\n4. Tenue d’un registre des activités de traitement (art. 30 §2) – appuyée ([EDPB-07-2020-93]).\n5. Mise en œuvre de mesures techniques et organisationnelles appropriées (art. 32) – appuyée ([EDPB-07-2020-93]; [EDPB-07-2020-125]).\n6. Désignation d’un DPO dans certains cas (art. 37) – appuyée ([EDPB-07-2020-93]).\n7. Notification des violations de données (art. 33 §2) – appuyée ([EDPB-07-2020-93]).\n8. Respect des règles sur les transferts de données vers des pays tiers (chapitre V) – appuyée ([EDPB-07-2020-93]).\n9. Un sous‑traitant peut être tenu responsable ou sanctionné en cas de non‑respect de ces obligations – appuyée ([EDPB-07-2020-74]).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Sous‑traitants ont des obligations en vertu du RGPD – présente; 2. Il existe des différences entre les responsabilités du responsable et du sous‑traitant – absente; 3. Les sous‑traitants doivent respecter les responsabilités définies dans un contrat avec le responsable – absente; 4. Le sous‑traitant doit appliquer des mesures techniques et organisationnelles appropriées selon les instructions du responsable – absente; 5. Le sous‑traitant aide le responsable à se conformer au RGPD – absente; Aucun énoncé de la réponse n’est incompatible avec la référence –",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-47",
+    "faithfulness": {
+     "justification": "1. Amendes administratives jusqu’à 10 000 000 EUR (ou 2 % du chiffre d’affaires) pour violations des obligations du responsable ou du sous‑traitant, y compris celles liées à l’article 28 – non appuyée (RGPD‑art83‑4 ne cite pas l’article 28 parmi les obligations concernées). 2. Amendes administratives jusqu’à 20 000 000 EUR (ou 4 % du chiffre d’affaires) pour violations graves (principes de base, droits des personnes, transferts vers pays tiers) – appuyée (RGPD‑art83‑5). 3. Un rappel à l’ordre peut être adressé en cas de violation mineure ou si l’amende serait disproportionnée – appuyée (RGPD‑cons148). 4. Des mesures correctives (injunctions, limitations, suspensions) peuvent être imposées par l’autorité de contrôle – appuyée (RGPD‑art83‑5 mentionne le non‑respect d’injonctions ordonnées par l’autorité). 5. Des sanctions supplémentaires peuvent être prises par un organisme chargé du suivi d’un code de conduite, pouvant suspendre ou exclure le responsable ou le sous‑traitant, et doit informer l’autorité – appuyée (RGPD‑art41‑4). 6. L’absence de contrat écrit ou d’acte juridique conforme à l’article 28 est sanctionnée – appuyée (EDPB‑07‑2020‑103).",
+     "affirmation_en_cause": "Amendes administratives pouvant aller jusqu’à 10 000 000 EUR (ou 2 % du chiffre d'affaires annuel mondial total de l'exercice précédent, le montant le plus élevé étant retenu) pour les violations des obligations incombant au responsable du traitement ou au sous-traitant (comme celles liées à l’article 28 sur les contrats avec les sous‑traitants).",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Contrôle du respect du RGPD par les autorités nationales de protection des données – présente ; 2. Les autorités peuvent mener des enquêtes et imposer des sanctions – présente ; 3. Amendes pouvant aller jusqu’à 20 millions d’euros ou 4 % du chiffre d’affaires mondial – présente (20 000 000 EUR ou 4 % mentionnés) ; 4. Rappels à l’ordre – présent ; 5. Interdictions de traitement temporaires ou permanentes – présent (mesures correctives telles que limitations ou suspensions) ; Aucun énoncé de la réponse n’est incompatible avec la référence.",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-48",
+    "faithfulness": {
+     "justification": [
+      "Un cookie est un identifiant en ligne – appuyée (RGPD-cons30).",
+      "Il peut être associé à une personne physique – appuyée (RGPD-cons30).",
+      "Il est souvent utilisé par les appareils, applications ou outils – appuyée (RGPD-cons30).",
+      "Il laisse des traces – appuyée (RGPD-cons30).",
+      "Ces traces, combinées à d’autres identifiants et informations, peuvent servir à créer des profils et à identifier la personne – appuyée (RGPD-cons30)."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    }
+   },
+   {
+    "id": "FAQ-49",
+    "faithfulness": {
+     "error": "max completion tokens reached before generating a valid document",
+     "content": null
+    },
+    "accuracy": {
+     "justification": "Identité et coordonnées du responsable du traitement – présente; Finalités du traitement – présente; Base légale du traitement (incl. intérêt légitime) – présente; Coordonnées du DPO (si existant) – présente; Destinataires ou catégories de destinataires – présente; Informations sur les transferts hors EEE (décision d’adéquation ou garanties) – absente; Catégories de données personnelles traitées lorsque les données ne sont pas obtenues de la personne concernée – absente; Durée de conservation ou critères de détermination – présente; Droit d’accès, d’effacement, de rectification, de restriction, d’opposition et de portabilité – présente; Droit d’introduire une réclamation auprès d’une autorité de protection – absente; Droit de retirer son consentement à tout moment (si consentement) – absente; Informations sur la prise de décision automatisée (logique et conséquences) – partiellement présente (profilage mentionné); Source des données personnelles (si non obtenues directement) – présente; Obligation de fournir les données et conséquences du refus – présente;",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-03",
+    "faithfulness": {
+     "justification": "1. Les CCT permettent de satisfaire aux exigences de l’article 46, paragraphe 1, du RGPD et de l’article 28, paragraphes 3 et 4, du RGPD, offrant une solution validée par la Commission européenne – appuyée (CCT-cons10). 2. Elles peuvent être incluses dans un contrat plus large sans contredire les CCT, à condition que les ajouts ne compromettent pas les droits des personnes concernées ni la protection des données – appuyée (CCT-cons6; EDPB-07-2020-107). 3. Les CCT fournissent des modèles préétablis (champs à compléter ou options à choisir), réduisant ainsi la charge administrative pour les parties – appuyée (EDPB-07-2020-107). 4. Elles imposent des règles claires sur la définition de l’objet, durée, nature et finalité du traitement, le type de données, les catégories de personnes concernées, ainsi que les obligations et droits du responsable du traitement – appuyée (CCT-cons7). 5. Leur adoption par la Commission européenne leur confère une reconnaissance officielle, limitant les risques de non-conformité en cas de contrôle – appuyée (CCT-cons10).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    }
+   },
+   {
+    "id": "COM-05",
+    "faithfulness": {
+     "justification": [
+      "appuyée: La Commission évaluera le fonctionnement pratique des clauses contractuelles types dans le cadre de l’évaluation périodique prévue à l’article 97 du RGPD. (extraits CCT-cons12, CCT-art3)"
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Article 97 du RGPD impose à la Commission de réaliser une évaluation de la mise en œuvre du RGPD tous les quatre ans – absente (la réponse ne mentionne pas la périodicité de quatre ans). La prochaine évaluation est attendue pour 2024 et comprendra une évaluation de l'application pratique des CCT – absente (la réponse ne précise pas la date 2024, bien qu’elle mentionne l’évaluation des CCT).",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-07",
+    "faithfulness": {
+     "justification": "Le texte des clauses contractuelles types ne peut pas être modifié dans son contenu essentiel, sauf pour ajouter des informations aux annexes ou les mettre à jour : appuyée (extrait CCT-clause2-a). L’ajout de clauses complémentaires est autorisé, à condition qu’elles ne contredisent pas les clauses types et ne portent pas atteinte aux droits fondamentaux : appuyée (extraits CCT-clause2-b, CCT-cons6).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Le texte ne peut pas être modifié, sauf pour sélectionner des modules ou options spécifiques – absente\n2. Le texte ne peut pas être modifié, sauf pour compléter les parties entre crochets (juridictions, autorité, délais) – absente\n3. Le texte ne peut pas être modifié, sauf pour remplir les annexes – présente\n4. Le texte ne peut pas être modifié, sauf pour ajouter des garanties supplémentaires qui augmentent le niveau de protection – absente\n5. Toute modification au‑delà de ces adaptations fait perdre la sécurité juridique offerte par un acte de l’Union – absente\n6. Les parties doivent choisir l’une des deux options prévues (conformité RGPD/RPDUE, autorisation préalable ou générale) – absente\n7. Pour les transferts, les clauses modifiées ne peuvent plus servir de base sauf approbation nationale comme « clauses ad hoc » – absente\n8. L’affirmation de la réponse « le texte ne peut pas être modifié, sauf pour ajouter des informations aux annexes ou les mettre à jour » limite les adaptations autorisées aux seules annexes, ce qui contredit les adaptations permises (modules, options, compléments entre crochets, garanties supplémentaires) prévues par la référence – contradiction",
+     "contradiction": "presente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "COM-09",
+    "faithfulness": {
+     "justification": "1. Il est possible d'ajouter des clauses supplémentaires aux CCT ou de les intégrer dans un contrat plus large, à condition qu’elles ne contredisent pas les CCT et ne portent pas atteinte aux droits fondamentaux – appuyée (CCT-cons6, RGPD-cons109, EDPB-07-2020-107, CCT-clause2). 2. Les CCT restent inchangées dans leur substance, sauf pour les ajouts d’informations aux annexes ou la mise à jour des données – appuyée (CCT-clause2). 3. Les extraits confirment cette possibilité tant pour les contrats entre responsables de traitement et sous‑traitants que pour les accords entre sous‑traitants – appuyée (CCT-cons6, RGPD-cons109).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "- Parties can add supplementary clauses or integrate CCT provided no contradiction and no rights infringement: présente\n- Example of communication/cooperation clauses: absente\n- Example of specifying notification deadline: absente\n- Prohibition of general liability exemption (clause 12 a): absente\n- Prohibition of allowing sub‑processing without authorization (clause 7.7): absente\n- No contradictory affirmation found",
+     "contradiction": "absente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "COM-11",
+    "faithfulness": {
+     "justification": "Les clauses relatives à la protection des données doivent être identiques à celles des CCT, y compris les champs à compléter ou les options choisies – appuyée (EDPB-07-2020-107). Les CCT peuvent être intégrées dans un accord global couvrant d’autres aspects, à condition que les clauses supplémentaires ne contredisent pas les CCT – appuyée (CCT-cons6, EDPB-07-2020-107). Les clauses supplémentaires ne doivent pas porter atteinte aux droits des personnes concernées ni à la protection RGPD – appuyée (CCT-cons6, EDPB-07-2020-107). Les CCT doivent satisfaire aux exigences des articles 28 du RGPD et 29 du règlement UE 2018/1725, notamment en définissant finalité, durée, type de données, etc. – appuyée (CCT-cons7, CCT-art1). Les CCT sont conçues pour les contrats entre un responsable du traitement et un sous-traitant – appuyée (CCT-art2).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. CCT must be signed by all parties and bind them, integrated into contract per civil law – absente\n2. CCT should be applied to parties' situation, fill annexes, indicate clearly to parties, data subjects, authorities, jurisdictions which modules/options retained – absente\nNo contradictory affirmation found.",
+     "contradiction": "absente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "COM-16",
+    "faithfulness": {
+     "justification": "Le responsable du traitement doit donner ses instructions au sous-traitant de manière documentée – appuyée (EDPB-07-2020-116, EDPB-07-2020-118)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Le sous-traitant ne traite les données qu’à la suite d’instructions documentées du responsable – présente; Les CCT ne précisent pas sous quelle forme les instructions doivent être données ; le responsable peut choisir la forme tant qu’elle est documentée – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-17",
+    "faithfulness": {
+     "justification": "Le sous-traitant est tenu de communiquer au responsable du traitement les informations concernant les sous-traitants ultérieurs, notamment leurs noms, localisation, activités et garanties mises en œuvre – appuyée (EDPB‑07‑2020‑152 indique que le sous‑traitant doit fournir une liste contenant localisation, activités et garanties, ce qui implique les noms)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Oui, le sous-traitant doit communiquer le nom de chaque sous‑traitant ultérieur afin que le responsable puisse se prononcer sur l’autorisation – présente; Les parties doivent choisir entre autorisation spécifique préalable ou autorisation écrite générale – présente; Dans les deux cas, le sous‑traitant doit communiquer le nom de chaque sous‑traitant ultérieur – présente; Il ne suffit pas d’indiquer seulement les catégories – présente; Les parties doivent convenir du délai pour la demande d’autorisation spécifique ou informer par écrit de tout changement envisagé – présente;",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "COM-18",
+    "faithfulness": {
+     "justification": "Si le responsable du traitement s'oppose à un changement de sous-traitants ultérieurs dans le cadre d'une autorisation générale, le sous-traitant ne peut pas procéder à ce changement. – appuyée (extraits §156 et §152 indiquent que le sous‑traitant doit informer le responsable et que ce dernier a la possibilité de s’opposer, ce qui implique que le changement ne peut pas être réalisé en cas d’opposition). Le responsable du traitement conserve ainsi son droit de contrôle et d'opposition, conformément aux exigences de l'article 28 du RGPD et aux lignes directrices de l'EDPB. – appuyée (extraits §156 et §152 montrent que le responsable dispose d’un droit de contrôle et d’opposition, en accord avec l’article 28).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Le sous‑traitant doit informer par écrit le responsable du traitement de tout changement envisagé de la liste des sous‑traitants ultérieurs, avec délai de préavis convenu – absente.\n2. Si le responsable s’oppose, le sous‑traitant ne peut pas recruter les nouveaux sous‑traitants – présente.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-19",
+    "faithfulness": {
+     "justification": "Le sous-traitant doit notifier une violation de données à caractère personnel au responsable du traitement dans les meilleurs délais après en avoir pris connaissance – appuyée (RGPD-art33-2, CCT-clause9.2) ; L'EDPB précise que cette notification doit être faite sans délai inutile et suggère d’inclure dans le contrat un délai spécifique – appuyée (EDPB-07-2020-136)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Les CCT ne précisent pas le délai, la notification doit intervenir dans les meilleurs délais – présente\n2. Il appartient aux parties de fixer ce délai en fonction des circonstances – présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "COM-24",
+    "faithfulness": {
+     "justification": [
+      "Transferts de données entre un responsable du traitement (sous RGPD) et un sous-traitant ne relevant pas du champ d’application territorial du RGPD – non appuyée : les extraits autorisent l’usage des CCT entre responsable et sous‑traitant (CCT‑art2) mais n’imposent pas la restriction « uniquement si le sous‑traitant ne relève pas du champ d’application territorial du RGPD » ; l’exclusivité n’est pas établie",
+      "Transferts de données entre un sous‑traitant (sous RGPD) et un sous‑traitant ultérieur ne relevant pas du champ d’application territorial du RGPD – non appuyée : les extraits mentionnent que les CCT peuvent être utilisées pour ces transferts (CCT‑cons10) mais ne stipulent pas qu’elles sont limitées exclusivement à ces cas",
+      "Transferts couverts par l’article 28, paragraphes 3 et 4, du RGPD – appuyée : confirmé par CCT‑cons10 et CCT‑clause1‑a/b qui indiquent que les CCT satisfont aux exigences de l’article 28 §3‑4 pour ces transferts",
+      "Elles ne peuvent pas être utilisées pour les transferts internationaux couverts par le chapitre V du RGPD – appuyée : CCT‑cons10 indique explicitement que les CCT ne peuvent servir de clauses contractuelles types aux fins du chapitre V, et CCT‑clause1‑f le rappelle",
+      "Les CCT visent spécifiquement les obligations contractuelles entre parties (responsable/sous‑traitant) et ne remplacent pas les mécanismes du chapitre V – appuyée : CCT‑cons10 précise que les CCT ne remplacent pas les garanties du chapitre V et CCT‑clause1‑f souligne qu’elles ne suffisent pas seules pour les transferts internationaux"
+     ],
+     "affirmation_en_cause": "Transferts de données entre un responsable du traitement (sous RGPD) et un sous-traitant ne relevant pas du champ d’application territorial du RGPD",
+     "verdict": "affirmation_non_appuyee"
+    }
+   },
+   {
+    "id": "COM-30",
+    "faithfulness": {
+     "justification": "les clauses contractuelles types peuvent être utilisées pour transférer des données à caractère personnel vers une organisation internationale – appuyée – extrait RGPD-art46-2; conformément à l’article 46, paragraphe 2, point c) du RGPD, qui mentionne explicitement les « clauses types de protection des données adoptées par la Commission » comme garanties appropriées pour de tels transferts – appuyée – extrait RGPD-art46-2; les clauses contractuelles types visées dans les extraits sont conçues pour garantir la conformité avec les règles de protection des données, y compris dans le cadre de transferts internationaux – non appuyée – l’extrait CCT-clause1 f) indique que les clauses ne suffisent pas à elles seules pour assurer le respect des obligations relatives aux transferts internationaux, ce qui contredit la formulation de la réponse",
+     "affirmation_en_cause": "les clauses contractuelles types visées dans les extraits sont conçues pour garantir la conformité avec les règles de protection des données, y compris dans le cadre de transferts internationaux",
+     "verdict": "affirmation_non_appuyee"
+    }
+   }
+  ],
+  [
+   {
+    "id": "FAQ-05",
+    "faithfulness": {
+     "justification": "Vous avez un délai maximal d'un mois pour répondre à une demande d’accès formulée par une personne concernée – appuyée – extrait RGPD-art12-3 indique « dans un délai d'un mois à compter de la réception de la demande » (et RGPD-cons59 confirme « au plus tard dans un délai d'un mois »). Vous avez un délai maximal d'un mois pour répondre à une demande d’accès formulée par une personne concernée, conformément à l’article 12 du RGPD – appuyée – les mêmes extraits (RGPD-art12-3, RGPD-cons59) établissent que l’obligation provient de l’article 12.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "- Must respond within one month at latest – présente\n- Deadline can be extended by two months if complex, with info within one month – absente\n- Must be provided free of charge – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-06",
+    "faithfulness": {
+     "justification": [
+      "Oui, il est possible de traiter des données sensibles, mais sous des conditions strictes et avec des garanties supplémentaires. – non appuyée : les extraits ne mentionnent pas explicitement que le traitement est autorisé, seulement les obligations si le traitement a lieu.",
+      "Le traitement de données sensibles ... est autorisé à condition d'appliquer des limitations ou garanties spécifiques – appuyée : CCT-annexeII décrit les limitations/garanties appliquées aux données sensibles.",
+      "Ces garanties doivent tenir pleinement compte de la nature des données et des risques encourus – appuyée : CCT-annexeII indique que les limitations ou garanties doivent tenir pleinement compte de la nature des données et des risques encourus.",
+      "Le RGPD impose aussi une évaluation des risques (analyse d'impact) si le traitement est à grande échelle ou engendre un risque élevé – appuyée : RGPD-cons91 stipule qu’une analyse d’impact est requise pour les traitements à risque élevé, notamment pour les catégories particulières de données.",
+      "Le traitement doit aussi respecter les principes généraux du RGPD (licéité, transparence, minimisation, etc.) – appuyée : RGPD-cons39 énonce ces principes généraux.",
+      "Une justification légale (consentement, intérêt légitime, obligation légale, etc.) est nécessaire – non appuyée : les extraits fournis ne listent pas les bases légales de licéité du traitement."
+     ],
+     "affirmation_en_cause": "Oui, il est possible de traiter des données sensibles, mais sous des conditions strictes et avec des garanties supplémentaires.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Le traitement de données sensibles est généralement interdit, sauf dans des circonstances très spécifiques : absente; La personne a donné son consentement explicite pour le traitement de ses données sensibles : absente; Le traitement des données sensibles est nécessaire pour que le responsable du traitement puisse remplir ses obligations, notamment dans le contexte de l’emploi, de la sécurité sociale et de la protection sociale : absente; Le traitement des données sensibles est nécessaire pour protéger les intérêts vitaux d’une personne lorsque l’individu est physiquement ou légalement incapable de donner son consentement : absente; Le traitement des données sensibles s’effectue dans le cadre des activités légitimes d’une fondation, d’une association ou d’une autre organisation à but non lucratif ayant un but politique, philosophique, religieux ou syndical, et uniquement pour le traitement des données personnelles de leurs membres, anciens membres ou personnes ayant des contacts réguliers avec eux : absente; Les données sensibles ont été manifestement rendues publiques par les individus : absente; Le traitement des données sensibles est nécessaire dans le cadre d’une procédure judiciaire : absente; Le traitement des données sensibles est nécessaire pour des questions d’intérêt public substantiel : absente; Le traitement des données sensibles est nécessaire dans le cadre de la médecine préventive ou de la médecine du travail : absente; Le traitement des données sensibles est nécessaire pour des questions de santé publique sur la base du droit de l’Union ou du droit national : absente; Le traitement des données sensibles est nécessaire à des fins d’archivage dans l’intérêt public, à des fins de recherche scientifique ou historique ou à des fins statistiques : absente;",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-07",
+    "faithfulness": {
+     "justification": "Fournir des informations transparentes, claires et précises sur le traitement des données – appuyée (RGPD-cons39)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation 1 (droit de demander si leurs données sont traitées et droit d’accès) – absente ; Aff. 2 (fournir une copie des données personnelles gratuitement et informations complémentaires) – absente ; Aff. 3 (fournir les renseignements en format électronique couramment utilisé ou format demandé) – absente ; Aucun énoncé de la réponse ne contredit les affirmations de référence",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-09",
+    "faithfulness": {
+     "justification": "A1: non appuyée – les extraits ne mentionnent pas d’autres bases légales comme le contrat ou l’obligation légale pour se dispenser du consentement.; A2: appuyée – RGPD-cons32 indique que le consentement doit être libre, spécifique, éclairé et univoque.; A3: appuyée – RGPD-cons32 précise qu’il n’y a pas de consentement en cas de silence, de cases cochées par défaut ou d’inactivité.; A4: appuyée – RGPD-cons42 exige que le consentement soit fourni de façon compréhensible, claire et accessible.; A5: non appuyée – aucun extrait ne stipule que le consentement doit être donné avant l’utilisation des cookies.; A6: non appuyée – RGPD-cons42 parle de la possibilité de retirer le consentement sans préjudice, mais ne précise pas qu’il doit être retiré « aussi facilement qu’il a été donné ».; A7: non appuyée – les extraits fournis ne couvrent pas les cookies strictement nécessaires comme exception (et la réponse indique d’ailleurs que ce point n’est pas couvert).; A8: non appuyée – aucune source citée ne mentionne les cookies justifiés par une obligation légale ou la protection d’intérêts vitaux comme exception.",
+     "affirmation_en_cause": "Oui, vous avez généralement besoin d’un consentement pour utiliser des cookies sur le site web de votre organisme, sauf si leur utilisation relève d’une autre base légale (comme l’exécution d’un contrat ou une obligation légale).",
+     "verdict": "affirmation_non_appuyee"
+    }
+   },
+   {
+    "id": "FAQ-10",
+    "faithfulness": {
+     "justification": "Elles sont traitées de manière à ne plus pouvoir être attribuées à une personne précise sans informations supplémentaires (qui doivent être conservées séparément et protégées) – appuyée (RGPD-art4-5, RGPD-cons26). Elles restent des données à caractère personnel (car identifiables avec des moyens supplémentaires), et le RGPD s’applique toujours à leur traitement – appuyée (RGPD-cons26). Elles ne concernent plus une personne physique identifiable, même avec des moyens raisonnables (coût, temps, technologies disponibles) – appuyée (RGPD-cons26). Le RGPD ne s’applique pas à leur traitement, car elles ne relèvent plus de la notion de \"données à caractère personnel\" – appuyée (RGPD-cons26). L’anonymisation est irréversible (ou du moins, techniquement impossible à inverser) – non appuyée (aucun extrait ne mentionne l’irréversibilité). La pseudonymisation peut être levée si les informations supplémentaires sont accessibles – appuyée (RGPD-art4-5, RGPD-cons26). Pseudonymisation = protection partielle (données toujours personnelles, mais moins accessibles) – appuyée (déduction des définitions). Anonymisation = suppression totale de l’identifiabilité (données hors champ RGPD) – appuyée (RGPD-cons26).",
+     "affirmation_en_cause": "L'anonymisation est irréversible (ou du moins, techniquement impossible à inverser)",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Pseudonymisation transforme les données pour qu'elles ne puissent être attribuées sans informations supplémentaires conservées séparément – présente\n2. Remplacement par des identifiants indirects (ex. alias, numéro séquentiel) – présente\n3. Les données pseudonymisées restent des données personnelles et sont soumises au RGPD – présente\n4. Les données anonymisées sont rendues non identifiables par tout moyen raisonnable – présente\n5. Lorsque l'anonymisation est correctement mise en œuvre, le RGPD ne s’applique plus – présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-12",
+    "faithfulness": {
+     "justification": "Les données révélant l'origine raciale ou ethnique – appuyée (CCT-clause7.5)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Certain types of personal data belong to particular categories called sensitive data – présente; Sensitive data include health information – présente; Sensitive data include sexual orientation – présente; Sensitive data include racial or ethnic origin – présente; Sensitive data include political opinions – présente; Sensitive data include religious or philosophical beliefs – présente; Sensitive data include trade union membership – présente; Sensitive data include biometric data – présente (answer adds limiting condition that contradicts reference); Sensitive data include genetic data – présente; Processing of sensitive data is generally prohibited, except in specific circumstances – absente; Answer limits biometric data to cases where they uniquely identify a person – contradiction with reference",
+     "contradiction": "presente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-14",
+    "faithfulness": {
+     "justification": "1. La définition de donnée à caractère personnel comme toute information se rapportant à une personne physique identifiée ou identifiable, directement ou indirectement, notamment par référence à un identifiant (nom, numéro, données de localisation, identifiant en ligne, ou tout élément spécifique à son identité physique, physiologique, génétique, psychique, économique, culturelle ou sociale) – appuyée (RGPD-art4-1); 2. L’inclusion des informations pouvant être attribuées à une personne physique par le recours à des informations supplémentaires (ex. données pseudonymisées) – appuyée (RGPD-cons26)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Les données personnelles désignent toute information relative à une personne identifiée ou identifiable. – présente\nUne personne identifiable est toute personne qui peut être identifiée directement ou indirectement. – présente\nDifférents éléments d’information qui pourraient conduire, ensemble, à l’identification d’une personne en particulier constituent également des données personnelles. – présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-15",
+    "faithfulness": {
+     "justification": [
+      "Pour être conforme au RGPD lorsque vous collectez des données personnelles auprès d’un tiers, vous devez fournir à la personne concernée les informations prévues à l’article 13 §3 : non appuyée – aucun extrait ne prévoit cette obligation pour la collecte auprès d’un tiers.",
+      "Si vous prévoyez un traitement ultérieur des données pour une autre finalité que celle initialement déclarée, vous devez informer la personne concernée au préalable de cette autre finalité et de toute autre information pertinente : appuyée – RGPD-art13-3 §3."
+     ],
+     "affirmation_en_cause": "Pour être conforme au RGPD lorsque vous collectez des données personnelles auprès d’un tiers, vous devez fournir à la personne concernée les informations prévues à l’**[RGPD-art13-3]**.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Ensure data received were collected legitimately and subjects informed – absente; 2. Contract with processor detailing processing – absente; 3. Respect all obligations – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-17",
+    "faithfulness": {
+     "justification": [
+      "appuyée: Les mesures doivent être appropriées en fonction de la nature, de la portée, du contexte et de la finalité du traitement, ainsi que des risques pour les droits et libertés des personnes physiques – extrait [CCT-annexeIII]",
+      "appuyée: Une analyse des risques (origine, nature, probabilité et gravité) est essentielle pour identifier les meilleures pratiques à appliquer – extrait [RGPD-cons77]",
+      "appuyée: Les mesures doivent être décrites de manière précise et adaptées au traitement spécifique – extrait [CCT-annexeIII]",
+      "appuyée: Chiffrement et pseudonymisation des données – extrait [CCT-annexeIII]",
+      "appuyée: Confidentialité, intégrité, disponibilité et résilience des systèmes – extrait [CCT-annexeIII]",
+      "appuyée: Procédures de test, analyse et évaluation régulière des mesures – extrait [CCT-annexeIII]",
+      "appuyée: Identification et autorisation des utilisateurs, protection des données en transmission et stockage – extrait [CCT-annexeIII]",
+      "appuyée: Sécurité physique des sites, enregistrement des événements, configuration des systèmes – extrait [CCT-annexeIII]",
+      "appuyée: Minimisation, qualité et conservation limitée des données – extrait [CCT-annexeIII]",
+      "appuyée: Portabilité et effacement des données – extrait [CCT-annexeIII]",
+      "appuyée: Des codes de conduite, certifications ou lignes directrices peuvent guider le choix des mesures – extrait [RGPD-cons77]",
+      "appuyée: Des certifications ou labels peuvent faciliter l’évaluation par les personnes concernées – extrait [RGPD-cons100]",
+      "appuyée: Si des sous-traitants sont impliqués, des mesures spécifiques doivent être décrites pour garantir leur assistance au responsable du traitement – extrait [CCT-annexeIII]",
+      "appuyée: Les mesures doivent permettre de détecter rapidement les incidents et d’informer les autorités et les personnes concernées – extrait [RGPD-cons87]"
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Sécuriser l’accès aux locaux – présente\nUtiliser un logiciel antivirus régulièrement mis à jour – absente\nChoisir soigneusement vos mots de passe – absente\nAuthentifier les utilisateurs avant d’utiliser les installations informatiques – présente\nDisposer d’une politique de sauvegarde et de récupération des données en cas d’incident – absente\nVerrouiller votre écran pendant votre absence – absente\nVerrouiller votre bureau à la fin de la journée – absente\nLes mesures varient selon la nature des données et les risques – présente",
+     "contradiction": "absente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "FAQ-18",
+    "faithfulness": {
+     "justification": [
+      "1. non appuyée – aucun extrait ne stipule qu’il est interdit de partager sans respecter les conditions du RGPD",
+      "2. appuyée – extrait [EDPB-07-2020-92] indique qu’un tiers destinataire est considéré comme responsable du traitement pour ses propres finalités",
+      "3. appuyée – même extrait précise qu’il n’y a pas de relation responsable/sous‑traitant, le tiers est responsable",
+      "4. non appuyée – article 6 du RGPD n’est pas présent dans les extraits fournis",
+      "5. non appuyée – les obligations d’information (articles 13 et 14) ne sont pas mentionnées dans les extraits",
+      "6. non appuyée – aucune mention des obligations de sécurité ou des droits des personnes dans les extraits",
+      "7. non appuyée – les exigences de documentation et de garanties pour les pays tiers ne figurent pas dans les extraits fournis",
+      "8. non appuyée – l’obligation de co‑responsabilité (article 26) n’est pas couverte par les extraits"
+     ],
+     "affirmation_en_cause": "Non, vous ne pouvez pas simplement partager une liste de données personnelles avec vos partenaires commerciaux (tiers) sans respecter les conditions du RGPD.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "- Vous pouvez partager sous conditions : présente\n- Informer les personnes du partage avec un tiers : présente\n- Informer des finalités, mesures de sécurité, d’accès et de conservation : présente\n- Aucune affirmation de fond de la réponse n’est incompatible avec la référence.",
+     "contradiction": "absente",
+     "limite": "signalee"
+    }
+   },
+   {
+    "id": "FAQ-21",
+    "faithfulness": {
+     "justification": "Acte positif, clair et univoque : le consentement doit être donné par une action explicite (ex. : cocher une case, une déclaration écrite ou orale, un paramètre technique choisi). Le silence, les cases pré‑cochées ou l'inactivité ne suffisent pas. – appuyée (RGPD-cons32); La personne concernée doit comprendre l'identité du responsable du traitement et les finalités du traitement. – appuyée (RGPD-cons42); Le consentement doit être libre : la personne ne doit pas subir de pression (ex. : déséquilibre de pouvoir, contrat subordonné à un consentement non nécessaire). – appuyée (RGPD-cons42, RGPD-cons43, RGPD-art7-4); Il doit être distinct pour chaque finalité de traitement (ex. : impossible de mélanger des consentements pour des usages différents sans option de refus séparée). – non appuyée (les extraits autorisent un consentement couvrant plusieurs finalités, ne requièrent pas une distinction); Le consentement doit être isolé des autres éléments, rédigé en termes clairs et simples, et facilement identifiable. – appuyée (RGPD-cons42, RGPD-art7-2); Éviter les clauses abusives ou les formulations trompeuses. – appuyée (RGPD-cons42); Le responsable du traitement doit pouvoir démontrer que le consentement a été donné librement (ex. : enregistrement de la date, méthode d'obtention, possibilité de retrait). – appuyée (RGPD-cons42); Un contrat ne peut pas être conditionné à un consentement non essentiel à sa réalisation (ex. : accepter le marketing pour obtenir un service). – appuyée (RGPD-cons43, RGPD-art7-4); Si le consentement est lié à un contrat, il doit être facultatif et séparé des éléments obligatoires. – appuyée (RGPD-cons43, RGPD-art7-4); Cases cochées par défaut à éviter. – appuyée (RGPD-cons32); Consentement \"global\" pour tous les usages sans option de granularité à éviter. – appuyée (RGPD-cons32); Formulations floues ou cachées dans des CGU illisibles à éviter. – appuyée (RGPD-cons42); Subordonner un service essentiel à un consentement non nécessaire à éviter. – appuyée (RGPD-cons43, RGPD-art7-4)",
+     "affirmation_en_cause": "Il doit être distinct pour chaque finalité de traitement (ex. : impossible de mélanger des consentements pour des usages différents sans option de refus séparée).",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Consent must be free – présente\nConsent must be specific – présente\nConsent must be informed – présente\nConsent must be univocal – présente\nClear positive action (non‑pre‑checked, separate) – présente\nRight to withdraw consent freely – présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-26",
+    "faithfulness": {
+     "justification": "Licéité, loyauté et transparence : appuyée (RGPD-art5-1a)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Licite, équitable et transparent: présente\nCollecte à des fins spécifiées, explicites et légitimes: présente\nLimitation aux finalités initiales, pas de traitement incompatible: présente\nMinimisation des données nécessaires et proportionnées: présente\nExactitude et mise à jour, rectification/effacement des inexactes: présente\nLimitation du stockage dans le temps, suppression ou anonymisation quand non nécessaire: présente\nTraitement sécurisé avec contrôles de cybersécurité: présente\nResponsabilité du responsable du traitement et démonstration de conformité: présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-27",
+    "faithfulness": {
+     "justification": "La durée de conservation des données personnelles doit être limitée au strict minimum nécessaire pour les finalités pour lesquelles elles sont traitées – appuyée – extrait RGPD-art5-1-e (e) stipule que les données doivent être conservées pendant une durée n'excédant pas celle nécessaire aux finalités.;Des exceptions existent, notamment pour des finalités archivistiques dans l'intérêt public, des fins de recherche scientifique ou historique, des fins statistiques, à condition que des mesures techniques et organisationnelles appropriées soient mises en place – appuyée – même article RGPD-art5-1-e mentionne ces exceptions et la condition de mesures appropriées.;Le responsable du traitement doit informer la personne concernée de la durée de conservation ou, si ce n'est pas possible, des critères utilisés pour déterminer cette durée – appuyée – RGPD-art13-2-a et RGPD-art15-1-d le prévoient.;Je ne sais pas : les sources disponibles ne couvrent pas cette question concernant les durées précises applicables à chaque cas concret (ex. : données clients, données RH, etc.) – non appuyée – aucun extrait n'indique que les sources ne couvrent pas cette question.;Ces durées dépendent des réglementations sectorielles ou des bonnes pratiques du secteur – non appuyée – aucun extrait ne mentionne une dépendance aux réglementations sectorielles ou aux bonnes pratiques.",
+     "affirmation_en_cause": "Ces durées dépendent des réglementations sectorielles ou des bonnes pratiques du secteur",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Vous ne pouvez pas stocker des données personnelles pour toujours – présente; 2. Les données ne peuvent être conservées que le temps nécessaire aux finalités – présente; 3. La durée peut être déterminée par des lois spécifiques (ex. bulletins de salaire) – absente; 4. Les organismes doivent mettre en place des politiques de conservation – absente; 5. Les données doivent être supprimées ou anonymisées lorsqu’elles ne sont plus nécessaires – absente;",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-29",
+    "faithfulness": {
+     "justification": "Adopter des mesures techniques et organisationnelles appropriées – appuyée (RGPD-cons78); Mettre en place des règles internes et des mesures respectant les principes de protection des données dès la conception et par défaut – appuyée (RGPD-cons78); Réduire au minimum le traitement des données à caractère personnel et pseudonymiser les données dès que possible – appuyée (RGPD-cons78); Garantir la transparence sur les fonctions et le traitement des données, ainsi que permettre aux personnes concernées de contrôler le traitement de leurs données – appuyée (RGPD-cons78); Le traitement des données doit servir l'humanité et être proportionné par rapport à sa fonction dans la société, en équilibrant le droit à la protection des données avec d’autres droits fondamentaux – appuyée (RGPD-cons4); Appliquer les règles de manière cohérente pour garantir un niveau élevé de protection des données, en particulier en ce qui concerne les catégories particulières de données (données sensibles) – appuyée (RGPD-cons10); Clarifier et faciliter l'exercice des droits des individus (accès, rectification, effacement, etc.) – non appuyée (RGPD-cons11 ne mentionne pas la facilitation ni les droits spécifiques); Inciter les acteurs (fabricants, prestataires) à intégrer la protection des données dès la conception de leurs produits, services ou applications – appuyée (RGPD-cons78)",
+     "affirmation_en_cause": "Clarifier et faciliter l'exercice des droits des individus (accès, rectification, effacement, etc.)",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Le RGPD prévoit des droits spécifiques pour les personnes qui doivent être respectés – présente\nInformer les personnes des opérations de traitement et de leurs finalités lors de la collecte – présente\nRépondre aux demandes d’exercice des droits (accès, rectification, opposition, effacement, portabilité) – absente (opposition et portabilité non mentionnées)\nLes organismes transparents et respectueux des droits sont moins susceptibles de faire l’objet de plaintes – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-33",
+    "faithfulness": {
+     "justification": "Détermine les rôles clés (responsable du traitement et sous-traitant) et leurs obligations respectives en matière de protection des données – appuyée (extrait [EDPB-07-2020-2])",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "- Le RGPD crée un ensemble harmonisé de règles applicables à tous les traitements de données personnelles effectués par des organisations établies dans l’EEE ou ciblant des personnes physiques dans l’UE : absente\n- L’objectif principal du RGPD est de veiller à ce que les données personnelles bénéficient du même niveau de protection élevé partout dans l’EEE, d’accroître la sécurité juridique tant pour les personnes physiques que pour les organisations qui traitent des données, et d’offrir un degré élevé de protection aux individus : absente\n- Le règlement est entré en vigueur le 24 mai 2016 et s’applique depuis le 25 mai 2018 : absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-37",
+    "faithfulness": {
+     "justification": [
+      "Un responsable conjoint du traitement est une situation où deux ou plusieurs responsables du traitement déterminent conjointement les finalités et les moyens d’un traitement de données personnelles – appuyée (RGPD-art26-1, EDPB-07-2020-51)",
+      "Cela signifie qu’ils agissent ensemble (et non individuellement) pour définir ces éléments clés, ce qui les rend solidairement responsables du respect des obligations du RGPD pour ce traitement spécifique – non appuyée (aucun extrait ne mentionne la responsabilité solidaire, les extraits parlent seulement de détermination conjointe des finalités et moyens)"
+     ],
+     "affirmation_en_cause": "Cela signifie qu’ils agissent ensemble (et non individuellement) pour définir ces éléments clés, ce qui les rend solidairement responsables du respect des obligations du RGPD pour ce traitement spécifique.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Lorsque deux ou plusieurs responsables du traitement déterminent conjointement la finalité et les moyens du traitement – présente; Ils décident ensemble de traiter les données personnelles à des fins communes – présente; La responsabilité conjointe peut prendre de nombreuses formes et la participation des différents responsables peut être inégale – absente; Les responsables conjoints doivent déterminer leurs responsabilités respectives en matière de conformité au RGPD – absente; Être responsable conjoint implique une responsabilité partagée d’une activité de traitement – présente;",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-43",
+    "faithfulness": {
+     "justification": "Oui, vous pouvez transférer des données personnelles en dehors de l’Espace économique européen (EEE), mais sous certaines conditions strictes : appuyée – extrait RGPD-cons101 (les transferts ne peuvent avoir lieu que dans le plein respect du règlement).; Si le pays tiers ou l’organisation internationale offre un niveau de protection adéquat, le transfert est autorisé sans autorisation spécifique si la Commission a adopté une décision d’adéquation : appuyée – extrait RGPD-art45-1 §1.; En l’absence de décision d’adéquation, le transfert peut avoir lieu sous l’une des conditions suivantes (consentement explicite, exécution de contrat, motifs d’intérêt public, etc.) : appuyée – extrait RGPD-art49-1 §1 alinéa a‑g.; Les transferts pour des motifs importants d’intérêt public ou pour la sauvegarde des intérêts vitaux sont des dérogations possibles : appuyée – extrait RGPD-cons112.; Si aucune des conditions ci‑dessus n’est remplie, le transfert peut avoir lieu sous conditions strictes (non répétitif, limité, intérêts légitimes impérieux, évaluation des risques, garanties appropriées, information de l’autorité et de la personne concernée) : appuyée – extrait RGPD-art49-1 §1 (deuxième alinéa).; Les transferts doivent toujours respecter le niveau de protection garanti par le RGPD, même après un transfert initial vers un pays tiers : appuyée – extrait RGPD-cons101.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Existence de deux principaux moyens de transfert (décision d’adéquation ou garanties appropriées) – présente; Le transfert peut se faire sur la base d’une décision d’adéquation – présente; En l’absence de décision d’adéquation, le transfert peut se faire sur la base de garanties appropriées incluant des droits et voies de recours – présente; Aucun énoncé de la réponse n’est incompatible avec la référence – aucune contradiction",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-44",
+    "faithfulness": {
+     "justification": "Oui, les sous-traitants doivent également respecter le RGPD – appuyée (extraits : EDPB-07-2020-93, EDPB-07-2020-74)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Les sous-traitants ont des obligations en vertu du RGPD – présente\nIl existe des différences entre les responsabilités des responsables du traitement et des sous-traitants – absente\nLes sous-traitants doivent respecter les responsabilités énoncées dans un contrat conclu avec le responsable du traitement – absente\nLe sous-traitant doit effectuer les opérations de traitement avec les mesures techniques et organisationnelles appropriées, conformément aux instructions du responsable du traitement – absente\nLe sous-traitant aide le responsable du traitement à se conformer au RGPD – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-47",
+    "faithfulness": {
+     "justification": [
+      "non appuyée – l’affirmation indique que les amendes de 10 000 000 EUR (ou 2 % du CA) concernent les violations liées à l’article 28 sur les contrats avec les sous‑traitants, or les extraits de RGPD‑art83‑4 ne mentionnent pas l’article 28 ; ils ne listent que les articles 8, 11, 25‑39, 42 et 43",
+      "appuyée – RGPD‑art83‑5 prévoit des amendes pouvant atteindre 20 000 000 EUR (ou 4 % du CA) pour les violations des principes de base, des droits des personnes concernées et des transferts de données",
+      "appuyée – RGPD‑cons148 décrit le rappel à l’ordre en cas de violation mineure ou d’amende disproportionnée, en tenant compte de la gravité, de l’intention, des mesures correctives, etc.",
+      "appuyée – RGPD‑art83‑5 §5 e) mentionne que l’autorité de contrôle peut imposer des injonctions, des limitations temporaires ou définitives du traitement ou suspendre les flux de données",
+      "appuyée – RGPD‑art41‑4 §4 autorise un organisme de suivi de code de conduite à suspendre ou exclure le responsable ou le sous‑traitant et à en informer l’autorité de contrôle",
+      "appuyée – EDPB‑07‑2020‑103 indique que l’absence de contrat écrit ou d’acte juridique conforme à l’article 28 constitue une violation sanctionnable"
+     ],
+     "affirmation_en_cause": "10 000 000 EUR (ou 2 % du chiffre d'affaires annuel mondial total de l'exercice précédent, le montant le plus élevé étant retenu) pour les violations des obligations incombant au responsable du traitement ou au sous-traitant (comme celles liées à l’article 28 sur les contrats avec les sous‑traitants)",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Le respect du RGPD est contrôlé par les autorités nationales de protection des données. – absente\nLes autorités de protection des données peuvent mener des enquêtes et imposer des sanctions si nécessaire. – absente\nAmendes allant jusqu’à 20 millions d’euros, soit 4 % du chiffre d’affaires annuel mondial (le montant le plus élevé étant retenu). – présente\nRappels à l’ordre. – présente\nInterdictions de traitement temporaires ou permanentes. – présente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-48",
+    "faithfulness": {
+     "justification": "Un cookie est un identifiant en ligne – appuyée (RGPD-cons30)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    }
+   },
+   {
+    "id": "FAQ-49",
+    "faithfulness": {
+     "justification": "Affirmation: L'existence du traitement et ses finalités – appuyée – RGPD-cons60;Affirmation: Les modalités du traitement (par exemple, la durée de conservation, les catégories de données concernées) – non appuyée – les extraits ne précisent pas ces éléments spécifiques;Affirmation: Si les données sont collectées directement auprès de la personne concernée, elle doit être informée de l'obligation ou non de fournir ces données et des conséquences en cas de refus – appuyée – RGPD-cons60;Affirmation: Si les données sont obtenues d'une autre source, les informations doivent être fournies dans un délai raisonnable – appuyée – RGPD-cons61;Affirmation: Si les données sont destinées à être communiquées à un tiers, la personne concernée doit en être informée au moment de la première communication – appuyée – RGPD-cons61;Affirmation: Si les données sont utilisées pour un traitement ultérieur différent de la finalité initiale, la personne concernée doit en être informée avant ce traitement – appuyée – RGPD-cons61;Affirmation: En cas de profilage, la personne concernée doit être informée de son existence et de ses conséquences – appuyée – RGPD-cons60;Affirmation: Les informations doivent être concises, transparentes, compréhensibles, aisément accessibles, claires et simples – appuyée – RGPD-art12-1;Affirmation: Elles doivent être fournies par écrit ou par d'autres moyens (y compris électroniques), et oralement sur demande (sous réserve de vérification de l'identité) – appuyée – RGPD-art12-1;Affirmation: En cas de violation de données susceptible d'engendrer un risque élevé, la personne concernée doit être informée rapidement (nature de la violation + recommandations pour atténuer les risques) – appuyée – RGPD-cons86;Affirmation: Les informations sur la répartition des responsabilités (accord entre responsables conjoints) doivent être mises à disposition des personnes concernées, mais sans obligation légale de modalités spécifiques – appuyée – EDPB-07-2020-181;Affirmation: Identité et coordonnées du responsable de traitement – non appuyée – les extraits ne listent pas cet élément;Affirmation: Base légale du traitement – non appuyée – les extraits ne mentionnent pas cet élément;Affirmation: Durée de conservation des données – non appuyée – les extraits ne mentionnent pas cet élément;Affirmation: Droits de la personne concernée (accès, rectification, opposition, etc.) – non appuyée – les extraits ne mentionnent pas cet élément;Affirmation: Existence d'un délégué à la protection des données (DPO) si applicable – non appuyée – les extraits ne mentionnent pas cet élément",
+     "affirmation_en_cause": "Les modalités du traitement (par exemple, la durée de conservation, les catégories de données concernées)",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Identité et coordonnées du responsable du traitement – présente\nFinalités du traitement – présente\nBase légale du traitement (incl. intérêts légitimes) – présente\nCoordonnées du DPO (si existant) – présente\nDestinataires ou catégories de destinataires – absente\nInformations sur les transferts hors de l’EEE (décision d’adéquation, garanties) – absente\nCatégories de données personnelles traitées (lorsqu’elles ne sont pas obtenues de la personne) – présente\nDurée de conservation ou critères – présente\nDroits d’accès, d’effacement, de rectification, de restriction, d’opposition, de portabilité – présente\nDroit de déposer une plainte auprès de l’autorité de contrôle – présente\nDroit de retirer le consentement (si consentement) – présente\nInformations sur la prise de décision automatisée (logique, conséquences) – présente\nSource des données personnelles (si non obtenues directement) – présente\nObligation de fournir les données et conséquences du refus – présente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-03",
+    "faithfulness": {
+     "justification": "Les CCT permettent de satisfaire aux exigences de l’article 46, paragraphe 1, du RGPD et de l’article 28, paragraphes 3 et 4, du RGPD, solution validée par la Commission européenne – appuyée (CCT-cons10). Elles peuvent être incluses dans un contrat plus large sans contredire les CCT, à condition que les ajouts ne compromettent pas les droits des personnes concernées ni la protection des données – appuyée (CCT-cons6; EDPB-07-2020-107). Les CCT fournissent des modèles préétablis (champs à compléter ou options à choisir), réduisant la charge administrative – appuyée (EDPB-07-2020-107). Elles imposent des règles claires sur la définition de l’objet, durée, nature, finalité du traitement, le type de données, les catégories de personnes concernées, ainsi que les obligations et droits du responsable du traitement – appuyée (CCT-cons7). Leur adoption par la Commission européenne leur confère une reconnaissance officielle, limitant les risques de non-conformité en cas de contrôle – appuyée (CCT-cons10).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    }
+   },
+   {
+    "id": "COM-05",
+    "faithfulness": {
+     "justification": "Oui, la Commission européenne évaluera le fonctionnement pratique des clauses contractuelles types dans le cadre de l’évaluation périodique prévue à l’article 97 du RGPD. – appuyée (CCT-cons12; CCT-art3)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Article 97 du RGPD impose à la Commission de réaliser tous les quatre ans une évaluation de la mise en œuvre du RGPD – absente\nLe rapport d'évaluation de 2020 est disponible sur le site de la Commission – absente\nLa prochaine évaluation est attendue pour 2024 – absente\nL’évaluation comprendra également une évaluation de l'application pratique des CCT – présente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-07",
+    "faithfulness": {
+     "justification": "Affirmation 1 : le texte des clauses contractuelles types ne peut pas être modifié dans son contenu essentiel, sauf pour ajouter ou mettre à jour des informations aux annexes – appuyée par l’extrait CCT-clause2-a. Affimation 2 : l’ajout de clauses complémentaires est autorisé à condition qu’elles ne contredisent pas les clauses types et ne portent pas atteinte aux droits fondamentaux – appuyée par les extraits CCT-clause2-b et CCT-cons6.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Le texte des CCT ne peut pas être modifié, sauf pour sélectionner des modules ou options spécifiques – absente; Le texte des CCT ne peut pas être modifié, sauf pour compléter le texte aux endroits indiqués entre crochets (juridictions, autorité, délais) – absente; Le texte des CCT ne peut pas être modifié, sauf pour remplir les annexes – présente; Le texte des CCT ne peut pas être modifié, sauf pour ajouter des garanties supplémentaires qui augmentent le niveau de protection – présente; Si les parties modifient le texte au‑delà de ces adaptations, elles ne peuvent pas se prévaloir de la sécurité juridique offerte par un acte de l’Union – absente; Les parties doivent choisir parmi les options prévues concernant la conformité au RGPD ou RPDUE et l’autorisation préalable ou générale pour sous‑traitants – absente; Pour les transferts, les clauses modifiées ne peuvent plus servir de base aux transferts vers des pays tiers, sauf approbation comme clauses ad‑hoc – absente; Contradiction : la réponse limite les modifications autorisées aux seules annexes, excluant les sélections de modules, les compléments entre crochets et les garanties supplémentaires prévues par la référence.",
+     "contradiction": "presente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "COM-09",
+    "faithfulness": {
+     "justification": "Il est possible d'ajouter des clauses supplémentaires aux CCT ou de les intégrer dans un contrat plus large – appuyée (CCT-cons6, RGPD-cons109, EDPB-07-2020-107, CCT-clause2); Ces clauses supplémentaires ne doivent pas contredire, directement ou indirectement, les CCT et ne doivent pas porter atteinte aux libertés et droits fondamentaux des personnes concernées – appuyée (CCT-cons6, RGPD-cons109, EDPB-07-2020-107, CCT-clause2); Les CCT restent inchangées dans leur substance, sauf pour les ajouts d’informations aux annexes ou la mise à jour des données qui y figurent – appuyée (CCT-clause2); Les extraits confirment cette possibilité pour les contrats entre responsables de traitement et sous-traitants, ainsi que pour les accords entre sous-traitants – appuyée (CCT-cons6, RGPD-cons109, EDPB-07-2020-107)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Les parties peuvent compléter les CCT par des clauses supplémentaires ou les intégrer dans un contrat commercial plus large, à condition que les autres dispositions ne contredisent pas les CCT et ne portent pas atteinte aux droits des personnes concernées : présente\nIl est interdit d’inclure dans le contrat commercial une exonération générale de responsabilité qui contredirait la clause 12, point a) des CCT : présente\nIl est interdit d’inclure une clause autorisant le sous‑traitant à sous‑traiter sans autorisation, ce qui contredirait la clause 7.7 des CCT : présente",
+     "contradiction": "absente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "COM-11",
+    "faithfulness": {
+     "justification": "1. Les clauses relatives à la protection des données doivent être identiques à celles des CCT, y compris les champs à compléter ou les options choisies : appuyée – EDPB‑07‑2020‑107 indique que les clauses de l’accord concernant la protection des données doivent être identiques aux CCT et que les CCT laissent souvent des champs vides ou des options à choisir.\n2. Les CCT peuvent être intégrées dans un accord global couvrant d’autres aspects, à condition que les clauses supplémentaires ne contredisent pas les CCT, ni directement ni indirectement : appuyée – CCT‑cons6 stipule que le responsable et le sous‑traitant ne doivent pas être empêchés d’inclure les CCT dans un contrat plus large ni d’ajouter d’autres clauses, à condition qu’elles ne contredisent pas les CCT.\n3. Les clauses supplémentaires ne doivent pas porter atteinte aux droits des personnes concernées ni à la protection RGPD : appuyée – CCT‑cons6 mentionne qu’elles ne doivent pas porter atteinte aux libertés et droits fondamentaux des personnes, et EDPB‑07‑2020‑107 précise qu’elles ne doivent pas porter atteinte à la protection assurée par le RGPD.\n4. Les CCT doivent satisfaire aux exigences des articles 28 du RGPD et 29 du règlement UE 2018/1725, notamment en définissant finalité, durée, type de données, etc. : appuyée – CCT‑cons7 indique que les CCT doivent exiger la définition de l’objet, de la durée, de la nature, de la finalité, du type de données et des catégories de personnes, et CCT‑art1 précise qu’elles satisfont aux exigences des articles 28 et 29.\n5. Les CCT sont conçues pour les contrats entre un responsable du traitement et un sous‑traitant : appuyée – CCT‑art2 indique que les CCT peuvent être utilisées dans les contrats conclus entre un responsable du traitement et un sous‑traitant.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "- CCT must be signed by all parties, bind them, and be integrated in the contract according to the civil law of the chosen jurisdiction – absente\n- CCT should be applied to the parties' situation, with annexes filled and clear indication of modules, options and specifics to parties, data subjects, supervisory authorities and competent jurisdictions – absente",
+     "contradiction": "absente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "COM-16",
+    "faithfulness": {
+     "justification": "Le responsable du traitement doit donner ses instructions au sous-traitant de manière documentée – appuyée (EDPB-07-2020-116, EDPB-07-2020-118)",
+     "Le responsable du traitement doit donner ses instructions au sous-traitant de manière documentée – appuyée (EDPB-07-2020-116, EDPB-07-2020-118)": "appuyée",
+     "Ces instructions peuvent figurer dans le contrat ou un autre acte juridique – appuyée (EDPB-07-2020-118)": "appuyée",
+     "Ces instructions peuvent figurer dans une annexe au contrat – appuyée (EDPB-07-2020-127, EDPB-07-2020-118)": "appuyée",
+     "Ces instructions peuvent être sous forme écrite (par exemple, par courrier électronique) ou toute autre forme documentée permettant d'en conserver la trace – appuyée (EDPB-07-2020-118)": "appuyée",
+     "Il est recommandé de conserver les instructions avec le contrat ou l'acte juridique pour éviter toute difficulté de preuve – appuyée (EDPB-07-2020-118)": "appuyée",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Le sous-traitant ne traite les données à caractère personnel que sur instruction documentée du responsable du traitement – présente ; Les CCT ne précisent pas sous quelle forme les instructions doivent être données ; le responsable du traitement peut donc décider de les donner sous la forme qu'il juge appropriée, à condition que les instructions soient documentées – présente ; aucune affirmation de la réponse n’est incompatible avec la référence – aucune contradiction",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "COM-17",
+    "faithfulness": {
+     "justification": [
+      "Oui, le sous-traitant est tenu de communiquer au responsable du traitement les informations concernant les sous-traitants ultérieurs, notamment leurs noms et autres détails pertinents (localisation, activités, garanties) : appuyée (extraits 152, 156)",
+      "Le sous-traitant doit informer le responsable du traitement en temps utile de tout ajout ou remplacement envisagé de sous‑traitants ultérieurs (autorisation générale) : appuyée (extrait 156)",
+      "Le responsable du traitement doit être informé des sous‑traitants ultérieurs envisagés pour évaluer et autoriser leur recours (autorisation spécifique) : appuyée (extrait 152)",
+      "Une liste des sous‑traitants ultérieurs agréés doit figurer dans le contrat ou une annexe et être tenue à jour : appuyée (extrait 154)"
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Le sous-traitant doit communiquer au responsable du traitement le nom de chaque sous-traitant ultérieur – présente\nIl existe deux options d’autorisation (autorisation spécifique préalable ou autorisation écrite générale) – présente\nDans les deux cas, le sous-traitant doit communiquer le nom des sous-traitants ultérieurs – présente\nIl ne suffit pas d’indiquer seulement les catégories de sous-traitants ultérieurs – absente\nLes parties doivent convenir du délai dans lequel le sous-traitant doit soumettre la demande d’autorisation spécifique préalable ou informer par écrit le responsable de tout changement envisagé de la liste convenue – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-18",
+    "faithfulness": {
+     "justification": "Affirmation 1 : Si le responsable du traitement s’oppose à un changement de sous‑traitants ultérieurs dans le cadre d’une autorisation générale, le sous‑traitant ne peut pas procéder à ce changement – appuyée par les extraits [EDPB-07-2020-156] (le sous‑traitant doit informer le responsable afin de lui donner la possibilité de s’opposer) et [EDPB-07-2020-152] (le sous‑traitant doit obtenir l’autorisation écrite du responsable avant tout changement).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Le sous‑traitant doit informer par écrit le responsable du traitement de tout changement envisagé, avec délai de préavis convenu – absente.\n2. En cas d’opposition du responsable, le sous‑traitant ne peut pas recruter les nouveaux sous‑traitants – présente.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-19",
+    "faithfulness": {
+     "justification": "Le sous-traitant doit notifier une violation de données à caractère personnel au responsable du traitement dans les meilleurs délais après en avoir pris connaissance – appuyée (RGPD-art33-2 ; CCT-clause9.2). L'EDPB précise que cette notification doit être faite sans délai inutile et suggère d’inclure dans le contrat un délai spécifique (ex. nombre d’heures) – appuyée (EDPB-07-2020-136).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. CCT ne précisent pas de délai précis – absente ; 2. Clause 9.2 impose notification « dans les meilleurs délais » – présente ; 3. Parties doivent fixer le délai en fonction des circonstances – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-24",
+    "faithfulness": {
+     "error": "{\"justification\":\"1. Transferts de données entre un responsable du traitement (sous RGPD) et un sous-traitant ne relevant pas du champ d’application territorial du RGPD – appuyée (CCT-cons10 indique que les clauses s’appliquent aux transferts du responsable vers des sous‑traitants ne relevant pas du champ d’application territorial).\",\"2. Transferts de données entre un sous‑traitant (sous RGPD) et un sous‑traitant ultérieur ne relevant pas du champ d’application territorial du RGPD – appuyée (CCT-cons10 mentionne les transferts du sous‑traitant vers des sous‑traitants ultérieurs hors champ d’application).\",\"3. Transferts couverts par l’article 28, paragraphes 3 et 4, du RGPD (obligations contractuelles entre responsable et sous‑traitant) – appuyée (CCT-clause1‑a et CCT-clause1‑b précisent que les clauses visent à garantir le respect de l’article 28, paragraphes 3 et 4).\",\"4. Elles ne peuvent pas être utilisées pour les transferts internationaux couverts par le chapitre V du RGPD – appuyée (CCT-cons10 indique que les clauses ne peuvent servir aux fins du chapitre V ; CCT-clause1‑f le confirme).\",\"5. Les CCT ne remplacent pas les mécanismes du chapitre V (comme les clauses types de l’article 46, paragraphe 2, du RGPD) – appuyée (CCT-clause1‑f stipule que les clauses ne suffisent pas seules pour assurer le respect des obligations du chapitre V).\",\"6. Les clauses contractuelles types ne peuvent être utilisées que pour les transferts suivants – non appuyée (les extraits décrivent les cas d’utilisation autorisés mais n’affirment pas que ces cas constituent une liste exhaustive, donc l’affirmation d’exclusivité n’est pas établie par les extraits).\",\"affirmation_en_cause\":\"Les clauses contractuelles types ne peuvent être utilisées que pour les transferts suivants\",\"verdict\":\"affirmation_non_appuyee\"}",
+     "content": null
+    }
+   },
+   {
+    "id": "COM-30",
+    "faithfulness": {
+     "justification": "Oui, les clauses contractuelles types peuvent être utilisées pour transférer des données à caractère personnel vers une organisation internationale – appuyée (RGPD-art46-2 indique que les clauses types sont une garantie appropriée pour les transferts visés par le Chapitre V, qui couvre les transferts vers des pays tiers ou des organisations internationales).; conformément à l’article 46, paragraphe 2, point c) du RGPD, qui mentionne explicitement les « clauses types de protection des données adoptées par la Commission » comme garanties appropriées pour de tels transferts – appuyée (RGPD-art46-2).; les clauses contractuelles types visées dans les extraits sont conçues pour garantir la conformité avec les règles de protection des données, y compris dans le cadre de transferts internationaux – appuyée (CCT-cons7 décrit les clauses comme devant inclure des règles de fond et de procédure pour garantir la conformité ; CCT-clause1 f) précise que les clauses sont liées aux obligations de transferts internationaux).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    }
+   }
+  ],
+  [
+   {
+    "id": "FAQ-05",
+    "faithfulness": {
+     "justification": [
+      "délai maximal d'un mois pour répondre à une demande d’accès : appuyée – extrait RGPD-art12-3 indique un délai d'un mois (et RGPD-cons59 le confirme).",
+      "conformément à l’article 12 du RGPD : appuyée – les extraits RGPD-art12-3 et RGPD-cons59 proviennent de l’article 12."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Répondre dans les meilleurs délais et au plus tard dans un délai d’un mois à compter de la réception de la demande : présente\nLe délai peut être prolongé de deux mois supplémentaires si la demande est trop complexe et qu’il faut plus de temps pour y répondre, à condition que la personne en soit informée dans un délai d’un mois à compter de la réception de la demande : absente\nVous devez le faire gratuitement : absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-06",
+    "faithfulness": {
+     "justification": "Oui, il est possible de traiter des données sensibles, mais sous des conditions strictes et avec des garanties supplémentaires. – appuyée – CCT-annexeII et CCT‑clause7.5 indiquent que le traitement des données sensibles est autorisé à condition d’appliquer des limitations ou garanties spécifiques.; Le traitement de données sensibles (comme définies dans la clause 7.5 du CCT 2021/915) est autorisé à condition d'appliquer des limitations ou garanties spécifiques. – appuyée – CCT‑annexeII et CCT‑clause7.5 précisent que des limitations ou garanties doivent être appliquées.; Ces garanties doivent tenir pleinement compte de la nature des données et des risques encourus. – appuyée – CCT‑annexeII mentionne que les limitations ou garanties doivent « tenir pleinement compte de la nature des données et des risques encourus ».; Le RGPD impose aussi une évaluation des risques (analyse d’impact relative à la protection des données) si le traitement est à grande échelle ou engendre un risque élevé. – appuyée – RGPD‑cons91 stipule que l’analyse d’impact est requise pour les traitements susceptibles d’engendrer un risque élevé, notamment le traitement de catégories particulières de données à caractère personnel.; Le traitement doit aussi respecter les principes généraux du RGPD (licéité, transparence, minimisation des données, etc.). – appuyée – RGPD‑cons39 énonce que tout traitement doit être licite, loyal et transparent, et respecter les principes de minimisation et de sécurité.; Une justification légale (consentement, intérêt légitime, obligation légale, etc.) est nécessaire. – appuyée – RGPD‑cons39 indique que le traitement doit être licite, ce qui implique la nécessité d’une base juridique appropriée (consentement, intérêt légitime, etc.).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": [
+      "Général : le traitement de données sensibles est généralement interdit, sauf dans des circonstances très spécifiques – absente",
+      "Consentement explicite de la personne – présente",
+      "Nécessaire pour que le responsable remplisse ses obligations (emploi, sécurité sociale, protection sociale) – absente",
+      "Nécessaire pour protéger les intérêts vitaux d’une personne incapable de donner son consentement – absente",
+      "Activités légitimes d’une fondation, association ou autre organisation à but non lucratif à but politique, philosophique, religieux ou syndical – absente",
+      "Données sensibles rendues manifestement publiques par les individus – absente",
+      "Nécessaire dans le cadre d’une procédure judiciaire – absente",
+      "Nécessaire pour des questions d’intérêt public substantiel – absente",
+      "Nécessaire dans le cadre de la médecine préventive ou de la médecine du travail – absente",
+      "Nécessaire pour des questions de santé publique sur la base du droit de l’Union ou du droit national – absente",
+      "Nécessaire à des fins d’archivage dans l’intérêt public, de recherche scientifique ou historique, ou à des fins statistiques – absente"
+     ],
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-07",
+    "faithfulness": {
+     "justification": "Informer sur l’identité du responsable du traitement et les finalités du traitement – appuyée (RGPD-cons39)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Les particuliers peuvent vous demander si vous traitez leurs données et ont le droit d’accès à ces données – absente; Vous devez fournir une copie de leurs données personnelles, gratuitement, ainsi que toute information supplémentaire nécessaire – absente; Lorsque la demande est faite par voie électronique, vous devez fournir les renseignements requis dans un format électronique couramment utilisé, ou un autre format demandé par la personne concernée – absente;",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-09",
+    "faithfulness": {
+     "justification": "Vous avez généralement besoin d’un consentement pour utiliser des cookies sur le site web de votre organisme, sauf si leur utilisation relève d’une autre base légale (comme l’exécution d’un contrat ou une obligation légale). - non appuyée, les extraits fournis ne mentionnent pas d’autres bases légales comme exception au consentement.;Le consentement doit être libre, spécifique, éclairé et univoque - appuyée, RGPD-cons32.;Le consentement ne peut pas être implicite (ex. : cases cochées par défaut, silence ou inactivité). - appuyée, RGPD-cons32.;Il doit également être facilement accessible, compréhensible et formulé en termes clairs - appuyée, RGPD-cons42.;Le consentement doit être donné avant l’utilisation des cookies (principe de privacy by design) - non appuyée, aucun extrait ne précise que le consentement doit être obtenu avant le traitement des cookies.;La personne concernée doit pouvoir retirer son consentement aussi facilement qu’elle l’a donné - appuyée, RGPD-cons42.;Cookies strictement nécessaires au fonctionnement du site (ex. : panier d’achat) sont une exception - non appuyée, les extraits ne prévoient pas cette exception.;Cookies utilisés dans le cadre d’une obligation légale ou pour protéger les intérêts vitaux de la personne concernée sont une exception - non appuyée, les extraits ne prévoient pas cette exception.",
+     "affirmation_en_cause": "Vous avez généralement besoin d’un consentement pour utiliser des cookies sur le site web de votre organisme, sauf si leur utilisation relève d’une autre base légale (comme l’exécution d’un contrat ou une obligation légale).",
+     "verdict": "affirmation_non_appuyee"
+    }
+   },
+   {
+    "id": "FAQ-10",
+    "faithfulness": {
+     "justification": "- Elles sont traitées de manière à ne plus pouvoir être attribuées à une personne précise sans informations supplémentaires (qui doivent être conservées séparément et protégées) : appuyée (RGPD-art4-5, RGPD-cons26).\n- Elles restent des données à caractère personnel (car identifiables avec des moyens supplémentaires), et le RGPD s’applique toujours à leur traitement : appuyée (RGPD-cons26).\n- Les données anonymisées ne concernent plus une personne physique identifiable, même avec des moyens raisonnables (coût, temps, technologies disponibles) : appuyée (RGPD-cons26).\n- Le RGPD ne s’applique pas à leur traitement, car elles ne relèvent plus de la notion de \"données à caractère personnel\" : appuyée (RGPD-cons26).\n- L’anonymisation est irréversible (ou du moins, techniquement impossible à inverser) : non appuyée (aucun extrait ne mentionne l’irréversibilité).\n- La pseudonymisation peut être levée si les informations supplémentaires sont accessibles : appuyée (RGPD-art4-5).",
+     "affirmation_en_cause": "L'anonymisation est irréversible (ou du moins, techniquement impossible à inverser)",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "La pseudonymisation transforme des données personnelles afin qu’elles ne puissent plus être attribuées à une personne spécifique sans l’utilisation d’informations supplémentaires, à condition que ces informations supplémentaires soient conservées séparément et fassent l’objet de mesures techniques et organisationnelles visant à garantir que les données ne sont pas attribuées à des personnes physiques – présente; Les données pseudonymisées sont toujours des données personnelles et sont soumises au RGPD – présente; Les données anonymisées sont des données qui ont été rendues anonymes, de telle sorte que l’individu n’est pas ou plus identifiable par tout moyen raisonnablement susceptible d’être utilisé – présente; Lorsque l’anonymisation est correctement mise en œuvre, le RGPD ne s’applique plus aux données anonymisées – présente; Dans la pratique, il peut s’agir de remplacer les données personnelles (nom, prénom, numéro personnel, numéro de téléphone, etc.) par des données d’identification indirecte (alias, numéro séquentiel, etc.) dans un ensemble de données – présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-12",
+    "faithfulness": {
+     "justification": "- Les données révélant l'origine raciale ou ethnique : appuyée (CCT-clause7.5)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Les données concernant la santé → présente; Les données concernant l’orientation sexuelle → présente; Les données révélant l’origine raciale ou ethnique → présente; Les opinions politiques, les croyances religieuses ou philosophiques → présente; L’appartenance syndicale → présente; Les données biométriques et génétiques → présente; Le traitement des données sensibles est généralement interdit, sauf circonstances spécifiques → absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-14",
+    "faithfulness": {
+     "justification": "Affirmation 1 : « toute information se rapportant à une personne physique identifiée ou identifiable, directement ou indirectement, notamment par référence à un identifiant (nom, numéro, données de localisation, identifiant en ligne, ou tout élément spécifique à son identité physique, physiologique, génétique, psychique, économique, culturelle ou sociale) » – appuyée (extrait RGPD-art4-1).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Les données personnelles désignent toute information relative à une personne identifiée ou identifiable. – présente\nUne personne identifiable est toute personne qui peut être identifiée directement ou indirectement. – présente\nDifférents éléments d’information qui pourraient conduire, ensemble, à l’identification d’une personne en particulier constituent également des données personnelles. – présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-15",
+    "faithfulness": {
+     "justification": "Pour être conforme au RGPD lorsque vous collectez des données personnelles auprès d’un tiers, vous devez fournir à la personne concernée les informations prévues à l’article 13 §3 : non appuyée – l’extrait RGPD-art13-3 porte sur la collecte auprès de la personne concernée, pas auprès d’un tiers.\nSi vous prévoyez un traitement ultérieur des données pour une autre finalité que celle initialement déclarée, vous devez informer la personne concernée au préalable de cette autre finalité et de toute autre information pertinente : appuyée – extrait RGPD-art13-3 §3 le stipule.",
+     "affirmation_en_cause": "Pour être conforme au RGPD lorsque vous collectez des données personnelles auprès d’un tiers, vous devez fournir à la personne concernée les informations prévues à l’**[RGPD-art13-3]**.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "- Assurer que les données reçues ont été collectées légitimement : absente\n- Assurer que les personnes concernées ont été informées du traitement : présente\n- Mettre en place un contrat avec le sous‑traitant détaillant les opérations et les moyens de traitement : absente\n- Respecter toutes vos obligations de responsable de traitement : absente\n- Aucun énoncé de la réponse n’est incompatible avec la référence : aucune contradiction",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-17",
+    "faithfulness": {
+     "justification": "Les mesures doivent être appropriées en fonction de la nature, de la portée, du contexte et de la finalité du traitement, ainsi que des risques pour les droits et libertés des personnes physiques – appuyée (CCT-annexeIII); Une analyse des risques (origine, nature, probabilité et gravité) est essentielle pour identifier les meilleures pratiques à appliquer – appuyée (RGPD-cons77); Les mesures doivent être décrites de manière précise et adaptées au traitement spécifique – appuyée (CCT-annexeIII); Chiffrement et pseudonymisation des données – appuyée (CCT-annexeIII); Confidentialité, intégrité, disponibilité et résilience des systèmes – appuyée (CCT-annexeIII); Procédures de test, analyse et évaluation régulière des mesures – appuyée (CCT-annexeIII); Identification et autorisation des utilisateurs, protection des données en transmission et stockage – appuyée (CCT-annexeIII); Sécurité physique des sites, enregistrement des événements, configuration des systèmes – appuyée (CCT-annexeIII); Minimisation, qualité et conservation limitée des données – appuyée (CCT-annexeIII); Portabilité et effacement des données – appuyée (CCT-annexeIII); Des codes de conduite, certifications ou lignes directrices peuvent guider le choix des mesures – appuyée (RGPD-cons77); Des certifications ou labels peuvent faciliter l’évaluation par les personnes concernées – appuyée (RGPD-cons100); Si des sous-traitants sont impliqués, des mesures spécifiques doivent être décrites pour garantir leur assistance au responsable du traitement – appuyée (CCT-annexeIII); Les mesures doivent permettre de détecter rapidement les incidents et d’informer les autorités et les personnes concernées – appuyée (RGPD-cons87)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "- Mesures varient selon nature des données et risques : présente\n- Sécuriser l’accès aux locaux : présente\n- Utiliser un logiciel antivirus régulièrement mis à jour : absente\n- Choisir soigneusement vos mots de passe : absente\n- Authentifier les utilisateurs avant d’utiliser les installations informatiques : présente\n- Disposer d’une politique de sauvegarde et de récupération des données en cas d’incident : absente\n- Verrouiller l’écran pendant votre absence et votre bureau à la fin de la journée : absente\n- Aucun énoncé contradictoire trouvé dans la réponse.",
+     "contradiction": "absente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "FAQ-18",
+    "faithfulness": {
+     "justification": [
+      "Non, vous ne pouvez pas simplement partager une liste de données personnelles avec vos partenaires commerciaux (tiers) sans respecter les conditions du RGPD. – non appuyée : aucun extrait n’affirme une interdiction de partage sans conditions.",
+      "Un tiers destinataire est considéré comme un responsable du traitement pour tout traitement qu’il effectue pour ses propres finalités après réception des données. – appuyée : extrait [EDPB-07-2020-92] le stipule explicitement.",
+      "Le partage de données personnelles avec un tiers implique que ce dernier devient également responsable du traitement des données qu'il reçoit, et non un simple sous‑traitant. – appuyée : même extrait [EDPB-07-2020-92] indique qu’il n’y a pas de relation responsable/sous‑traitant mais que le tiers est responsable.",
+      "Il faut vérifier la base légale du traitement (article 6 du RGPD). – non appuyée : l’article 6 n’est pas présent dans les extraits fournis.",
+      "Il faut informer les personnes concernées des transferts de données (articles 13 et 14 du RGPD). – non appuyée : les articles 13 et 14 ne sont pas cités dans les extraits.",
+      "Il faut s’assurer que le tiers respecte les obligations RGPD (sécurité, droits des personnes, etc.). – non appuyée : aucune disposition à ce sujet n’est fournie dans les extraits.",
+      "Il faut documenter le transfert, notamment si le tiers est dans un pays tiers, en vérifiant les garanties comme les clauses contractuelles types ou les décisions d’adéquation. – non appuyée : les exigences de documentation ou de garanties ne sont pas mentionnées dans les extraits.",
+      "Si le tiers agit pour vos propres finalités, il doit être considéré comme co‑responsable du traitement, ce qui implique une convention de co‑responsabilité (article 26 du RGPD). – non appuyée : l’article 26 n’est pas présent dans les extraits."
+     ],
+     "affirmation_en_cause": "Non, vous ne pouvez pas simplement partager une liste de données personnelles avec vos partenaires commerciaux (tiers) sans respecter les conditions du RGPD.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Vous pouvez partager une liste de données personnelles avec vos partenaires commerciaux sous condition – présente\n2. Vous devez informer les personnes que vous partagerez leurs données avec un tiers – présente\n3. Vous devez les informer des finalités, mesures de sécurité, d’accès et de conservation – absente",
+     "contradiction": "absente",
+     "limite": "signalee"
+    }
+   },
+   {
+    "id": "FAQ-21",
+    "faithfulness": {
+     "justification": "Le consentement doit être donné par une action explicite (ex. : cocher une case, une déclaration écrite ou orale, un paramètre technique choisi). Le silence, les cases pré‑cochées ou l’inactivité ne suffisent pas. : appuyée – extrait RGPD-cons32\nLa personne concernée doit comprendre l’identité du responsable du traitement et les finalités du traitement. : appuyée – extrait RGPD-cons42\nLe consentement doit être libre : la personne ne doit pas subir de pression (ex. : déséquilibre de pouvoir, contrat subordonné à un consentement non nécessaire). : appuyée – extraits RGPD-cons42, RGPD-cons43, RGPD-art7-4\nIl doit être distinct pour chaque finalité de traitement (ex. : impossible de mélanger des consentements pour des usages différents sans option de refus séparée). : non appuyée – les extraits imposent la distinction seulement lorsqu’elle est appropriée, pas systématiquement pour chaque finalité\nIl doit être isolé des autres éléments, rédigé en termes clairs et simples, et facilement identifiable. : appuyée – extraits RGPD-cons42, RGPD-art7-2\nÉviter les clauses abusives ou les formulations trompeuses. : appuyée – extrait RGPD-cons42\nLe responsable du traitement doit pouvoir démontrer que le consentement a été donné librement (ex. : enregistrement de la date, méthode d’obtention, possibilité de retrait). : appuyée – extrait RGPD-cons42\nUn contrat ne peut pas être conditionné à un consentement non essentiel à sa réalisation (ex. : accepter le marketing pour obtenir un service). : appuyée – extraits RGPD-cons43, RGPD-art7-4\nSi le consentement est lié à un contrat, il doit être facultatif et séparé des éléments obligatoires. : appuyée – même extraits que précédemment\nÉvitez de lier l’accès au service à ce consentement si ce n’est pas strictement nécessaire. : appuyée – même extraits que précédemment\nCases cochées par défaut. : appuyée – extrait RGPD-cons32\nConsentement \"global\" pour tous les usages sans option de granularité. : appuyée – extrait RGPD-cons32 (exigence de spécificité) et RGPD-cons43 (nécessité de distinction)",
+     "affirmation_en_cause": "Il doit être distinct pour chaque finalité de traitement (ex. : impossible de mélanger des consentements pour des usages différents sans option de refus séparée).",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Libre : présente\nSpécifique : présente\nInformé : présente\nUnivoque : présente\nAction positive claire (cases non pré‑cochées, séparées) : présente\nRetrait libre sans conséquences négatives : présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-26",
+    "faithfulness": {
+     "justification": "Les données doivent être traitées de manière licite, loyale et transparente au regard de la personne concernée – appuyée (RGPD-art5-1a); Les données doivent être collectées pour des finalités déterminées, explicites et légitimes, et ne pas être traitées ultérieurement de manière incompatible avec ces finalités – appuyée (RGPD-art5-1b); Les données doivent être adéquates, pertinentes et limitées à ce qui est nécessaire au regard des finalités – appuyée (RGPD-art5-1c); Les données doivent être exactes et, si nécessaire, tenues à jour, avec mesures raisonnables pour rectifier ou effacer les inexactitudes – appuyée (RGPD-art5-1d); Les données doivent être conservées pendant une durée n’excédant pas celle nécessaire aux finalités – appuyée (RGPD-art5-1e); Les données doivent être traitées de façon à garantir une sécurité appropriée, incluant protection contre traitements non autorisés ou illicites et contre perte, destruction ou dégâts accidentels – appuyée (RGPD-art5-1f); Ces principes sont renforcés par le principe de responsabilité (article 5, paragraphe 2), qui impose au responsable du traitement de veiller à leur respect et d’en démontrer la conformité – appuyée (EDPB-07-2020-6); Les principes de base du traitement sont définis à l’article 5, paragraphe 1 du RGPD – appuyée (RGPD-art5-1)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "- Licite, équitable et transparent : présente\n- Collecte à des fins spécifiées, explicites et légitimes, limitation des finalités : présente\n- Minimisation des données nécessaires et proportionnées : présente\n- Exactitude et mise à jour, rectification/effacement : présente\n- Limitation du stockage dans le temps, suppression ou anonymisation quand non nécessaires : présente\n- Sécurité du traitement, contrôles de cybersécurité : présente\n- Responsabilité du responsable, démonstration du respect : présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-27",
+    "faithfulness": {
+     "error": "{\"justification\":\"La durée de conservation des données personnelles doit être limitée au strict minimum nécessaire pour les finalités pour lesquelles elles sont traitées – appuyée (RGPD-art5-1-e et RGPD-cons39 indiquent que la durée doit être limitée au strict minimum).\",\"Des exceptions existent, notamment pour des finalités archivistiques dans l'intérêt public, des fins de recherche scientifique ou historique, des fins statistiques, à condition que des mesures techniques et organisationnelles appropriées soient mises en place – appuyée (RGPD-art5-1-e mentionne ces exceptions et la condition de mesures appropriées).\",\"Le responsable du traitement doit informer la personne concernée de la durée de conservation ou, si ce n'est pas possible, des critères utilisés pour déterminer cette durée – appuyée (RGPD-art13-2-a et RGPD-art15-1-d imposent cette information).\",\"Ces durées dépendent des réglementations sectorielles ou des bonnes pratiques du secteur – non appuyée (aucun extrait ne stipule que les durées varient selon les réglementations sectorielles ou les bonnes pratiques).\"},\"affirmation_en_cause\":\"Ces durées dépendent des réglementations sectorielles ou des bonnes pratiques du secteur.\",\"verdict\":\"affirmation_non_appuyee\"",
+     "content": null
+    },
+    "accuracy": {
+     "justification": "1. Vous ne pouvez pas stocker des données personnelles pour toujours – présente (impliquée par la limitation au strict minimum nécessaire). 2. Les données ne peuvent être conservées que le temps nécessaire aux finalités – présente. 3. La durée peut être déterminée par des lois spécifiques (ex. bulletins de salaire) – absente. 4. Les organismes doivent mettre en place des politiques de conservation – absente. 5. Les données doivent être supprimées ou anonymisées lorsqu’elles ne sont plus nécessaires – absente. Aucun énoncé de la réponse n’est incompatible avec la référence.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-29",
+    "faithfulness": {
+     "justification": "Adopter des mesures techniques et organisationnelles appropriées – appuyée (RGPD-cons78); Mettre en place des règles internes et des mesures respectant les principes de protection des données dès la conception et par défaut – appuyée (RGPD-cons78); Réduire au minimum le traitement des données à caractère personnel et pseudonymiser les données dès que possible – appuyée (RGPD-cons78); Garantir la transparence et permettre aux personnes concernées de contrôler le traitement – appuyée (RGPD-cons78); Le traitement doit servir l'humanité et être proportionné, en équilibrant le droit à la protection des données avec d’autres droits fondamentaux – appuyée (RGPD-cons4); Appliquer les règles de manière cohérente dans l’Union, notamment pour les catégories particulières de données sensibles – appuyée (RGPD-cons10); Renforcer les droits des personnes concernées – appuyée (RGPD-cons11); Clarifier et faciliter l’exercice des droits des individus (accès, rectification, effacement, etc.) – appuyée (RGPD-cons11, reformulation fidèle); Inciter les fabricants et prestataires à intégrer la protection des données dès la conception – appuyée (RGPD-cons78)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Le RGPD prévoit des droits spécifiques pour les personnes qui doivent être respectés. – présente\nInformer les personnes dont vous traitez les données de vos opérations de traitement et de ses finalités lors de la collecte, par ex. via une déclaration de confidentialité. – présente\nRépondre aux demandes d’exercice des droits : accès, rectification, opposition, effacement ou portabilité. – présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-33",
+    "faithfulness": {
+     "justification": "Détermine les rôles clés (responsable du traitement et sous‑traitant) et leurs obligations respectives en matière de protection des données : appuyée – extrait [EDPB-07-2020-2]. Impose des règles spécifiques aux sous‑traitants, qui peuvent être tenus responsables ou sanctionnés en cas de non‑respect : appuyée – extrait [EDPB-07-2020-74]. Encadre strictement les finalités et moyens du traitement des données : appuyée – extrait [EDPB-07-2020-34]. Établit des obligations directes pour les sous‑traitants (confidentialité, registre des traitements, sécurité, notification des violations, etc.) : appuyée – extrait [EDPB-07-2020-93]. Exige un contrat écrit entre responsable et sous‑traitant pour garantir la conformité : appuyée – extrait [EDPB-07-2020-103].",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Le RGPD crée un ensemble harmonisé de règles applicables à tous les traitements de données personnelles effectués par des organisations établies dans l’EEE ou ciblant des personnes physiques dans l’UE – absente; L’objectif principal du RGPD est de veiller à une protection élevée des données, d’accroître la sécurité juridique pour les personnes et les organisations – absente; Le règlement est entré en vigueur le 24 mai 2016 et s’applique depuis le 25 mai 2018 – absente;",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-37",
+    "faithfulness": {
+     "justification": "Un responsable conjoint du traitement est une situation où deux ou plusieurs responsables du traitement déterminent conjointement les finalités et les moyens d’un traitement de données personnelles – appuyée (RGPD-art26-1)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "- Lorsque deux ou plusieurs responsables déterminent conjointement la finalité et les moyens du traitement, ils sont considérés comme responsables conjoints – présente\n- Ils décident ensemble de traiter les données à des fins communes – présente\n- La responsabilité conjointe peut prendre de nombreuses formes et la participation peut être inégale – absente\n- Les responsables conjoints doivent déterminer leurs responsabilités respectives en matière de conformité au RGPD – absente\n- Être responsable conjoint implique une responsabilité partagée de l’activité de traitement – présente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-43",
+    "faithfulness": {
+     "justification": [
+      "Oui, vous pouvez transférer des données personnelles en dehors de l’Espace économique européen (EEE), mais sous certaines conditions strictes – appuyée – les articles 45, 49 et le considérant 101 indiquent que les transferts sont possibles uniquement dans le respect du RGPD et sous conditions.",
+      "Si le pays tiers ou l’organisation internationale offre un niveau de protection adéquat, le transfert est autorisé sans autorisation spécifique si la Commission a adopté une décision d’adéquation – appuyée – RGPD art45‑1.",
+      "En l’absence de décision d’adéquation, le transfert peut avoir lieu sous l’une des conditions suivantes : consentement explicite, exécution d’un contrat, conclusion ou exécution d’un contrat dans l’intérêt de la personne concernée, motifs importants d’intérêt public, constatation/exercice/défense de droits en justice, sauvegarde des intérêts vitaux, transfert depuis un registre public – appuyée – RGPD art49‑1 énumère ces dérogations.",
+      "Les transferts pour des motifs importants d’intérêt public ou pour la sauvegarde des intérêts vitaux sont explicitement mentionnés comme dérogations possibles – appuyée – RGPD cons112.",
+      "Si aucune des conditions ci‑dessus n’est remplie, le transfert peut avoir lieu sous conditions strictes (non répétitif, limité en nombre, intérêts légitimes impérieux, évaluation des risques, garanties appropriées, information de l’autorité de contrôle et de la personne concernée) – appuyée – suite du RGPD art49‑1.",
+      "Les transferts doivent toujours respecter le niveau de protection garanti par le RGPD, même après un transfert initial vers un pays tiers – appuyée – RGPD cons101."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Il existe, en principe, deux principaux moyens de transférer des données personnelles vers un pays non membre de l’EEE ou une organisation internationale. – présente; Les transferts peuvent avoir lieu sur la base d’une décision d’adéquation. – présente; En l’absence d’une telle décision, sur la base de garanties appropriées, y compris des droits et des voies de recours pour les personnes physiques. – présente;",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-44",
+    "faithfulness": {
+     "justification": "Oui, les sous-traitants doivent également respecter le RGPD – appuyée (extraits : EDPB-07-2020-93, EDPB-07-2020-74); le RGPD impose directement des obligations aux sous-traitants – appuyée (EDPB-07-2020-93, EDPB-07-2020-74); Confidentialité des données (article 28, paragraphe 3) – appuyée (EDPB-07-2020-93); Tenue d’un registre des activités de traitement (article 30, paragraphe 2) – appuyée (EDPB-07-2020-93); Mise en œuvre de mesures techniques et organisationnelles appropriées (article 32) – appuyée (EDPB-07-2020-93, EDPB-07-2020-125); Désignation d’un DPO dans certains cas (article 37) – appuyée (EDPB-07-2020-93); Notification des violations de données (article 33, paragraphe 2) – appuyée (EDPB-07-2020-93); Respect des règles sur les transferts de données vers des pays tiers (chapitre V) – appuyée (EDPB-07-2020-93); Un sous-traitant peut être tenu responsable ou sanctionné en cas de non‑respect de ces obligations – appuyée (EDPB-07-2020-74)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Sous‑traitants ont des obligations en vertu du RGPD – présente; Il existe des différences entre les responsabilités du responsable et du sous‑traitant – absente; Les sous‑traitants doivent respecter les responsabilités définies dans un contrat avec le responsable – absente; Le sous‑traitant doit réaliser le traitement avec les mesures techniques et organisationnelles appropriées, conformément aux instructions du responsable – absente; Le sous‑traitant aide le responsable à se conformer au RGPD – absente;",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-47",
+    "faithfulness": {
+     "justification": "Amendes administratives jusqu’à 10 000 000 EUR (ou 2 % du CA) pour les violations des obligations du responsable ou du sous‑traitant (comme celles liées à l’article 28) – non appuyée : l’extrait RGPD‑art83‑4 ne mentionne pas l’article 28.\nAmendes administratives jusqu’à 20 000 000 EUR (ou 4 % du CA) pour les violations plus graves (principes de base, droits, transferts) – appuyée par RGPD‑art83‑5.\nRappel à l’ordre en cas de violation mineure ou d’amende disproportionnée – appuyée par RGPD‑cons148.\nMesures correctives (injonctions, limitations, suspensions) imposées par l’autorité de contrôle – appuyée par RGPD‑art83‑5.\nSanctions supplémentaires par un organisme de suivi d’un code de conduite (suspension/exclusion) avec information à l’autorité – appuyée par RGPD‑art41‑4.\nAbsence de contrat écrit conforme à l’article 28 constitue une violation sanctionnée – appuyée par EDPB‑07‑2020‑103.",
+     "affirmation_en_cause": "10 000 000 EUR (ou 2 % du chiffre d'affaires annuel mondial total de l'exercice précédent, le montant le plus élevé étant retenu) pour les violations des obligations incombant au responsable du traitement ou au sous-traitant (comme celles liées à l’article 28 sur les contrats avec les sous-traitants)",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Le respect du RGPD est contrôlé par les autorités nationales de protection des données. – présente\nLes autorités de protection des données peuvent mener des enquêtes. – absente\nLes autorités peuvent imposer des amendes jusqu’à 20 millions d’euros ou 4 % du chiffre d’affaires annuel mondial (le montant le plus élevé retenu). – présente\nLes autorités peuvent émettre des rappels à l’ordre. – présente\nLes autorités peuvent imposer des interdictions de traitement temporaires ou permanentes. – absente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-48",
+    "faithfulness": {
+     "justification": [
+      "Un cookie est un identifiant en ligne – appuyée par RGPD-cons30 qui définit les cookies comme des identifiants en ligne.",
+      "Il peut être associé à une personne physique – appuyée par RGPD-cons30 qui indique que les personnes physiques peuvent se voir associer des cookies.",
+      "Il est souvent utilisé par les appareils, applications ou outils – appuyée par RGPD-cons30 qui mentionne les appareils, applications, outils et protocoles.",
+      "Il laisse des traces – appuyée par RGPD-cons30 qui dit que ces identifiants peuvent laisser des traces.",
+      "Ces traces, combinées à d’autres identifiants et informations, peuvent servir à créer des profils et à identifier la personne – appuyée par RGPD-cons30 qui décrit cette combinaison permettant de créer des profils et d’identifier les personnes."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    }
+   },
+   {
+    "id": "FAQ-49",
+    "faithfulness": {
+     "justification": "L'existence du traitement et ses finalités – appuyée – RGPD-cons60; Les modalités du traitement (par exemple, la durée de conservation, les catégories de données concernées) – non appuyée – les extraits ne précisent pas ces modalités; Si les données sont collectées directement auprès de la personne concernée, elle doit être informée de l'obligation ou non de fournir ces données et des conséquences en cas de refus – appuyée – RGPD-cons60; Si les données sont obtenues d'une autre source, les informations doivent être fournies dans un délai raisonnable – appuyée – RGPD-cons61; Si les données sont destinées à être communiquées à un tiers, la personne concernée doit en être informée au moment de la première communication – appuyée – RGPD-cons61; Si les données sont utilisées pour un traitement ultérieur différent de la finalité initiale, la personne concernée doit en être informée avant ce traitement – appuyée – RGPD-cons61; En cas de profilage, la personne concernée doit être informée de son existence et de ses conséquences – appuyée – RGPD-cons60; Les informations doivent être concises, transparentes, compréhensibles, aisément accessibles, claires et simples – appuyée – RGPD-art12-1; Elles doivent être fournies par écrit ou par d'autres moyens (y compris électroniques), et oralement sur demande (sous réserve de vérification de l'identité) – appuyée – RGPD-art12-1; En cas de violation de données susceptible d'engendrer un risque élevé, la personne concernée doit être informée rapidement (nature de la violation + recommandations pour atténuer les risques) – appuyée – RGPD-cons86; Les informations sur la répartition des responsabilités (accord entre responsables conjoints) doivent être mises à disposition des personnes concernées, mais sans obligation légale de modalités spécifiques – appuyée – EDPB-07-2020-181; Identité et coordonnées du responsable de traitement – non appuyée – aucun extrait fourni ne mentionne cet élément; Base légale du traitement – non appuyée – aucun extrait fourni ne mentionne cet élément; Durée de conservation des données – non appuyée – aucun extrait fourni ne mentionne cet élément; Droits de la personne concernée (accès, rectification, opposition, etc.) – non appuyée – aucun extrait fourni ne mentionne cet élément; Existence d'un délégué à la protection des données (DPO) si applicable – non appuyée – aucun extrait fourni ne mentionne cet élément",
+     "affirmation_en_cause": "Identité et coordonnées du responsable de traitement",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "identité et coordonnées du responsable du traitement – présente\nfinalités du traitement – présente\nbase légale du traitement – présente\ncoordonnées du DPD (si existant) – présente\ndestinataires ou catégories de destinataires – absente\ninformations sur les transferts de données hors EEE – absente\ncatégories de données personnelles traitées lorsque les données ne sont pas obtenues de la personne concernée – absente\ndurée de conservation ou critères de détermination – présente\ndroits d’accès, d’effacement, de rectification, de restriction, d’opposition et de portabilité – présente\ndroit de déposer une plainte auprès de l’autorité de contrôle – présente\ndroit de retirer le consentement à tout moment (lorsque le consentement est la base légale) – absente\ninformations relatives à une prise de décision automatisée (logique sous‑jacente et conséquences) – absente\nsource des données personnelles lorsqu’elles ne proviennent pas directement de la personne – présente\nobligation de fournir les données et conséquences du refus – présente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-03",
+    "faithfulness": {
+     "justification": [
+      "Conformité aux exigences légales : appuyée – extrait CCT-cons10 indique que les CCT satisfont aux exigences de l’article 46, paragraphe 1, et de l’article 28, paragraphes 3‑4 du RGPD.",
+      "Flexibilité d’intégration : appuyée – extraits CCT-cons6 et EDPB-07-2020-107 précisent que les CCT peuvent être intégrées dans un contrat plus large tant que les ajouts ne contredisent pas les CCT ni les droits fondamentaux.",
+      "Simplification de la rédaction : non appuyée – extrait EDPB-07-2020-107 mentionne des champs à compléter ou des options, mais ne dit pas que cela réduit la charge administrative des parties.",
+      "Cadre structuré pour les obligations : appuyée – extrait CCT-cons7 décrit les exigences de définition de l’objet, durée, nature, finalité, type de données, catégories de personnes concernées et obligations/droits du responsable du traitement.",
+      "Validité juridique renforcée : non appuyée – extrait CCT-cons10 indique l’adoption par la Commission européenne, mais ne mentionne pas explicitement une reconnaissance officielle ni la limitation des risques de non‑conformité en cas de contrôle."
+     ],
+     "affirmation_en_cause": "Validité juridique renforcée : Leur adoption par la Commission européenne leur confère une reconnaissance officielle, limitant les risques de non-conformité en cas de contrôle",
+     "verdict": "affirmation_non_appuyee"
+    }
+   },
+   {
+    "id": "COM-05",
+    "faithfulness": {
+     "justification": "appuyée - les extraits CCT-cons12 et CCT-art3 indiquent que la Commission évaluera le fonctionnement pratique des clauses contractuelles types dans le cadre de l’évaluation périodique prévue à l’article 97 du RGPD.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Article 97 du RGPD impose à la Commission de réaliser une évaluation tous les quatre ans – absente; Le rapport d'évaluation de 2020 est disponible sur le site de la Commission – absente; La prochaine évaluation est attendue pour 2024 – absente; L'évaluation comprendra une évaluation de l'application pratique des CCT – présente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-07",
+    "faithfulness": {
+     "justification": "Le texte des clauses contractuelles types ne peut pas être modifié dans son contenu essentiel, sauf pour ajouter des informations aux annexes ou les mettre à jour : appuyée (extrait CCT-clause2-a). L’ajout de clauses complémentaires est autorisé, à condition qu’elles ne contredisent pas les clauses types et ne portent pas atteinte aux droits fondamentaux : appuyée (extraits CCT-clause2-b et CCT-cons6).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "- Le texte des CCT ne peut pas être modifié, sauf pour sélectionner des modules ou options spécifiques proposés dans le texte. → absente\n- Le texte des CCT ne peut pas être modifié, sauf pour compléter le texte aux endroits indiqués entre crochets (juridictions, autorité, délais). → absente\n- Le texte des CCT ne peut pas être modifié, sauf pour remplir les annexes. → présente\n- Le texte des CCT ne peut pas être modifié, sauf pour ajouter des garanties supplémentaires qui augmentent le niveau de protection des données. → présente\n- Si les parties modifient le texte au‑delà des adaptations mentionnées, elles ne peuvent pas se prévaloir de la sécurité juridique de l’acte de l’Union. → absente\n- Les parties doivent procéder aux adaptations nécessaires en choisissant l’une des deux options prévues concernant conformité et autorisation préalable. → absente\n- Pour les transferts, les clauses modifiées au‑delà des adaptations ne peuvent plus servir de base aux transferts, sauf approbation comme clauses ad hoc par autorité nationale. → absente\n- Contradiction détectée : la réponse indique que les seules modifications permises sont l’ajout ou la mise à jour d’informations aux annexes, excluant la sélection de modules/options et la complétion des champs entre crochets, ce qui contredit la référence qui autorise ces adaptations.",
+     "contradiction": "presente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "COM-09",
+    "faithfulness": {
+     "justification": [
+      "affirmation 1: Il est possible d'ajouter des clauses supplémentaires aux CCT ou de les intégrer dans un contrat plus large – appuyée (extraits CCT-cons6, RGPD-cons109, EDPB-07/2020-107, CCT-clause2).",
+      "affirmation 2: Les clauses supplémentaires ne doivent pas contredire les CCT ni porter atteinte aux libertés et droits fondamentaux – appuyée (extraits CCT-cons6, RGPD-cons109, EDPB-07/2020-107, CCT-clause2).",
+      "affirmation 3: Les CCT restent inchangées dans leur substance, sauf pour l’ajout d’informations aux annexes ou la mise à jour des données – appuyée (extrait CCT-clause2).",
+      "affirmation 4: Cette possibilité s’applique aux contrats entre responsables de traitement et sous-traitants ainsi qu’aux accords entre sous-traitants – appuyée (extraits CCT-cons6, RGPD-cons109, EDPB-07/2020-107)."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Condition de pouvoir compléter les CCT à condition de ne pas contredire les CCT ni porter atteinte aux droits des personnes – présente; Interdiction d’inclure une exonération générale de responsabilité qui contredirait les CCT – absente; Interdiction d’inclure une clause autorisant le sous‑traitant à sous‑traiter sans autorisation, contredisant la clause 7.7 – absente",
+     "contradiction": "absente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "COM-11",
+    "faithfulness": {
+     "justification": "Affirmation 1 – Les clauses relatives à la protection des données doivent être identiques à celles des CCT, y compris les champs à compléter ou les options choisies : appuyée – EDPB‑07‑2020‑107 indique que les clauses de l’accord concernant la protection des données doivent être identiques aux CCT et que les CCT laissent souvent des champs vides ou des options à choisir.\nAffirmation 2 – Les CCT peuvent être intégrées dans un accord plus large à condition que les clauses supplémentaires ne contredisent pas les CCT, ni directement ni indirectement : appuyée – CCT‑cons6 et EDPB‑07‑2020‑107 précisent que les parties peuvent inclure les CCT dans un contrat plus large tant que les clauses additionnelles ne contredisent pas les CCT.\nAffirmation 3 – Les clauses supplémentaires ne doivent pas porter atteinte aux droits des personnes concernées ni à la protection RGPD : appuyée – CCT‑cons6 et EDPB‑07‑2020‑107 stipulent que les clauses additionnelles ne doivent pas porter atteinte aux libertés, droits fondamentaux ou à la protection assurée par le RGPD.\nAffirmation 4 – Les CCT doivent satisfaire aux exigences des articles 28 du RGPD et 29 du règlement UE 2018/1725, notamment en définissant finalité, durée, type de données, etc. : appuyée – CCT‑cons7 décrit les éléments que les CCT doivent exiger (objet, durée, nature, finalité, type de données, catégories, obligations et droits) et CCT‑art1 indique que les CCT répondent aux exigences des articles 28 ¶3‑4 et 29 ¶3‑4.\nAffirmation 5 – Les CCT sont destinées aux contrats entre un responsable du traitement et un sous‑traitant : appuyée – CCT‑art2 précise que les CCT peuvent être utilisées dans les contrats conclus entre un responsable du traitement et un sous‑traitant.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. CCT must be signed by all parties and integrated into the contract according to the civil law of the chosen jurisdiction – absente; 2. CCT should be applied to the parties' situation, with annexes completed and clear indication (to parties, data subjects, data protection authorities and competent jurisdictions) of the selected modules, options and specifications – absente;",
+     "contradiction": "absente",
+     "limite": "non_signalee"
+    }
+   },
+   {
+    "id": "COM-16",
+    "faithfulness": {
+     "justification": [
+      "appuyée – le responsable doit donner ses instructions de manière documentée (EDPB-07-2020-116)",
+      "appuyée – les instructions peuvent figurer dans le contrat ou un autre acte juridique (EDPB-07-2020-118)",
+      "appuyée – les instructions peuvent figurer dans une annexe au contrat (EDPB-07-2020-127, EDPB-07-2020-118)",
+      "appuyée – les instructions peuvent être sous forme écrite (ex. courrier électronique) ou toute forme documentée permettant d’en conserver la trace (EDPB-07-2020-118)",
+      "appuyée – il est recommandé de conserver les instructions avec le contrat ou l’acte juridique pour éviter toute difficulté de preuve (EDPB-07-2020-118)"
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation 1 (instruction documentée) : présente\nAffirmation 2 (forme non précisée, toute forme documentée acceptable) : présente",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "COM-17",
+    "faithfulness": {
+     "justification": "Le sous-traitant est tenu de communiquer au responsable du traitement les noms et autres détails pertinents (localisation, activités, garanties) – appuyée (EDPB‑07‑2020‑152). Le sous‑traitant doit informer le responsable du traitement en temps utile de tout ajout ou remplacement envisagé de sous‑traitants ultérieurs – appuyée (EDPB‑07‑2020‑156). Le responsable du traitement doit être informé des sous‑traitants ultérieurs envisagés pour évaluer et autoriser leur recours – appuyée (EDPB‑07‑2020‑152). Une liste des sous‑traitants ultérieurs agréés doit figurer dans le contrat ou une annexe et être tenue à jour – appuyée (EDPB‑07‑2020‑154).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Obligation du sous‑traitant de communiquer le nom de chaque sous‑traitant ultérieur au responsable – présente.\n2. Clause 7.7 prévoit deux options (autorisation spécifique préalable ou autorisation écrite générale) – présente.\n3. Dans les deux cas, le nom doit être communiqué pour que le responsable puisse se prononcer – présente.\n4. Indiquer seulement les catégories n’est pas suffisant – absente.\n5. Les parties doivent convenir d’un délai pour la demande d’autorisation spécifique préalable (option 1) – absente.\n6. Le sous‑traitant doit informer par écrit le responsable de tout changement envisagé de la liste convenue (option 2) – absente.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-18",
+    "faithfulness": {
+     "justification": "Si le responsable du traitement s'oppose à un changement de sous-traitants ultérieurs dans le cadre d'une autorisation générale, le sous-traitant ne peut pas procéder à ce changement – appuyée – extrait : [EDPB-07-2020-156] indique que le sous‑traitant doit informer le responsable afin de lui donner la possibilité de s’y opposer, ce qui implique que l’opposition empêche le changement. Le responsable du traitement conserve ainsi son droit de contrôle et d'opposition, conformément aux exigences de l'article 28 du RGPD et aux lignes directrices de l'EDPB – appuyée – extrait : [EDPB-07-2020-152] précise que le responsable conserve son rôle central et la possibilité de s’opposer aux changements de sous‑traitants ultérieurs, en conformité avec l’article 28 du RGPD.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Le sous‑traitant doit informer par écrit le responsable du traitement de tout changement envisagé, avec délai de préavis convenu – absente\n2. Si le responsable s’oppose, le sous‑traitant ne peut pas recruter les nouveaux sous‑traitants – présente",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-19",
+    "faithfulness": {
+     "justification": "Le sous-traitant doit notifier une violation de données à caractère personnel au responsable du traitement dans les meilleurs délais après en avoir pris connaissance – appuyée (RGPD-art33-2, CCT-clause9.2); L'EDPB précise que cette notification doit être faite sans délai inutile et suggère d’inclure dans le contrat un délai spécifique (ex. nombre d’heures) – appuyée (EDPB-07-2020-136)",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "CCT ne précisent pas de délai précis, seulement « dans les meilleurs délais » – présente; Les parties doivent fixer le délai en fonction des circonstances – présente; Aucun énoncé de la réponse ne contredit la référence",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "COM-24",
+    "faithfulness": {
+     "justification": "- Les clauses contractuelles types (CCT) de l'extrait ne peuvent être utilisées que pour les transferts suivants : non appuyée – aucun extrait n’affirme que l’usage des CCT est limité uniquement à ces transferts ; CCT-art2 indique qu’elles peuvent être utilisées dans tout contrat entre responsable et sous‑traitant, sans restriction territoriale. - Transferts de données entre un responsable du traitement (sous RGPD) et un sous‑traitant ne relevant pas du champ d’application territorial du RGPD : appuyée – CCT-cons10 précise que les clauses s’appliquent aux transferts du responsable vers des sous‑traitants hors champ d’application territorial. - Transferts de données entre un sous‑traitant (sous RGPD) et un sous‑traitant ultérieur ne relevant pas du champ d’application territorial du RGPD : appuyée – CCT-cons10 mentionne également les transferts du sous‑traitant vers un sous‑traitant ultérieur hors champ d’application territorial. - Transferts couverts par l’article 28, paragraphes 3 et 4, du RGPD (obligations contractuelles entre responsable et sous‑traitant) : appuyée – CCT-clause1-a et CCT-clause1-b indiquent que les clauses visent à garantir le respect de l’article 28, paragraphes 3 et 4. - Elles ne peuvent pas être utilisées pour les transferts internationaux couverts par le chapitre V du RGPD (ex. : transferts vers des pays tiers sans adéquation ou garanties appropriées) : appuyée – CCT-cons10 stipule que les clauses ne peuvent servir de clauses contractuelles types aux fins du chapitre V, et CCT-clause1-f indique qu’elles ne suffisent pas seules pour les obligations du chapitre V. - Les CCT visent spécifiquement les obligations contractuelles entre parties (responsable/sous‑traitant) et ne remplacent pas les mécanismes du chapitre V (comme les clauses types de l’article 46, paragraphe 2, du RGPD) : appuyée – CCT-cons10 et CCT-clause1-f précisent que les CCT ne remplacent pas les garanties du chapitre V.",
+     "affirmation_en_cause": "Les clauses contractuelles types (CCT) de l'extrait ne peuvent être utilisées que pour les transferts suivants :",
+     "verdict": "affirmation_non_appuyee"
+    }
+   },
+   {
+    "id": "COM-30",
+    "faithfulness": {
+     "justification": "Affirmation 1: appuyée – RGPD-art46-2 §2 point c) indique que les clauses types de protection des données adoptées par la Commission sont des garanties appropriées pour les transferts, y compris vers des organisations internationales. Affimation 2: appuyée – même extrait RGPD-art46-2 cite explicitement les « clauses types de protection des données adoptées par la Commission ». Affimation 3: non appuyée – aucun extrait ne confirme que les clauses contractuelles types garantissent la conformité dans le cadre des transferts internationaux ; au contraire, CCT-clause1 f) indique qu’elles ne suffisent pas seules pour assurer le respect des obligations relatives aux transferts internationaux.",
+     "affirmation_en_cause": "les clauses contractuelles types visées dans les extraits sont conçues pour garantir la conformité avec les règles de protection des données, y compris dans le cadre de transferts internationaux",
+     "verdict": "affirmation_non_appuyee"
+    }
+   }
+  ]
+ ]
+}
