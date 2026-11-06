@@ -1,80 +1,77 @@
-# Vision du projet
+# Project vision
 
-> Document de cadrage. Il décrit ce que le projet cherche à construire et pourquoi. Les choix techniques détaillés seront documentés au fil de l'avancement.
+> This document describes what the project aims to build and why. What is built so far, and how it performs, is in the [README](README.md).
 
-## Le problème
+## The problem
 
-Un consultant ou un DPO doit régulièrement vérifier que les contrats de sous-traitance de ses clients respectent l'article 28 du RGPD. Ce travail pose trois difficultés :
+A consultant or a DPO regularly has to check that their clients' data processing agreements comply with Article 28 of the GDPR. This work raises three difficulties:
 
-- **Il demande de croiser plusieurs sources.** Le texte du RGPD ne suffit pas : savoir si une clause est suffisante suppose de connaître les lignes directrices de l'EDPB et les recommandations de la CNIL.
-- **Les documents analysés ne sont pas fiables.** Le contrat est souvent rédigé par le sous-traitant lui-même, c'est-à-dire par la partie qui a intérêt à ce qu'il soit jugé conforme.
-- **Les documents contiennent des données personnelles.** Les envoyer tels quels à un fournisseur de modèle de langage va à l'encontre du principe de minimisation que le consultant est justement chargé de faire respecter.
+- **It requires cross-checking several sources.** The text of the GDPR is not enough: knowing whether a clause is sufficient requires knowing the EDPB guidelines and the recommendations of the CNIL.
+- **The documents under review cannot be trusted.** The agreement is often drafted by the processor itself, the party that has an interest in it being found compliant.
+- **The documents contain personal data.** Sending them as they are to a language model provider goes against the data minimisation principle the consultant is there to enforce.
 
-## Ce que le projet construit
+## What the project builds
 
-Un assistant qui aide à analyser des documents RGPD, et qui en particulier :
+An assistant that helps analyse GDPR documents, and that:
 
-1. **Répond aux questions sur la réglementation** (RGPD, CNIL, EDPB) en citant précisément ses sources, au niveau de l'article ou du paragraphe.
-2. **Analyse un contrat de sous-traitance clause par clause** au regard de l'article 28. Chaque conclusion s'appuie sur un extrait du contrat cité mot pour mot et vérifié.
-3. **Sépare les documents de chaque client** dans des espaces de travail isolés.
-4. **Sait dire qu'il ne sait pas** quand la réponse n'est pas dans ses sources.
+1. **Answers questions on the regulation** (GDPR, CNIL, EDPB) from its sources only, citing them precisely, at the level of the article or paragraph.
+2. **Will analyse a data processing agreement clause by clause** against Article 28. Each finding will rest on an excerpt of the agreement, quoted word for word and checked.
+3. **Will mask the personal data in client documents** before they are sent to a language model provider. The originals stay on the server, so that quotes can still be checked.
+4. **Will keep each client's documents apart** in isolated workspaces.
+5. **Says when its sources do not answer**, in whole or in part.
 
-## Ce qui distingue le projet
+## What sets the project apart
 
-### Chaque choix est mesuré
-Le projet ne se contente pas de fonctionner : il mesure à quel point il fonctionne. La qualité de la recherche, l'exactitude des citations, la capacité à refuser de répondre et la fiabilité de l'analyse des contrats sont évaluées sur des jeux de données construits pour l'occasion. Une technique n'est ajoutée que si elle améliore une mesure.
+### Every choice is measured
+The project does not stop at working: it measures how well it works. Retrieval quality, citation accuracy, the ability to decline to answer and, later, the reliability of the agreement analysis are evaluated on dedicated datasets. A technique is added only if it improves a measure.
 
-### Le RAG n'est utilisé que là où il se justifie
-Les modèles actuels acceptent des contextes très longs. Le projet compare donc systématiquement la recherche documentaire (RAG) à l'approche qui consiste à tout placer dans le contexte, en qualité, en coût et en latence. La comparaison est faite à plusieurs tailles de corpus pour déterminer à partir de quand le RAG devient nécessaire.
+### Retrieval will be compared with long context
+Current models accept very long contexts. The project will therefore compare retrieval-augmented generation with placing the whole corpus in the context, in quality, cost and latency. The comparison will be made at several corpus sizes, to find the point from which retrieval becomes necessary.
 
-### La sécurité est attaquée, défendue et mesurée
-Le projet part d'un modèle de menace explicite, détaillé plus bas. Les défenses sont évaluées avant et après leur mise en place à l'aide d'un outil de red teaming. Leur coût est aussi mesuré, car une défense qui dégrade trop la qualité des réponses n'est pas une bonne défense.
+### Security will be attacked, defended and measured
+The project starts from an explicit threat model, summarised below. Defences will be evaluated before and after they are put in place, and so will their cost, since a defence that degrades answer quality too much is not a good defence.
 
-### Le projet est déployé
-Une API conteneurisée est déployée sur Azure. L'intégration continue fait tourner une partie de l'évaluation à chaque modification, et une baisse de qualité bloque la fusion.
+### The project will be deployed
+A containerised API will be deployed on Azure. Continuous integration will run part of the evaluation on each change, and a drop in quality will block the merge.
 
-## Modèle de menace, en résumé
+## Threat model, in brief
 
-| Ce qu'on protège | Contre quoi |
+| What is protected | Against what |
 |---|---|
-| L'intégrité de l'analyse d'un contrat | Des instructions cachées dans le document par son rédacteur |
-| La confidentialité entre clients | Une réponse qui exploiterait les documents d'un autre client |
-| La confidentialité de la conversation | Une exfiltration de données provoquée par le contenu d'un document |
-| Les données personnelles des documents | Leur envoi non nécessaire à des fournisseurs externes |
+| The integrity of an agreement analysis | Instructions hidden in the document by its author |
+| Confidentiality between clients | An answer drawing on another client's documents |
+| Confidentiality of the conversation | Data exfiltration triggered by the content of a document |
+| The personal data in the documents | Sending it to external providers when not needed |
 
-Le principe retenu est de **privilégier les défenses d'architecture**, qui ne se contournent pas par une simple reformulation : vérification des citations, isolation des clients au niveau de la base de données, nettoyage des sorties. Les détecteurs probabilistes viennent en complément.
+The chosen principle is to **favour architectural defences**, which a simple rephrasing cannot get around: citation checks, client isolation at the database level, output sanitisation. Probabilistic detectors come as a complement.
 
-## Les sources
+## Sources
 
-Le corpus est constitué de textes publics, ajoutés par étapes :
+The corpus is made of public texts, added in stages:
 
-1. Le RGPD, les clauses contractuelles types de la Commission européenne pour l'article 28, et les lignes directrices de l'EDPB sur les notions de responsable de traitement et de sous-traitant.
-2. Les principales lignes directrices de l'EDPB, la loi Informatique et Libertés et les guides de la CNIL.
-3. Éventuellement, les décisions de sanction de la CNIL.
+1. The GDPR, the European Commission's standard contractual clauses for Article 28, and the EDPB guidelines on the concepts of controller and processor.
+2. The main EDPB guidelines, the French Data Protection Act and the CNIL guides.
+3. Possibly, the CNIL's sanction decisions.
 
-Les contrats analysés pendant l'évaluation sont **fictifs** et construits pour l'occasion. Aucun document réel de client n'est utilisé.
+The evaluation questions come from published question-and-answer documents of the EDPB and the European Commission, whose answers, written by experts, serve as references. The agreements analysed during evaluation will be **fictitious** and built for the purpose. No real client document is used.
 
-## Principes d'ingénierie
+## Engineering principles
 
-- **La complexité doit se justifier.** Un composant n'entre dans le projet que s'il répond à un besoin identifié ou s'il améliore une mesure. Les solutions simples sont préférées tant qu'elles suffisent.
-- **Le déterministe d'abord.** Quand une vérification peut être faite par du code plutôt que par un modèle, elle est faite par du code.
-- **Les résultats sont reproductibles.** Chaque évaluation enregistre sa configuration, et les chiffres publiés sont générés à partir de ces enregistrements.
-- **Les limites sont dites.** Ce que le projet ne sait pas faire ou n'a pas testé est écrit explicitement.
+- **Complexity must be justified.** A component enters the project only if it meets an identified need or improves a measure. Simple solutions are preferred as long as they are enough.
+- **Deterministic first.** When a check can be done by code rather than by a model, it is done by code.
+- **Results can be checked.** Each evaluation records its configuration and its raw outputs, and published figures are generated from these records.
+- **Limits are stated.** What the project cannot do or has not tested is written down explicitly.
 
-## Hors périmètre
+## Out of scope
 
-- Rendre un avis global de conformité sur un document.
-- Fournir un conseil juridique. L'outil est une aide à l'analyse, pas un substitut à l'expertise d'un juriste.
-- Permettre à l'assistant d'agir (envoyer des messages, appeler des services externes).
-- Entraîner ou ajuster un modèle.
-- Traiter des documents scannés.
-- Proposer une interface élaborée : une interface simple de démonstration suffit.
+- Giving an overall compliance opinion on a document.
+- Providing legal advice. The tool supports analysis; it does not replace a lawyer's expertise.
+- Letting the assistant act (send messages, call external services).
+- Training or fine-tuning a model.
+- Processing scanned documents.
+- Offering an elaborate interface: a simple demonstration interface is enough.
 
-## Limites assumées
+## Accepted limits
 
-- Les jeux d'évaluation sont annotés par un ingénieur, pas par un juriste. Les questions privilégient donc les réponses vérifiables dans les textes.
-- Les défenses sont évaluées contre un ensemble d'attaques connu. Un attaquant qui connaîtrait les défenses pourrait obtenir de meilleurs résultats.
-
-## État d'avancement
-
-Le projet est en phase de cadrage. Les résultats seront publiés ici au fur et à mesure.
+- The evaluation data is annotated by a single person, an engineer, not a lawyer. The questions therefore favour answers that can be checked in the texts.
+- Defences will be evaluated against a known set of attacks. An attacker who knew the defences could do better.
