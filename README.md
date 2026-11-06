@@ -12,7 +12,7 @@ The first stage, answering questions on the regulation, is built and evaluated. 
 
 **Generation.** Ministral 14B answers from these passages only, citing a passage identifier after each claim, or says it does not know. Citations are checked by code against the passages provided.
 
-**Evaluation.** 79 questions in French, mostly from the EDPB guide for small businesses and from the Commission's questions and answers on the standard contractual clauses, each annotated with the passages that answer it. They are split into a development set, used to build the system, and a test set. Retrieval, citations and refusals are measured by code; faithfulness and accuracy by an LLM judge (Qwen 3.8 27B), whose verdicts were compared with human judgments before use.
+**Evaluation.** 79 questions in French, mostly from the EDPB guide for small businesses and from the Commission's questions and answers on the standard contractual clauses, each annotated with the passages that answer it. They are split into a development set, used to build the system, and a test set. Retrieval, citations and refusals are measured by code; faithfulness and accuracy by an LLM judge (Qwen 3.8 27B), whose verdicts were compared with human judgments before use. How the questions were annotated and split is described in [evaluation/README.md](evaluation/README.md).
 
 ## Results
 
