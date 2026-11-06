@@ -1,0 +1,270 @@
+{
+ "run": "dev-20261030-151711.json",
+ "judgments": [
+  {
+   "id": "FAQ-05",
+   "category": "complete",
+   "faithfulness": "douteux",
+   "contradiction": "douteux",
+   "coverage": "incomplete",
+   "notes": "Fidélité : Le délai d’un mois est appuyé si “répondre” inclut la notification de prolongation ; non appuyé si “répondre” signifie traiter la demande, ce délai pouvant être porté à trois mois.\nContradiction avec la référence : Même raisonnement"
+  },
+  {
+   "id": "FAQ-06",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Une justification légale (consentement, intérêt légitime, obligation légale, etc.) est nécessaire.",
+   "contradiction": "presente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-07",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Préciser les catégories de données collectées et leur nécessité (adéquation, pertinence et limitation) [RGPD-cons39]",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-09",
+   "category": "out_of_corpus",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Oui, vous avez généralement besoin d’un consentement pour utiliser des cookies (ou autres traceurs) sur le site web de votre organisme, sauf si leur utilisation relève d’une autre base légale (comme l’exécution d’un contrat ou une obligation légale).",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-10",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": " L'anonymisation est irréversible (ou du moins, techniquement impossible à inverser)",
+   "contradiction": "absente",
+   "coverage": "complete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-12",
+   "category": "complete",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-14",
+   "category": "complete",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "coverage": "complete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-15",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Pour être conforme au RGPD lorsque vous collectez des données personnelles auprès d’un tiers, vous devez fournir à la personne concernée les informations prévues à l’[RGPD-art13-3].",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-17",
+   "category": "partial",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "limit": "non_signalee",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-18",
+   "category": "partial",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Vérifier la base légale du traitement (consentement, exécution d'un contrat, obligation légale, etc.) conformément à l’article 6 du RGPD (non cité ici, mais essentiel)",
+   "contradiction": "absente",
+   "limit": "signalee",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-21",
+   "category": "complete",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-26",
+   "category": "complete",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "coverage": "complete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-27",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Ces durées dépendent des réglementations sectorielles ou des bonnes pratiques du secteur.",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-29",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Appliquer les règles de manière cohérente pour garantir un niveau élevé de protection des données, en particulier en ce qui concerne les catégories particulières de données (données sensibles) [RGPD-cons10]",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-33",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Exige un contrat écrit entre responsable et sous-traitant pour garantir la conformité [EDPB-07-2020-103]",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-37",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "ce qui les rend solidairement responsables du respect des obligations du RGPD pour ce traitement spécifique",
+   "contradiction": "douteux",
+   "coverage": "incomplete",
+   "notes": "La réponse dit que les responsables conjoints sont “solidairement responsables” du respect des obligations. La référence parle de “responsabilité partagée”, de participation “inégale” et de “responsabilités respectives” à déterminer. Contradiction si l’on comprend que la référence répartit les obligations entre les responsables, chacun pour sa part ; pas de contradiction si l’on comprend que la répartition se fait entre eux, chacun restant responsable de l’ensemble."
+  },
+  {
+   "id": "FAQ-43",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Sauvegarde des intérêts vitaux de la personne concernée ou d’autres personnes.",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": "Fidélité : \"Sauvegarde des intérêts vitaux de la personne concernée ou d’autres personnes.\" est cité sans la condition qui devrait aller avec \"lorsque la personne concernée se trouve dans l'incapacité physique ou juridique de donner son consentement\". Appuyé si la liste se lit comme des intitulés de dérogations, non appuyé si chaque élément est présenté comme une condition suffisante."
+  },
+  {
+   "id": "FAQ-44",
+   "category": "complete",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-47",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Un rappel à l'ordre peut être adressé en cas de violation mineure ou si l'amende serait disproportionnée, en tenant compte de la gravité, de l'intention, des mesures correctives prises, etc. [RGPD-cons148].",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-48",
+   "category": "out_of_corpus",
+   "faithfulness": "appuyee",
+   "notes": ""
+  },
+  {
+   "id": "FAQ-49",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Les modalités du traitement (par exemple, la durée de conservation, les catégories de données concernées) [RGPD-cons61].",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "COM-03",
+   "category": "out_of_corpus",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Les CCT permettent de satisfaire aux exigences de l’article 46, paragraphe 1, du RGPD (transfert de données hors UE)",
+   "notes": ""
+  },
+  {
+   "id": "COM-05",
+   "category": "complete",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "COM-07",
+   "category": "partial",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "limit": "non_signalee",
+   "notes": ""
+  },
+  {
+   "id": "COM-09",
+   "category": "partial",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Les CCT restent inchangées dans leur substance",
+   "contradiction": "absente",
+   "limit": "non_signalee",
+   "notes": "Fidélité : \"Les CCT restent inchangées dans leur substance\" laisse entendre que les idées clés ne doivent pas changer, mais la rédaction peut l’être. Or la clause 2 a interdit de modifier les clauses, sans distinguer le fond de la forme."
+  },
+  {
+   "id": "COM-11",
+   "category": "partial",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Utilisation exclusive pour les sous-traitants : Les CCT sont conçues pour les contrats entre un responsable du traitement et un sous-traitant",
+   "contradiction": "absente",
+   "limit": "non_signalee",
+   "notes": "Fidélité : parle d'une exclusivité qui n'existe pas dans la CCT-art2 qui dit \"Les clauses contractuelles types figurant en annexe peuvent être utilisée\" et qui exprime donc une possibilité"
+  },
+  {
+   "id": "COM-16",
+   "category": "complete",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "coverage": "complete",
+   "notes": ""
+  },
+  {
+   "id": "COM-17",
+   "category": "complete",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "De plus, une liste des sous-traitants ultérieurs agréés doit figurer dans le contrat ou une annexe et être tenue à jour [EDPB-07-2020-154].",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": "Fidélité  : La réponse supprime la condition donnée dans la citation et en fait une obligation générale."
+  },
+  {
+   "id": "COM-18",
+   "category": "complete",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "coverage": "incomplete",
+   "notes": ""
+  },
+  {
+   "id": "COM-19",
+   "category": "complete",
+   "faithfulness": "appuyee",
+   "contradiction": "absente",
+   "coverage": "complete",
+   "notes": ""
+  },
+  {
+   "id": "COM-24",
+   "category": "out_of_corpus",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "Les clauses contractuelles types (CCT) de l'extrait ne peuvent être utilisées que pour les transferts suivants :\n\n1. Transferts de données entre un responsable du traitement (sous RGPD) et un sous-traitant ne relevant pas du champ d’application territorial du RGPD [CCT-cons10].\n2. Transferts de données entre un sous-traitant (sous RGPD) et un sous-traitant ultérieur ne relevant pas du champ d’application territorial du RGPD [CCT-cons10].",
+   "notes": ""
+  },
+  {
+   "id": "COM-30",
+   "category": "out_of_corpus",
+   "faithfulness": "affirmation_non_appuyee",
+   "unsupported": "De plus, les clauses contractuelles types visées dans les extraits sont conçues pour garantir la conformité avec les règles de protection des données, y compris dans le cadre de transferts internationaux [CCT-cons7].",
+   "notes": ""
+  }
+ ]
+}
