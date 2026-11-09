@@ -11,7 +11,7 @@ from mistralai.client import Mistral
 from pgvector.psycopg import register_vector
 from sentence_transformers import SentenceTransformer
 
-from gdpr_rag_audit.ask import LLM, RETRIES, UNKNOWN, answer, citations
+from gdpr_rag_audit.ask import LLM, RETRIES, UNKNOWN, answer, citations, hypothetical_answer, normalize_citations, search_text
 from gdpr_rag_audit.index import DATABASE_URL, EMBEDDING_MODEL
 from gdpr_rag_audit.questions import EVALUATION_DIR, load_subset
 from gdpr_rag_audit.search import K, search
@@ -30,8 +30,8 @@ def check_ids(conn: psycopg.Connection, questions: list[dict]) -> int:
 
 
 # Rank of each annotated passage in the full ordering of the index, starting at 1.
-def ranks(conn: psycopg.Connection, model: SentenceTransformer, question: dict, size: int) -> list[int]:
-    position = {id_: rank for rank, (id_, *_) in enumerate(search(conn, model, question["question"], k=size), 1)}
+def ranks(ordering: list[tuple], question: dict) -> list[int]:
+    position = {id_: rank for rank, (id_, *_) in enumerate(ordering, 1)}
     return sorted(position[p] for p in question["passages"])
 
 
@@ -57,23 +57,34 @@ def report(results: dict[str, list[int]], k: int) -> None:
     print(f"No passage found: {', '.join(scores['no_passage_found']) or 'none'}")
 
 
-def generate(conn: psycopg.Connection, model: SentenceTransformer, client: Mistral, questions: list[dict]) -> list[dict]:
-    records = []
+# One hypothetical answer per question serves both the retrieval measure and the passages given to the generator.
+def run(conn: psycopg.Connection, model: SentenceTransformer, client: Mistral, questions: list[dict], size: int,
+        answers: bool) -> tuple[dict[str, list[int]], list[dict]]:
+    results, records = {}, []
     for q in questions:
-        passages = search(conn, model, q["question"])
-        records.append({
-            "id": q["id"],
-            "category": q["category"],
-            "provided": [id_ for id_, *_ in passages],
-            "answer": answer(client, q["question"], passages),
-        })
-    return records
+        hypothetical = hypothetical_answer(client, q["question"])
+        ordering = search(conn, model, search_text(q["question"], hypothetical), k=size)
+        if q["category"] in RETRIEVAL_CATEGORIES:
+            results[q["id"]] = ranks(ordering, q)
+        if answers:
+            provided = [id_ for id_, *_ in ordering[:K]]
+            raw = answer(client, q["question"], ordering[:K])
+            records.append({
+                "id": q["id"],
+                "category": q["category"],
+                "hypothetical_answer": hypothetical,
+                "provided": provided,
+                "raw_answer": raw,
+                "answer": normalize_citations(raw, set(provided)),
+            })
+    return results, records
 
 
 def write_results(name: str, records: list[dict]) -> Path:
     RESULTS_DIR.mkdir(exist_ok=True)
     now = datetime.now()
-    config = {"subset": name, "date": now.isoformat(timespec="seconds"), "llm": LLM, "embedding_model": EMBEDDING_MODEL, "k": K}
+    config = {"subset": name, "date": now.isoformat(timespec="seconds"), "llm": LLM, "embedding_model": EMBEDDING_MODEL,
+              "retrieval": "question and hypothetical answer", "k": K}
     path = RESULTS_DIR / f"{name}-{now:%Y%m%d-%H%M%S}.json"
     path.write_text(json.dumps({"config": config, "answers": records}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return path
@@ -123,14 +134,11 @@ def main() -> None:
     subset = load_subset(args.subset)
     questions = [q for q in subset if q["category"] in RETRIEVAL_CATEGORIES]
     model = SentenceTransformer(EMBEDDING_MODEL)
-    with psycopg.connect(DATABASE_URL) as conn:
+    with psycopg.connect(DATABASE_URL) as conn, Mistral(api_key=os.environ["MISTRAL_API_KEY"], retry_config=RETRIES) as client:
         register_vector(conn)
         size = check_ids(conn, questions)
         print(f"{args.subset}: {len(questions)} questions, {size} indexed passages\n")
-        results = {q["id"]: ranks(conn, model, q, size) for q in questions}
-        if args.answers:
-            with Mistral(api_key=os.environ["MISTRAL_API_KEY"], retry_config=RETRIES) as client:
-                records = generate(conn, model, client, subset)
+        results, records = run(conn, model, client, subset if args.answers else questions, size, args.answers)
     report(results, K)
     if args.answers:
         path = write_results(args.subset, records)

@@ -1,4 +1,4 @@
-from gdpr_rag_audit.ask import UNKNOWN, citations
+from gdpr_rag_audit.ask import UNKNOWN, citations, normalize_citations
 from gdpr_rag_audit.evaluate import answer_scores, retrieval_scores, state
 
 
@@ -19,6 +19,14 @@ def test_refusal_is_the_exact_sentence():
 def test_citations_keep_only_passage_ids():
     text = "Coupé [...] et à compléter [durée], [RGPD-cons42, RGPD-art7-2] puis [CCT-clause9.1][EDPB-07-2020-93]."
     assert citations(text) == {"RGPD-cons42", "RGPD-art7-2", "CCT-clause9.1", "EDPB-07-2020-93"}
+
+
+def test_points_of_provided_passages_are_brought_back_to_the_passage():
+    provided = {"RGPD-art5-1", "CCT-clause1", "RGPD-art28-1"}
+    assert normalize_citations("Licéité [RGPD-art5-1a] et [CCT-clause1-f].", provided) == "Licéité [RGPD-art5-1] et [CCT-clause1]."
+    assert normalize_citations("Points a et b [RGPD-art5-1a, RGPD-art5-1b].", provided) == "Points a et b [RGPD-art5-1]."
+    unchanged = "Coupé [...] [RGPD-art5-1] [RGPD-art6-1a] [RGPD-art28-10] [CCT-clause1,RGPD-art5-1]."
+    assert normalize_citations(unchanged, provided) == unchanged
 
 
 def test_answer_scores():

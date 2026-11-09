@@ -1,0 +1,618 @@
+{
+ "config": {
+  "answers": "dev-20261107-142120.json",
+  "date": "2026-11-07T14:32:04",
+  "judge": "qwen/qwen3.8-27b",
+  "runs": 1,
+  "resumed": [
+   "2026-11-07T15:11:38"
+  ]
+ },
+ "runs": [
+  [
+   {
+    "id": "FAQ-05",
+    "faithfulness": {
+     "justification": "L'affirmation selon laquelle les extraits ne couvrent pas directement le délai pour répondre à une demande d'accès (art. 15) est appuyée par l'absence de l'article 15 dans les extraits fournis, bien que l'article 12-3 mentionne les articles 15 à 22. L'affirmation d'un délai maximal d'un mois pour fournir les informations est appuyée par [RGPD-art12-3]. L'affirmation d'un délai maximal d'un mois pour informer en cas de non-suites est appuyée par [RGPD-art12-4]. L'affirmation qu'il n'y a pas de limite légale pour la personne concernée pour formuler une demande est appuyée par l'absence de toute mention de délai pour la formulation de la demande dans les extraits. L'affirmation finale résumant le délai d'un mois pour le responsable est appuyée par [RGPD-art12-3] et [RGPD-art12-4].",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 : Répondre dans les meilleurs délais et au plus tard dans un délai d'un mois. Présente (la réponse mentionne un délai maximal d'un mois). Affirmation de fond 2 : Possibilité de prolongation de deux mois supplémentaires si la demande est complexe, sous réserve d'information dans le mois. Absente (la réponse ne mentionne pas cette exception ni la condition d'information). Affirmation de fond 3 : La réponse doit être gratuite. Absente (la réponse ne mentionne pas le caractère gratuit). Aucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-06",
+    "faithfulness": {
+     "justification": "L'affirmation selon laquelle le traitement est interdit par défaut est appuyée par [RGPD-art9-1]. L'affirmation selon laquelle le traitement est possible pour des finalités liées à la santé (recherche, statistiques, etc.) est appuyée par [RGPD-cons53]. L'affirmation selon laquelle le traitement est possible pour des motifs d'intérêt public (santé publique) est appuyée par [RGPD-cons54]. L'affirmation selon laquelle le consentement explicite est une exception autorisée est non appuyée, car les extraits fournis ne mentionnent pas le consentement comme base légale (seuls les considérants 53 et 54 sont fournis, qui parlent de bases légales spécifiques sans citer le consentement de l'article 9§2a). L'affirmation selon laquelle l'obligation légale est une exception autorisée est non appuyée, car les extraits ne mentionnent pas cette base légale spécifique. L'affirmation selon laquelle le sous-traitant doit appliquer des mesures renforcées (limitation de finalité, restrictions d'accès, registre, sécurité) est appuyée par [CCT-clause7.5] et [CCT-annexeII]. L'affirmation selon laquelle le contrat doit détailler les catégories, finalités et durée est appuyée par [CCT-annexeII].",
+     "affirmation_en_cause": "Consentement explicite de la personne concernée (non mentionné dans les extraits, mais prévu par le RGPD).",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 : Le traitement est généralement interdit sauf exceptions (Présente). Affirmation de fond 2 : Exception du consentement explicite (Présente). Affirmation de fond 3 : Exception pour les obligations en matière d'emploi, sécurité sociale et protection sociale (Absente, la réponse mentionne l'intérêt public et la santé mais omet spécifiquement le contexte emploi/sécurité sociale). Affirmation de fond 4 : Exception pour protéger les intérêts vitaux (Absente). Affirmation de fond 5 : Exception pour les activités légitimes d'organisations à but non lucratif (Absente). Affirmation de fond 6 : Exception si les données ont été manifestement rendues publiques (Absente). Affirmation de fond 7 : Exception pour les procédures judiciaires (Absente). Affirmation de fond 8 : Exception pour l'intérêt public substantiel (Présente). Affirmation de fond 9 : Exception pour la médecine préventive ou du travail (Partiellement présente via 'gestion des soins', mais l'aspect 'médecine du travail' spécifique est manquant). Affirmation de fond 10 : Exception pour la santé publique (Présente). Affirmation de fond 11 : Exception pour l'archivage, la recherche scientifique ou les statistiques (Présente). Aucune contradiction de fond détectée, la réponse ajoute des détails contractuels (CCT) qui ne contredisent pas la référence.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-07",
+    "faithfulness": {
+     "justification": "L'affirmation selon laquelle il faut fournir les finalités, catégories, destinataires, durée, droits, consentement, réclamation, conséquences et profilage si les données sont collectées directement est appuyée par [RGPD-art13-2] et [RGPD-art15-1]. L'affirmation selon laquelle il faut fournir la source et les intérêts légitimes si les données ne sont pas collectées directement est appuyée par [RGPD-art14-2]. L'affirmation selon laquelle la demande doit être traitée sans frais et dans un délai d'un mois est appuyée par [RGPD-cons59]. L'affirmation selon laquelle on peut exiger une preuve d'identité pour confirmer la légitimité de la demande n'est pas appuyée par les extraits fournis, qui ne mentionnent pas cette obligation ou possibilité.",
+     "affirmation_en_cause": "Vous pouvez exiger une **preuve d’identité** pour confirmer la légitimité de la demande.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 : Droit d'accès aux données (prévu dans la réponse via 'droits (accès...)'). Affirmation de fond 2 : Obligation de fournir une copie des données personnelles (prévue dans la réponse via 'fournir les informations suivantes' incluant les catégories et l'accès, bien que le terme 'copie' soit implicite dans le droit d'accès). Affirmation de fond 3 : Gratuité de la fourniture (prévue dans la réponse : 'sans frais'). Affirmation de fond 4 : Fourniture dans un format électronique couramment utilisé si la demande est électronique (absente dans la réponse, qui mentionne seulement les 'moyens électroniques' dans la section 'non couvert' et ne formule pas l'obligation de format).",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-09",
+    "faithfulness": {
+     "justification": [
+      "Le consentement doit être donné par un acte positif clair, comme cocher une case, et le silence ou les cases par défaut ne suffisent pas : appuyée par [RGPD-cons32].",
+      "Le responsable du traitement doit pouvoir prouver le consentement : appuyée par [RGPD-cons42].",
+      "Le consentement doit être éclairé, la personne devant connaître l'identité du responsable et les finalités : appuyée par [RGPD-cons42].",
+      "Si l'organisme est une autorité publique ou s'il y a déséquilibre manifeste, le consentement peut ne pas être considéré comme libre : appuyée par [RGPD-cons43].",
+      "Le traitement peut reposer sur d'autres fondements juridiques que le consentement (contrat, obligation légale) : appuyée par [RGPD-cons40].",
+      "Si l'utilisation des cookies est nécessaire à l'exécution d'un service demandé par l'utilisateur, le consentement pourrait ne pas être obligatoire : non appuyée, car les extraits mentionnent l'existence d'autres fondements mais ne lient pas spécifiquement les cookies à l'exécution d'un contrat ni n'établissent cette exception pour les cookies.",
+      "En principe, vous avez besoin d'un consentement explicite pour utiliser des cookies : non appuyée, car les extraits définissent les conditions du consentement mais n'affirment pas que le consentement est le fondement requis pour les cookies (ils laissent ouverte la possibilité d'autres fondements sans préciser leur application aux cookies).",
+      "Sauf s'ils sont strictement nécessaires à la fourniture d'un service demandé par l'utilisateur, comme les cookies techniques : non appuyée, car la distinction entre cookies techniques et autres, ainsi que l'exception de stricte nécessité, ne figurent pas dans les extraits fournis."
+     ],
+     "affirmation_en_cause": "Oui, **en principe**, vous avez besoin d’un **consentement explicite** pour utiliser des cookies (sauf s’ils sont strictement nécessaires à la fourniture d’un service demandé par l’utilisateur, comme les cookies techniques).",
+     "verdict": "affirmation_non_appuyee"
+    }
+   },
+   {
+    "id": "FAQ-10",
+    "faithfulness": {
+     "justification": [
+      "Les données pseudonymisées sont traitées de manière à ne plus pouvoir être attribuées à une personne précise sans informations supplémentaires conservées séparément : appuyée par [RGPD-art4-5].",
+      "Ces informations supplémentaires doivent être protégées par des mesures techniques et organisationnelles : appuyée par [RGPD-art4-5].",
+      "Les données pseudonymisées restent soumises au RGPD car elles concernent une personne identifiable : appuyée par [RGPD-cons26] qui stipule qu'elles 'devraient être considérées comme des informations concernant une personne physique identifiable' et que les principes s'appliquent à toute information concernant une personne identifiable.",
+      "Exemple d'identifiant alphanumérique avec clé stockée séparément : non appuyée, car les extraits définissent le concept mais ne fournissent pas d'exemple concret d'identifiant alphanumérique.",
+      "Les données anonymisées ne concernent plus une personne physique identifiable : appuyée par [RGPD-cons26] ('informations ne concernant pas une personne physique identifiée ou identifiable').",
+      "Le RGPD ne s'applique pas aux données anonymisées : appuyée par [RGPD-cons26] ('Il n'y a dès lors pas lieu d'appliquer les principes... aux informations anonymes').",
+      "Exemple de statistiques agrégées sans possibilité de retracer un individu : non appuyée, car les extraits mentionnent les fins statistiques mais ne donnent pas cet exemple spécifique de statistiques agrégées comme illustration de l'anonymisation.",
+      "Les extraits ne couvrent pas les méthodes précises (cryptographie, k-anonymat) : appuyée, car ces termes ne figurent pas dans les extraits.",
+      "Les extraits ne couvrent pas les obligations pour garantir l'anonymisation irréversible : appuyée, car les extraits parlent de mesures pour la pseudonymisation mais ne détaillent pas d'obligations spécifiques pour l'anonymisation irréversible au-delà de la définition.",
+      "Les extraits ne couvrent pas les cas limites de basculement de statut : appuyée, car les extraits définissent les deux états mais ne traitent pas explicitement des scénarios de transition ou de réidentification accidentelle."
+     ],
+     "affirmation_en_cause": "Exemple : Un identifiant alphanumérique remplaçant un nom, avec une clé de correspondance stockée séparément.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation 1 : La pseudonymisation rend les données non attribuables sans informations supplémentaires conservées séparément avec des mesures de protection -> présente. Affirmation 2 : Les données pseudonymisées restent des données personnelles soumises au RGPD -> présente. Affirmation 3 : L'anonymisation rend l'individu non identifiable par tout moyen raisonnablement susceptible d'être utilisé -> présente. Affirmation 4 : Le RGPD ne s'applique plus aux données anonymisées -> présente. Aucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-12",
+    "faithfulness": {
+     "justification": [
+      "La liste des catégories de données sensibles (origine raciale, opinions politiques, convictions, appartenance syndicale, génétiques, biométriques, santé, vie sexuelle, condamnations pénales) est appuyée par [CCT-clause7.5] et [RGPD-cons51].",
+      "La précision que les données biométriques ne sont sensibles que si elles permettent une identification unique est appuyée par [CCT-clause7.5] et [RGPD-cons51].",
+      "L'exemple donné pour les données biométriques (« empreintes digitales traitées par reconnaissance faciale ») est non appuyé : les extraits mentionnent les « données biométriques » et la « reconnaissance faciale » (via les photographies) séparément, mais ne fournissent pas d'exemple concret liant les empreintes digitales à la reconnaissance faciale, ni ne définissent les empreintes digitales comme données biométriques dans ce contexte.",
+      "L'affirmation selon laquelle les photographies ne sont pas systématiquement des données sensibles sauf traitement technique spécifique est appuyée par [RGPD-cons51].",
+      "L'affirmation que ces données nécessitent des garanties supplémentaires et des limitations spécifiques, notamment par les sous-traitants, est appuyée par [CCT-clause7.5].",
+      "La mention que ces données sont associées à des risques pour les droits et libertés est appuyée par [RGPD-cons75]."
+     ],
+     "affirmation_en_cause": "Les données biométriques **uniquement si elles permettent d'identifier une personne de manière unique** (ex. : empreintes digitales traitées par reconnaissance faciale)",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "L'affirmation selon laquelle les données sensibles méritent une protection accrue est présente (mention de garanties supplémentaires et sensibilité accrue). L'inclusion de l'origine raciale ou ethnique est présente. L'inclusion des opinions politiques, croyances religieuses ou philosophiques est présente. L'inclusion de l'appartenance syndicale est présente. L'inclusion des données biométriques et génétiques est présente. L'inclusion des données de santé est présente. L'inclusion de l'orientation sexuelle est présente. L'affirmation selon laquelle le traitement est généralement interdit sauf circonstances spécifiques est présente (mention de limitations spécifiques et d'autorisation).",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-14",
+    "faithfulness": {
+     "justification": "L'affirmation selon laquelle une donnée à caractère personnel est toute information se rapportant à une personne physique identifiée ou identifiable est appuyée par [RGPD-art4-1]. L'énumération des exemples (nom, numéro d'identification, localisation, identifiant en ligne, éléments spécifiques) est appuyée par [RGPD-art4-1]. L'affirmation qu'une personne est identifiable si elle peut l'être directement ou indirectement est appuyée par [RGPD-art4-1]. L'exemple 'numéro de sécurité sociale' pour un numéro d'identification est une illustration factuelle courante, acceptable comme reformulation fidèle du concept d'identifiant. L'exemple 'adresse e-mail, pseudonyme' pour un identifiant en ligne est une illustration factuelle courante, acceptable. L'exemple 'nom + adresse' pour l'identification directe et 'combinaison de données' pour l'indirecte sont des illustrations factuelles cohérentes avec la définition. L'affirmation que les données de santé incluent l'état physique/mental passé/présent/futur, antécédents, traitements, handicaps est appuyée par [RGPD-cons35] et [RGPD-art4-15]. L'affirmation que les données génétiques incluent ADN, ARN, analyses chromosomiques est appuyée par [RGPD-cons34]. L'affirmation que les numéros ou symboles uniques attribués pour des fins de santé sont des données personnelles est appuyée par [RGPD-cons35]. La section 'Ce que les extraits ne couvrent pas' signale des limites des sources et n'est pas considérée comme une affirmation de droit à évaluer, sauf si elle contient une erreur factuelle sur le contenu des extraits. L'affirmation que la santé et les données génétiques sont des sous-catégories spécifiques de données personnelles sensibles est appuyée par [RGPD-art4-15] et [RGPD-cons34] qui les définissent comme des types de données à caractère personnel, et le terme 'sensibles' est une reformulation courante de 'données particulières' bien que le terme exact 'données sensibles' ne soit pas dans les extraits, le contexte RGPD-art4-15 et cons34 les traite comme des catégories spécifiques. Cependant, l'extraits ne mentionnent pas explicitement le terme 'données sensibles' mais définissent 'données concernant la santé' et 'données génétiques' comme des types de données à caractère personnel. L'affirmation est donc une déduction directe de leur statut de catégories spécifiques. L'affirmation que les données anonymes ne sont pas couvertes est appuyée par [RGPD-cons26].",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Définition de la donnée personnelle (information relative à une personne identifiée ou identifiable) : présente. Définition de la personne identifiable (identification directe ou indirecte) : présente. Principe selon lequel la combinaison d'éléments d'information peut conduire à l'identification (données personnelles) : présente. Exemples variés (nom, adresse, IP, etc.) : absents (la réponse se limite à des exemples de santé/génétique et omet les exemples standards de la référence comme l'adresse IP, les cookies, les données bancaires, etc.).",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-15",
+    "faithfulness": {
+     "justification": [
+      "L'obligation d'informer la personne concernée des informations listées (durée, intérêts légitimes, droits, source, etc.) est appuyée par [RGPD-art14-2] qui détaille les informations à fournir lorsque les données ne sont pas collectées auprès de la personne concernée.",
+      "L'obligation de respecter les principes de licéité, loyauté, transparence, minimisation, exactitude, limitation de la conservation et sécurité est appuyée par [RGPD-art5-1].",
+      "L'obligation de formuler les informations en termes clairs et simples est appuyée par [RGPD-cons39].",
+      "L'obligation de limiter les données à ce qui est nécessaire (minimisation) est appuyée par [RGPD-art25-2] et [RGPD-art5-1].",
+      "La mention que les extraits ne couvrent pas les modalités pratiques, les transferts vers pays tiers (hors art 13), les détails techniques de sécurité ou la documentation interne est une limite des sources, non une affirmation juridique à vérifier.",
+      "Le conseil de vérifier un contrat de sous-traitance, de documenter la source et de prévoir un mécanisme d'information est un conseil, non une affirmation.",
+      "La référence à l'article 28 du RGPD dans la section 'Ce que les extraits ne couvrent pas' est une référence factuelle à un article non cité, mais présentée comme une absence dans les sources, ce qui est fidèle aux extraits fournis (qui ne contiennent pas l'art 28)."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "1. Assurer que les données ont été collectées légitimement : présente (mentionnée dans la section 'À faire en complément' et implicite dans les principes de l'article 5). 2. Informer les personnes concernées du traitement : présente (détaillée dans la section 1 sur l'article 14). 3. Mettre en place un contrat avec le sous-traitant si un tiers traite en votre nom : présente (mentionnée dans la section 'À faire en complément' et dans les limites des extraits). 4. Respecter les obligations de responsable de traitement : présente (couvert par les sections 1, 2 et 3 détaillant les obligations légales).",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-17",
+    "faithfulness": {
+     "justification": [
+      "L'évaluation des risques inhérents au traitement est requise : appuyée par [RGPD-cons83] qui indique qu'il importe d'évaluer les risques inhérents au traitement.",
+      "La prise en compte de la nature, de la portée, du contexte, des finalités et des risques (probabilité/gravité) est requise : appuyée par [RGPD-art32-1] qui liste ces critères pour déterminer les mesures.",
+      "L'inclusion de risques spécifiques (destruction, perte, altération, divulgation, accès non autorisé) dans l'évaluation : appuyée par [RGPD-cons83] qui énumère ces risques.",
+      "La proportionnalité des mesures selon l'état des connaissances, les coûts et la nature des données : appuyée par [RGPD-art32-1] et [RGPD-cons83].",
+      "La pseudonymisation et le chiffrement comme mesures possibles : appuyée par [RGPD-art32-1] alinéa a).",
+      "La garantie de confidentialité, intégrité, disponibilité et résilience : appuyée par [RGPD-art32-1] alinéa b).",
+      "Les procédures de rétablissement en cas d'incident : appuyée par [RGPD-art32-1] alinéa c).",
+      "Les tests et évaluations réguliers de l'efficacité : appuyée par [RGPD-art32-1] alinéa d).",
+      "La réduction au minimum du traitement des données : appuyée par [RGPD-cons78] qui cite la réduction à un minimum comme exemple de mesure.",
+      "La pseudonymisation dès que possible : appuyée par [RGPD-cons78] qui mentionne la pseudonymisation dès que possible.",
+      "La transparence sur les fonctions et traitements : appuyée par [RGPD-cons78] qui mentionne la garantie de la transparence.",
+      "L'accès restreint au personnel strictement nécessaire : appuyée par [CCT-clause7.4] b) qui limite l'accès à la mesure strictement nécessaire.",
+      "L'obligation pour le sous-traitant de respecter les mesures contractuelles (annexe III) : appuyée par [CCT-clause7.4] a) qui impose au sous-traitant de mettre en œuvre les mesures de l'annexe III.",
+      "La protection contre les violations de sécurité : appuyée par [CCT-clause7.4] a) qui définit la protection contre la violation de données.",
+      "Le signalement des limites (liste exhaustive, normes sectorielles, etc.) et les conseils (consulter CNIL, standards) ne sont pas des affirmations juridiques à vérifier."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 (Les mesures varient selon la nature des données et les risques) : présente (section 1 et 2). Affirmation de fond 2 (Sécuriser l'accès aux locaux) : absente. Affirmation de fond 3 (Utiliser un logiciel antivirus régulièrement mis à jour) : absente. Affirmation de fond 4 (Choisir soigneusement ses mots de passe) : absente. Affirmation de fond 5 (Authentifier les utilisateurs avant utilisation) : absente (la réponse mentionne l'accès restreint mais pas l'authentification explicite comme mesure minimale). Affirmation de fond 6 (Politique de sauvegarde et récupération) : présente (section 2, procédures de rétablissement). Affirmation de fond 7 (Verrouiller écran et bureau) : absente. Aucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "limite": "signalee"
+    }
+   },
+   {
+    "id": "FAQ-18",
+    "faithfulness": {
+     "justification": [
+      "Affirmation : Le partage de données personnelles avec des tiers doit être licite, loyal et transparent envers les personnes concernées. Appuyée par [RGPD-cons39] qui stipule que tout traitement devrait être licite et loyal et que le principe de transparence s'applique aux informations communiquées sur le traitement.",
+      "Affirmation : Les finalités du traitement doivent être explicites, légitimes et déterminées dès la collecte. Appuyée par [RGPD-cons39] qui indique que les finalités spécifiques devraient être explicites et légitimes, et déterminées lors de la collecte.",
+      "Affirmation : Si les partenaires commerciaux ne sont pas autorisés à traiter ces données, ils pourraient être considérés comme des tiers et non comme des acteurs internes. Appuyée par [EDPB-07-2020-88] qui précise qu'un employé (ou personne placée sous autorité) qui obtient un accès non autorisé ou pour des finalités distinctes est considéré comme un tiers par rapport au traitement de l'employeur. L'analogie avec les partenaires commerciaux non autorisés est une déduction directe de la définition du tiers fournie.",
+      "Affirmation : Le partage doit respecter les règles du RGPD, notamment en matière de transfert de données vers des tiers (y compris des pays tiers). Appuyée par [RGPD-cons115] qui mentionne les conditions pour les transferts vers les pays tiers.",
+      "Affirmation : Si les partenaires sont situés hors de l’UE/EEE, des garanties supplémentaires (comme des clauses contractuelles types) peuvent être nécessaires. Non appuyée. L'extrait [RGPD-cons115] mentionne que les transferts ne devraient être autorisés que lorsque les conditions fixées par le règlement sont remplies, mais il ne mentionne pas spécifiquement les 'clauses contractuelles types' ni ne les identifie comme une garantie supplémentaire possible. Cette information est absente des extraits fournis."
+     ],
+     "affirmation_en_cause": "Si les partenaires sont situés hors de l’UE/EEE, des garanties supplémentaires (comme des clauses contractuelles types) peuvent être nécessaires",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 : Le partage est possible sous conditions (Oui, vous pouvez) -> présente (la réponse implique la possibilité en listant les obligations à respecter, bien qu'elle commence par 'Je ne sais pas').\nAffirmation de fond 2 : Obligation d'informer les personnes du partage avec un tiers -> présente (point 1 : transparence, licéité, loyauté).\nAffirmation de fond 3 : Obligation d'informer des finalités poursuivies -> présente (point 1 : finalités explicites, légitimes et déterminées).\nAffirmation de fond 4 : Obligation d'informer des mesures de sécurité, d'accès et de conservation -> absente (la réponse mentionne les garanties pour les transferts hors UE et les obligations contractuelles, mais ne cite pas explicitement l'information sur les mesures de sécurité, d'accès et de conservation comme exigence de transparence envers les personnes concernées dans le contexte général du partage, contrairement à la référence qui l'associe directement à l'information des personnes).",
+     "contradiction": "absente",
+     "limite": "signalee"
+    }
+   },
+   {
+    "id": "FAQ-21",
+    "faithfulness": {
+     "justification": [
+      "Affirmation : Le consentement doit être donné par une manifestation libre, spécifique, éclairée et univoque (ex. : cocher une case, déclaration écrite/orale, comportement clair). Appuyée par [RGPD-cons32] qui décrit l'acte positif clair et les exemples.",
+      "Affirmation : Le silence, les cases pré-cochées ou l'inactivité ne suffisent pas. Appuyée par [RGPD-cons32] qui stipule explicitement qu'il ne saurait y avoir de consentement dans ces cas.",
+      "Affirmation : Le responsable du traitement doit pouvoir prouver que la personne concernée a consenti. Appuyée par [RGPD-cons42] et [RGPD-art7-1].",
+      "Affirmation : La demande de consentement doit être en termes clairs et simples, sous une forme aisément accessible, et sans clauses abusives. Appuyée par [RGPD-cons42].",
+      "Affirmation : La demande doit être distincte pour chaque opération de traitement si approprié. Appuyée par [RGPD-cons43] qui mentionne la nécessité d'un consentement distinct si cela est approprié.",
+      "Affirmation : La personne doit connaître l'identité du responsable du traitement et les finalités du traitement. Appuyée par [RGPD-cons42].",
+      "Affirmation : La personne doit avoir une véritable liberté de choix et pouvoir refuser ou retirer son consentement sans préjudice. Appuyée par [RGPD-cons42].",
+      "Affirmation : Le consentement ne doit pas être subordonné à l'exécution d'un contrat si les données ne sont pas nécessaires à ce contrat. Appuyée par [RGPD-art7-4] et [RGPD-cons43].",
+      "Affirmation : Dans un déséquilibre manifeste (ex. : autorité publique), le consentement peut être invalide. Appuyée par [RGPD-cons43] qui indique que le consentement ne constitue pas un fondement valable dans ce cas.",
+      "Affirmation : Le consentement doit couvrir toutes les finalités du traitement. Appuyée par [RGPD-cons32] qui dit que le consentement doit être donné pour l'ensemble des finalités si le traitement en a plusieurs.",
+      "Affirmation : S'il y a plusieurs finalités, un consentement distinct doit être demandé pour chacune. Non appuyée. [RGPD-cons32] indique que le consentement doit être donné pour l'ensemble des finalités, mais ne mentionne pas l'obligation d'un consentement *distinct* pour *chacune* des finalités. [RGPD-cons43] mentionne le consentement distinct pour des *opérations* différentes, pas spécifiquement pour chaque finalité dans le même traitement. L'affirmation va plus loin que les extraits."
+     ],
+     "affirmation_en_cause": "S’il y a plusieurs finalités, un consentement distinct doit être demandé pour chacune",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation 'libre' : présente (point 4). Affirmation 'spécifique' : présente (points 1 et 5). Affirmation 'informé' : présente (point 3). Affirmation 'univoque' : présente (point 1). Affirmation 'choix véritablement libre' : présente (point 4). Affirmation 'informations suffisantes (données, fins, moyens)' : présente (point 3, bien que 'moyens' soit implicite dans la transparence). Affirmation 'action positive claire (cases non pré-cochées, séparées des CGU)' : présente (point 1 mentionne cases non pré-cochées, point 3 mentionne distincte). Affirmation 'retrait libre sans conséquences négatives' : présente (point 4). Aucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-26",
+    "faithfulness": {
+     "justification": [
+      "Licéité, loyauté et transparence : appuyée par [RGPD-art5-1(a)] et [RGPD-cons39] qui détaillent l'information claire et accessible.",
+      "Limitation des finalités : appuyée par [RGPD-art5-1(b)] et [RGPD-cons39] qui mentionnent les finalités déterminées, explicites, légitimes et les exceptions.",
+      "Minimisation des données : appuyée par [RGPD-art5-1(c)] et [RGPD-cons39] qui exigent que les données soient adéquates, pertinentes et limitées.",
+      "Exactitude : appuyée par [RGPD-art5-1(d)] et [RGPD-cons39] qui imposent l'exactitude et la rectification des données inexactes.",
+      "Limitation de la conservation : appuyée par [RGPD-art5-1(e)] et [RGPD-cons39] qui limitent la durée de conservation et précisent les exceptions.",
+      "Intégrité et confidentialité : appuyée par [RGPD-art5-1(f)] et [RGPD-cons39] qui exigent une sécurité appropriée contre les accès non autorisés et les pertes.",
+      "Note sur la Responsabilisation : non appuyée, car les extraits ne définissent pas ce principe comme tel, bien que [RGPD-cons78] mentionne la démonstration du respect du règlement.",
+      "Note sur la Protection dès la conception : non appuyée, car [RGPD-cons78] les présente comme des mesures à adopter pour démontrer le respect, et non comme des principes de base du traitement au même titre que l'article 5."
+     ],
+     "affirmation_en_cause": "Les extraits ne couvrent pas explicitement les principes suivants, bien qu'ils soient mentionnés dans le RGPD (mais non détaillés ici) : - Responsabilisation (accountability) : obligation pour le responsable de traitement de démontrer le respect du RGPD (mentionné indirectement dans [RGPD-cons78], mais pas comme principe autonome). - Protection dès la conception et par défaut (privacy by design/by default) : évoqué dans [RGPD-cons78], mais comme une mesure de mise en œuvre plutôt qu'un principe indépendant.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation 1 (Licite, équitable/loyale, transparent) : présente. Affirmation 2 (Fins spécifiées, explicites, légitimes ; limitation aux finalités initiales) : présente. Affirmation 3 (Nécessaires et proportionnées) : présente. Affirmation 4 (Exactes et mises à jour ; rectification/effacement) : présente. Affirmation 5 (Stockage limité dans le temps ; suppression/anonymisation) : présente. Affirmation 6 (Traitement sécurisé) : présente. Affirmation 7 (Responsabilisation du responsable) : absente (la réponse la mentionne dans une note comme non couverte par les extraits, mais ne l'énonce pas comme un principe de base applicable, contrairement à la référence qui l'inclut explicitement). Aucune contradiction de fond détectée.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-27",
+    "faithfulness": {
+     "justification": "1. 'Les extraits disponibles ne précisent pas une durée de conservation fixe ou universelle' : appuyée, les extraits fournissent des principes (art 5-1) et des obligations d'information (art 13-2, 14-2) mais aucune durée chiffrée spécifique.\n2. 'Les données doivent être conservées... pendant une durée n'excédant pas celle nécessaire au regard des finalités' : appuyée, par l'art 5-1 point e) ('limitation de la conservation').\n3. 'Une durée plus longue est possible uniquement si les données sont traitées exclusivement à des fins archivistiques... recherche... statistiques, sous réserve de mesures... appropriées' : appuyée, par l'art 5-1 point e) qui détaille cette exception.\n4. 'Le responsable du traitement doit informer la personne concernée de la durée de conservation des données (ou des critères...)' : appuyée, par l'art 13-2 point a) et l'art 14-2 point a).\n5. 'Si les données sont collectées directement auprès de la personne' : appuyée, par le titre et le contexte de l'art 13-2.\n6. 'Si les données ne sont pas collectées directement auprès de la personne' : appuyée, par le titre et le contexte de l'art 14-2.\n7. 'Ils ne donnent pas de durée précise ou de cadre légal détaillé (comme des délais légaux sectoriels...)' : appuyée, les extraits fournis ne contiennent effectivement pas ces informations.\n8. 'Ils ne précisent pas les modalités de calcul ou d’adaptation de la durée en fonction des finalités spécifiques' : appuyée, les extraits mentionnent le critère (finalités) mais pas les modalités de calcul.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation 'Vous ne pouvez pas stocker des données personnelles pour toujours' : présente (la réponse indique que la durée n'excède pas celle nécessaire, impliquant une fin). Affirmation 'les données personnelles ne peuvent être conservées que le temps nécessaire pour atteindre les objectifs' : présente (cité explicitement dans le point 1). Affirmation 'la durée de conservation peut être déterminée par des lois spécifiques' : absente (la réponse mentionne explicitement que les extraits ne couvrent pas les délais légaux sectoriels et ne cite aucun exemple de loi spécifique). Affirmation 'Les organismes devraient mettre en place des politiques de conservation' : absente (la réponse ne mentionne pas l'obligation de mettre en place des politiques de conservation). Affirmation 'Les données doivent être supprimées ou anonymisées une fois qu'elles ne sont plus nécessaires' : absente (la réponse parle de limitation de la durée mais ne mentionne pas explicitement l'action de suppression ou d'anonymisation comme conséquence).",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-29",
+    "faithfulness": {
+     "justification": "1. Transparence et information claire : appuyée par [RGPD-art5-1(a)] (licite, loyal, transparent) et [RGPD-cons39] (informations accessibles, claires, risques, droits). 2. Finalités déterminées et limitation des données : appuyée par [RGPD-art5-1(b)] (finalités déterminées, explicites, légitimes), [RGPD-art5-1(c)] (adéquates, pertinentes, limitées) et [RGPD-cons39] (finalités déterminées lors de la collecte). 3. Minimisation et durée de conservation : appuyée par [RGPD-art5-1(e)] (durée n'excédant pas le nécessaire), [RGPD-cons39] (délais d'effacement ou examen périodique) et [RGPD-art5-1(d)] (rectification ou effacement des données inexactes). 4. Sécurité et confidentialité : appuyée par [RGPD-art5-1(f)] (mesures techniques/organisationnelles, sécurité) et [RGPD-cons78] (pseudonymisation, réduction du traitement). 5. Respect des principes dès la conception : appuyée par [RGPD-cons78] (protection dès la conception et par défaut, implication des fabricants/prestataires). La section 'Ce que les extraits ne couvrent pas' signale des limites des sources et n'est pas considérée comme une affirmation de droit à évaluer.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 (Informer les personnes des opérations et finalités lors de la collecte) : présente (couvert par la section 1 sur la transparence et l'information claire). Affirmation de fond 2 (Répondre aux demandes d'exercice des droits : accès, rectification, opposition, effacement, portabilité) : absente (la réponse mentionne explicitement que les modalités pratiques ne sont pas couvertes et ne liste pas les droits spécifiques à traiter). Aucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-33",
+    "faithfulness": {
+     "justification": [
+      "Le RGPD est un texte juridique de l'UE visant à garantir un niveau élevé et cohérent de protection : appuyée (RGPD-cons10 mentionne 'assurer un niveau cohérent et élevé de protection', RGPD-cons1 le lie aux droits fondamentaux).",
+      "Il s'agit d'un cadre juridique contraignant ancré dans les droits fondamentaux (art. 8 Charte, art. 16 TFUE) : appuyée (RGPD-cons1 cite explicitement ces articles et qualifie la protection de 'droit fondamental').",
+      "Il cherche à harmoniser les règles pour lever les obstacles aux flux de données tout en maintenant un niveau de protection équivalent : appuyée (RGPD-cons10 mentionne 'lever les obstacles aux flux de données' et un niveau de protection 'équivalent dans tous les États membres').",
+      "Il renforce les droits des personnes concernées (comme les droits d’accès, de rectification, d’effacement, etc.) : non appuyée (RGPD-cons11 mentionne le renforcement des droits, mais les extraits ne listent pas spécifiquement les droits d'accès, de rectification ou d'effacement ; cette précision relève d'une connaissance extérieure).",
+      "Il impose des obligations strictes aux acteurs traitant ces données (responsables et sous-traitants) : appuyée (RGPD-cons11 mentionne les obligations de ceux qui effectuent le traitement, EDPB-07-2020-2 mentionne les règles spécifiques pour les sous-traitants).",
+      "Il introduit des principes de responsabilité où le responsable doit prouver sa conformité : appuyée (EDPB-07-2020-2 énonce le principe de responsabilité et la capacité à démontrer la conformité).",
+      "Les extraits ne couvrent pas les dispositions détaillées, sanctions précises, modalités pratiques ou exceptions spécifiques : appuyée (les extraits fournis sont des considérants et une introduction générale, ils ne contiennent pas ces détails opérationnels ou punitifs spécifiques)."
+     ],
+     "affirmation_en_cause": "Il renforce les **droits des personnes concernées** (comme les droits d’accès, de rectification, d’effacement, etc.) et impose des **obligations strictes** aux acteurs traitant ces données (responsables et sous-traitants) [RGPD-cons11].",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 : Le RGPD crée un ensemble harmonisé de règles applicables aux traitements de données personnelles. Présente (la réponse mentionne l'harmonisation des règles et le cadre juridique pour la protection des données). Affirmation de fond 2 : Le champ d'application couvre les organisations établies dans l'EEE ou ciblant des personnes dans l'UE. Absente (la réponse ne précise pas le critère de ciblage des personnes physiques dans l'UE ni l'EEE, elle se limite à dire 'Union européenne' sans définir le périmètre territorial exact de la référence). Affirmation de fond 3 : L'objectif est de garantir un niveau élevé de protection des données personnelles. Présente. Affirmation de fond 4 : L'objectif est d'accroître la sécurité juridique pour les personnes et les organisations. Absente (la réponse mentionne les droits et obligations, mais pas explicitement l'objectif de sécurité juridique). Affirmation de fond 5 : Le règlement est entré en vigueur le 24 mai 2016. Absente. Affirmation de fond 6 : Le règlement s'applique depuis le 25 mai 2018. Absente.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-35",
+    "faithfulness": {
+     "error": "max completion tokens reached before generating a valid document",
+     "content": null
+    },
+    "accuracy": {
+     "justification": "Affirmation 1 : Déterminer la base légale du traitement (présente). Affirmation 2 : L'intérêt légitime est une base possible (présente). Affirmation 3 : En cas d'intérêt légitime, un test de mise en balance est nécessaire (présente, via la condition 'à condition que les droits... ne prévalent pas'). Affirmation 4 : Le consentement est une autre base possible (présente). Affirmation 5 : Les individus doivent être informés à l'avance (présente). Aucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-37",
+    "faithfulness": {
+     "justification": [
+      "Définition légale : appuyée par [RGPD-art26-1] qui stipule que lorsque deux responsables ou plus déterminent conjointement les finalités et les moyens, ils sont responsables conjoints.",
+      "Caractéristiques clés (partage des finalités/moyens) : appuyée par [RGPD-art26-1] et [EDPB-07-2020-59] qui mentionne les fins identiques ou communes.",
+      "Caractéristiques clés (conséquences sur la répartition des obligations) : appuyée par [EDPB-07-2020-48] qui indique que la qualification a des conséquences sur la répartition des obligations.",
+      "Caractéristiques clés (exemples de droits : accès, rectification, suppression) : non appuyée, car les extraits mentionnent les 'droits de la personne concernée' ou 'droits des personnes' sans énumérer spécifiquement l'accès, la rectification ou la suppression.",
+      "Obligations communes (définition transparente via accord) : appuyée par [RGPD-art26-1].",
+      "Obligations communes (tous restent tenus même si répartition varie) : appuyée par [EDPB-07-2020-169] qui précise que la responsabilité conjointe ne se traduit pas nécessairement par une responsabilité équivalente et que tous doivent respecter les exigences si les obligations ne peuvent être réparties.",
+      "Obligations communes (exemple outil commun) : appuyée par [EDPB-07-2020-169] qui cite explicitement le cas des outils communs et l'obligation de limitation de la finalité et de sécurité."
+     ],
+     "affirmation_en_cause": "notamment en matière d’exercice des droits des personnes concernées (ex. : accès, rectification, suppression)",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Définition (2+ responsables déterminant conjointement finalités et moyens) : présente. Décision commune sur le traitement à des fins communes : présente. Nécessité de déterminer les responsabilités respectives : présente. Partage de la responsabilité d'une activité de traitement : présente. Exemple concret (entreprises A et B) : absente (mais non obligatoire pour la couverture des affirmations de fond). Aucune contradiction identifiée.",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "FAQ-42",
+    "faithfulness": {
+     "justification": "1. 'Le traitement de données (comme celles issues d'une vidéosurveillance) doit être licite, loyal et transparent' : appuyée par [RGPD-cons39] qui exige que tout traitement soit licite, loyal et transparent.\n2. 'Les finalités doivent être explicites, déterminées et limitées' : appuyée par [RGPD-cons39] qui stipule que les finalités spécifiques doivent être explicites et légitimes, et déterminées lors de la collecte.\n3. 'La collecte doit être adéquate, pertinente et limitée à ce qui est nécessaire' : appuyée par [RGPD-cons39] qui impose que les données soient adéquates, pertinentes et limitées à ce qui est nécessaire.\n4. 'La vidéosurveillance est possible si elle répond à une finalité légitime... mais elle doit être proportionnée et justifiée' : appuyée par [RGPD-cons39] qui indique que les données ne doivent être traitées que si la finalité ne peut être raisonnablement atteinte par d'autres moyens (proportionnalité/nécessité) et que les finalités doivent être légitimes.\n5. 'Les données collectées (images) ne doivent pas être conservées plus longtemps que nécessaire' : appuyée par [RGPD-cons39] qui exige que la durée de conservation soit limitée au strict minimum.\n6. 'Des mesures techniques et organisationnelles doivent garantir leur sécurité et confidentialité' : appuyée par [RGPD-cons78] (mesures techniques et organisationnelles appropriées) et [CCT-clause7.4] (mesures pour assurer la sécurité des données).\n7. 'Les personnes présentes dans les locaux doivent être informées de l'existence de la vidéosurveillance... des finalités, des droits... et des garanties' : appuyée par [RGPD-cons39] qui exige la transparence, l'information sur l'identité du responsable, les finalités, les risques, règles, garanties et droits.\n8. 'Les extraits ne couvrent pas les règles spécifiques aux caméras dans les lieux de travail... interdites en France' : non appuyée, car les extraits ne mentionnent ni les lieux de travail spécifiquement, ni les vestiaires/toilettes, ni le droit français. C'est une connaissance extérieure.\n9. 'Les extraits ne couvrent pas les obligations légales nationales... autorisations préalables, durée maximale de conservation' : non appuyée, car les extraits ne mentionnent pas d'autorisations préalables ni de durées maximales spécifiques (seulement 'limitée au strict minimum').\n10. 'Les extraits ne couvrent pas les sanctions... CNIL' : non appuyée, car les extraits ne mentionnent pas la CNIL ni les sanctions.",
+     "affirmation_en_cause": "Les règles spécifiques aux caméras dans les lieux de travail (ex. : zones privées comme les vestiaires ou toilettes, interdites en France).",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Identifier les finalités : présente (mention de finalités explicites et exemples comme la sécurité des locaux).\nBase légale (consentement peu probable, intérêt légitime commun) : absente (la réponse mentionne la licéité mais ne détaille pas les bases légales spécifiques ni le test de mise en balance).\nObligation d'informer via panneaux : présente (mention de l'information et de l'affichage visible).\nContenu de l'information (identité, finalités, base légale, DPO, destinataires, sécurité, durée, droits) : absente (la réponse mentionne de manière générale les finalités et les droits, mais omet les détails spécifiques comme l'identité du responsable, la base légale, le DPO, les destinataires, etc.).\nAucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "limite": "signalee"
+    }
+   },
+   {
+    "id": "FAQ-43",
+    "faithfulness": {
+     "justification": [
+      "Oui, vous pouvez transférer des données personnelles en dehors de l’Espace économique européen (EEE) sous certaines conditions strictes : appuyée, les extraits [RGPD-art45-1] et [RGPD-art49-1] détaillent les conditions permettant les transferts vers des pays tiers.",
+      "Le transfert est autorisé sans formalité supplémentaire, à condition que la Commission européenne ait adopté une décision d’adéquation : appuyée, [RGPD-art45-1] indique qu'un tel transfert ne nécessite pas d'autorisation spécifique.",
+      "Exemples de pays (Canada, Japon) : non appuyée, les extraits ne citent aucun pays spécifique.",
+      "En l’absence de décision d’adéquation, vous pouvez recourir à l’une des dérogations spécifiques (liste exhaustive) : appuyée, [RGPD-art49-1] énumère les conditions sous lesquelles un transfert peut avoir lieu en l'absence d'adéquation ou de garanties de l'art 46.",
+      "Consentement explicite de la personne concernée, après information sur les risques : appuyée, [RGPD-art49-1(a)].",
+      "Nécessité à l’exécution d’un contrat (ou précontractuel) avec la personne concernée : appuyée, [RGPD-art49-1(b)].",
+      "Sauvegarde des intérêts vitaux de la personne : appuyée, [RGPD-art49-1(f)].",
+      "Autres cas limités (ex. : défense des droits en justice, intérêt public, etc.) : appuyée, [RGPD-art49-1(d)-(e)].",
+      "Cas exceptionnel sans adéquation ni dérogation : le transfert est possible uniquement s’il est non répétitif, limité à un nombre restreint de personnes, justifié par des intérêts légitimes impérieux, accompagné d’une évaluation des risques et de garanties appropriées, et communiqué à l’autorité de contrôle et à la personne concernée : appuyée, [RGPD-art49-1, 2e alinéa].",
+      "Les extraits ne couvrent pas les garanties appropriées prévues à l’article 46 : appuyée, les extraits mentionnent l'article 46 mais ne fournissent pas de texte le détaillant.",
+      "Les extraits ne couvrent pas les obligations spécifiques pour les sous-traitants ou les transferts ultérieurs : appuyée, [RGPD-cons101] mentionne ces aspects mais les extraits ne les détaillent pas.",
+      "Vérifiez si le pays bénéficiaire d’une décision d’adéquation (liste disponible sur le site de la Commission européenne) : non appuyée, les extraits ne mentionnent pas l'existence d'une liste sur le site de la Commission.",
+      "Les sources disponibles ne couvrent pas cette question ne s’applique pas ici : non appuyée, c'est une méta-affirmation sur la nature de la réponse, non fondée sur les extraits juridiques."
+     ],
+     "affirmation_en_cause": "ex. : Canada, Japon, etc.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 : Les transferts peuvent avoir lieu sur la base d'une décision d'adéquation. Présente dans la réponse (point 1). Affirmation de fond 2 : En l'absence de décision d'adéquation, les transferts peuvent avoir lieu sur la base de garanties appropriées (y compris des droits et voies de recours). Absente dans la réponse : la réponse mentionne explicitement que les garanties appropriées (art. 46) ne sont pas couvertes par les extraits et propose à la place les dérogations de l'article 49 comme alternative principale, omettant ainsi le mécanisme fondamental des garanties appropriées identifié comme l'un des deux moyens principaux dans la référence.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-44",
+    "faithfulness": {
+     "justification": "« Oui, les sous-traitants doivent également respecter le RGPD, et ce de manière directe » : appuyée par [EDPB-07-2020-93] qui mentionne les « dispositions imposant directement des obligations aux sous-traitants ».\n« Le sous-traitant est directement tenu de respecter les obligations du RGPD, notamment en matière de confidentialité » : appuyée par [EDPB-07-2020-93] et [RGPD-art28-3] (point b).\n« ...sécurité des données » : appuyée par [RGPD-art28-3] (point c, référence à l'article 32) et [EDPB-07-2020-93].\n« ...notification des violations » : appuyée par [EDPB-07-2020-93] qui cite l'article 33, paragraphe 2.\n« ...respect des règles en cas de transferts internationaux » : appuyée par [EDPB-07-2020-93] qui indique que les règles du chapitre V s'appliquent aux sous-traitants.\n« Le sous-traitant doit ne traiter les données qu’à l’instruction documentée du responsable du traitement » : appuyée par [RGPD-art28-3] (point a) et [RGPD-art29].\n« ...et ne pas dépasser cette instruction » : appuyée par [EDPB-07-2020-116] (« Le sous-traitant ne va pas au-delà des instructions... »).\n« Il doit aider le responsable du traitement à garantir le respect des obligations du RGPD » : appuyée par [RGPD-art28-3] (point f) et [EDPB-07-2020-93].\n« ...et mettre en œuvre des mesures techniques et organisationnelles appropriées » : appuyée par [RGPD-art28-3] (point c) et [EDPB-07-2020-93].\n« Les extraits ne couvrent pas : Les sanctions spécifiques... » : non applicable (signalement de limite des sources).\n« Les extraits ne couvrent pas : Les détails des obligations en matière de documentation... » : non applicable (signalement de limite des sources).\n« Les extraits ne couvrent pas : Les cas particuliers où un sous-traitant pourrait être considéré comme un responsable de traitement conjoint (article 26 du RGPD, non cité ici) » : non applicable (signalement de limite des sources).",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 : Les sous-traitants ont des obligations en vertu du RGPD (présente). Affirmation de fond 2 : Les sous-traitants doivent respecter les responsabilités énoncées dans un contrat conclu avec le responsable de traitement (absente, la réponse mentionne les instructions documentées mais omet l'obligation contractuelle spécifique détaillée dans la référence). Affirmation de fond 3 : Le sous-traitant doit effectuer les opérations avec des mesures techniques et organisationnelles appropriées (présente). Affirmation de fond 4 : Le sous-traitant agit conformément aux instructions du responsable du traitement (présente). Affirmation de fond 5 : Le sous-traitant aide le responsable du traitement à se conformer au RGPD (présente).",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-47",
+    "faithfulness": {
+     "justification": [
+      "Les mesures correctives listées (avertissement, rappel à l'ordre, ordonnances diverses, suspension des flux) sont appuyées par l'extrait [RGPD-art58-2] qui énumère précisément ces pouvoirs.",
+      "L'imposition d'une amende administrative en complément ou à la place des mesures correctives est appuyée par [RGPD-art58-2] (point i) et [RGPD-cons148].",
+      "La prise en compte de la gravité, du caractère intentionnel et des mesures d'atténuation pour les sanctions est appuyée par [RGPD-cons148].",
+      "La possibilité de substituer un rappel à l'ordre à une amende pour les violations mineures ou les charges disproportionnées est appuyée par [RGPD-cons148].",
+      "L'obligation de notifier une violation de données à l'autorité de contrôle dans les 72 heures (sauf absence de risque) est appuyée par [RGPD-art33-1].",
+      "L'affirmation selon laquelle le non-respect de l'obligation de notification « peut aggraver les sanctions » n'est pas appuyée par les extraits fournis, qui mentionnent l'obligation de notification et l'existence de sanctions, mais ne font pas le lien causal entre le retard de notification et l'aggravation des peines."
+     ],
+     "affirmation_en_cause": "ce qui peut aggraver les sanctions en cas de retard ou d'omission",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 : Le respect du RGPD est contrôlé par les autorités nationales de protection des données. Présente (la réponse mentionne l'autorité de contrôle). Affirmation de fond 2 : Les autorités peuvent mener des enquêtes et imposer des sanctions. Présente (la réponse liste les mesures correctrices et amendes). Affirmation de fond 3 : Les amendes vont jusqu'à 20 millions d'euros ou 4 % du chiffre d'affaires annuel mondial (le montant le plus élevé étant retenu). Absente (la réponse indique explicitement que les montants exacts ne sont pas couverts par les extraits fournis et ne cite pas les plafonds). Affirmation de fond 4 : Les sanctions incluent des rappels à l'ordre. Présente. Affirmation de fond 5 : Les sanctions incluent des interdictions de traitement temporaires ou permanentes. Présente.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "FAQ-48",
+    "faithfulness": {
+     "justification": "L'affirmation selon laquelle un cookie est un identifiant en ligne (ou témoin de connexion) est appuyée par l'extrait [RGPD-cons30] qui mentionne explicitement « des identifiants en ligne tels que des adresses IP et des témoins de connexion («cookies») ». L'affirmation selon laquelle il peut être associé à une personne physique est appuyée par le même extrait (« Les personnes physiques peuvent se voir associer... des identifiants en ligne... »). L'affirmation selon laquelle il peut laisser des traces permettant de créer des profils ou d'identifier la personne est appuyée par l'extrait [RGPD-cons30] (« Ces identifiants peuvent laisser des traces... peuvent servir à créer des profils de personnes physiques et à identifier ces personnes »). La remarque entre parenthèses signalant que les extraits ne précisent pas la technique exacte n'est pas une affirmation juridique mais un signalement de limite des sources, elle n'est donc pas jugée comme affirmation à vérifier.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    }
+   },
+   {
+    "id": "FAQ-49",
+    "faithfulness": {
+     "justification": [
+      "L'identité et les coordonnées du responsable du traitement et de son représentant sont listées dans l'article 13 §1 [RGPD-art13-1] : appuyée.",
+      "Les coordonnées du DPO sont listées dans l'article 13 §1 [RGPD-art13-1] : appuyée.",
+      "Les finalités du traitement et la base juridique sont listées dans l'article 13 §1 [RGPD-art13-1] : appuyée.",
+      "Les intérêts légitimes (art 6.1.f) sont listés dans l'article 13 §1 [RGPD-art13-1] : appuyée.",
+      "Les destinataires ou catégories de destinataires sont listés dans l'article 13 §1 [RGPD-art13-1] : appuyée.",
+      "L'information sur les transferts internationaux et les garanties est listée dans l'article 13 §1 [RGPD-art13-1] : appuyée.",
+      "La durée de conservation ou les critères sont listés dans l'article 13 §2 [RGPD-art13-2] : appuyée.",
+      "Les droits d'accès, rectification, effacement, limitation, opposition et portabilité sont listés dans l'article 13 §2 [RGPD-art13-2] : appuyée.",
+      "Le droit de retrait du consentement (art 6.1.a ou 9.2.a) est listé dans l'article 13 §2 [RGPD-art13-2] : appuyée.",
+      "Le droit de réclamation auprès d'une autorité de contrôle est listé dans l'article 13 §2 [RGPD-art13-2] : appuyée.",
+      "L'information sur le caractère obligatoire de la fourniture et les conséquences de la non-fourniture est listée dans l'article 13 §2 [RGPD-art13-2] : appuyée.",
+      "Les informations sur la prise de décision automatisée (logique, importance, conséquences) sont listées dans l'article 13 §2 [RGPD-art13-2] : appuyée.",
+      "La source des données et la mention des sources publiques sont listées dans l'article 14 §2 [RGPD-art14-2] : appuyée.",
+      "L'affirmation selon laquelle les informations de l'article 14 s'ajoutent à celles de l'article 13 est une déduction directe de la structure des articles (Art 14 §2 commence par 'En plus des informations visées au paragraphe 1' et l'Art 14 §1 renvoie implicitement à la logique de l'Art 13 pour les données non collectées directement, bien que l'extrait Art 14 §1 ne soit pas fourni, l'extrait Art 14 §2 confirme l'ajout d'informations spécifiques comme la source) : appuyée.",
+      "L'exigence de transparence, clarté et facilité de compréhension est mentionnée dans le considérant 39 [RGPD-cons39] : appuyée.",
+      "Le moment de l'information (collecte ou délai raisonnable) est mentionné dans le considérant 61 [RGPD-cons61] : appuyée.",
+      "L'information préalable en cas de nouvelle finalité est mentionnée dans le considérant 61 [RGPD-cons61] : appuyée.",
+      "La fourniture d'informations générales si l'origine est inconnue (plusieurs sources) est mentionnée dans le considérant 61 [RGPD-cons61] : appuyée.",
+      "Le signalement des limites des sources (ce que les extraits ne couvrent pas) n'est pas une affirmation sur le droit : non applicable."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "L'identité et les coordonnées du responsable du traitement : présente ; Les finalités du traitement : présente ; La base légale du traitement (avec détails sur les intérêts légitimes) : présente ; Les coordonnées du DPO (s'il existe) : présente ; Les destinataires ou catégories de destinataires : présente ; Les informations sur les transferts hors EEE (décision d'adéquation/garanties) : présente ; La durée de conservation ou les critères : présente ; Le droit d'accès, effacement, rectification, restriction, opposition et portabilité : présente ; Le droit de réclamation auprès d'une autorité : présente ; Le droit de retirer son consentement (si base légale consentement) : présente ; Les informations sur la logique et conséquences de la décision automatisée : présente ; La source des données (si non obtenues directement) : présente ; L'obligation de fournir les données et les conséquences du refus : présente ; Les catégories de données personnelles traitées (lorsque non obtenues directement) : absente (la réponse mentionne la source mais omet explicitement la catégorie des données, qui est une information distincte exigée par l'art. 14(1)(e) et listée dans la référence).",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-03",
+    "faithfulness": {
+     "justification": [
+      "Affirmation 1 : Les CCT permettent de respecter les obligations légales (art. 28/29) en définissant droits/obligations. Appuyée par [CCT-clause1] (objet de garantir la conformité) et [CCT-cons7] (exigence de définir objet, durée, obligations).",
+      "Affirmation 2 : Les CCT fournissent un cadre préétabli avec règles de fond/procedure et éléments à compléter, simplifiant la rédaction. Appuyée par [CCT-cons7] (règles de fond et procédure) et [EDPB-07-2020-107] (champs vides, options à choisir).",
+      "Affirmation 3 : Intégration possible dans des contrats plus larges sans contradiction. Appuyée par [RGPD-cons109] (ne devrait pas les empêcher d'inclure ces clauses dans un contrat plus large) et [EDPB-07-2020-107] (intégrées dans un accord plus large).",
+      "Affirmation 4 : Flexibilité pour ajouter des garanties supplémentaires (ex. droit applicable) sans affaiblir la protection. Appuyée par [EDPB-07-2020-107] (possibilité d'ajouter des clauses supplémentaires comme le droit applicable) et [RGPD-cons109] (ajouter d'autres clauses ou garanties supplémentaires).",
+      "Affirmation 5 : Les CCT sont des garanties appropriées pour les transferts internationaux sans autorisation préalable. Appuyée par [RGPD-art46-2] (garanties appropriées... sans que cela ne nécessite une autorisation particulière... par des clauses types... adoptées par la Commission ou une autorité de contrôle).",
+      "Section 'Ce que les extraits ne couvrent pas' : Signalement de limites des sources, non considéré comme une affirmation à évaluer."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    }
+   },
+   {
+    "id": "COM-07",
+    "faithfulness": {
+     "justification": [
+      "Le texte des clauses contractuelles types ne peut pas être modifié directement : appuyée, l'extrait [CCT-clause2] clause 2a indique que les parties s'engagent à ne pas modifier les clauses.",
+      "Les modifications autorisées se limitent à l'ajout d'informations aux annexes ou la mise à jour des informations qui y figurent : appuyée, l'extrait [CCT-clause2] clause 2a précise cette exception.",
+      "Les parties peuvent inclure les CCT dans un contrat plus large ou ajouter d'autres clauses ou garanties supplémentaires : appuyée, l'extrait [CCT-clause2] clause 2b et l'extrait [EDPB-07-2020-107] le confirment.",
+      "Ces ajouts ne doivent pas contredire, directement ou indirectement, les clauses : appuyée, l'extrait [CCT-clause2] clause 2b et l'extrait [EDPB-07-2020-107] le stipulent.",
+      "Ces ajouts ne doivent pas porter atteinte aux libertés et droits fondamentaux des personnes concernées : appuyée, l'extrait [CCT-clause2] clause 2b le mentionne explicitement.",
+      "L'EDPB précise que les parties peuvent ajouter des clauses supplémentaires pour autant qu'elles ne contredisent pas les CCT et ne portent pas atteinte à la protection assurée par le RGPD : appuyée, l'extrait [EDPB-07-2020-107] le détaille."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond : Le texte des CCT ne peut pas être modifié (sauf adaptations spécifiques) -> présente (la réponse dit qu'il ne peut pas être modifié directement).\nAffirmation de fond : Il est possible de sélectionner des modules ou options -> absente (la réponse ne mentionne pas la sélection de modules/options, elle se limite aux annexes et clauses supplémentaires).\nAffirmation de fond : Il est possible de compléter le texte aux endroits indiqués (crochets) -> absente (la réponse ne mentionne pas le remplissage des crochets).\nAffirmation de fond : Il est possible de remplir les annexes -> présente.\nAffirmation de fond : Il est possible d'ajouter des garanties supplémentaires qui augmentent la protection -> présente (la réponse mentionne l'ajout de clauses/garanties supplémentaires sous conditions).\nAffirmation de fond : Ces adaptations ne sont pas considérées comme une modification du texte de base -> absente (la réponse distingue modification directe et précisions, mais ne formule pas explicitement cette assimilation juridique, bien que ce soit implicite).\nAffirmation de fond : En cas de modification au-delà des adaptations, les parties ne peuvent pas se prévaloir de la sécurité juridique de l'acte de l'Union (CCT R/S) -> absente.\nAffirmation de fond : En cas de modification au-delà des adaptations, les clauses ne peuvent plus servir de base aux transferts vers des pays tiers sans approbation ACPD (CCT transferts) -> absente.\nAffirmation de fond : Les parties doivent choisir entre conformité RGPD/RPDUE et types d'autorisation pour sous-traitance -> absente.\nAucune affirmation de fond de la réponse n'est incompatible avec la référence ; la réponse est plus restrictive (en omettant les crochets et modules) mais ne contredit pas explicitement la référence en interdisant ce que la référence autorise, elle omet simplement ces possibilités.",
+     "contradiction": "absente",
+     "limite": "signalee"
+    }
+   },
+   {
+    "id": "COM-09",
+    "faithfulness": {
+     "justification": "L'affirmation selon laquelle il est possible d'intégrer les CCT dans un contrat plus large est appuyée par [EDPB-07-2020-107], [CCT-cons6] et [RGPD-cons109]. L'affirmation selon laquelle il est possible d'ajouter des clauses supplémentaires sous réserve qu'elles ne contredisent pas les CCT et ne portent pas atteinte aux droits fondamentaux est appuyée par [EDPB-07-2020-107], [CCT-cons6], [RGPD-cons109] et [CCT-clause2]. L'affirmation selon laquelle les CCT ne doivent pas être modifiées sauf pour les annexes est appuyée par [CCT-clause2]. La mention finale sur la non-couverture des détails spécifiques est un signalement de limite des sources et non une affirmation juridique.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 : Les parties peuvent compléter les CCT par des clauses supplémentaires ou les intégrer dans un contrat commercial plus large. Présente dans la réponse.\nAffirmation de fond 2 : Les autres dispositions contractuelles ne doivent pas contredire les CCT, directement ou indirectement. Présente dans la réponse.\nAffirmation de fond 3 : Les autres dispositions contractuelles ne doivent pas porter atteinte aux droits des personnes concernées. Présente dans la réponse.\nAucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "limite": "signalee"
+    }
+   },
+   {
+    "id": "COM-10",
+    "faithfulness": {
+     "justification": [
+      "« Les parties peuvent supprimer ou ne pas remplir les modules ou options des CCT qui ne s'appliquent pas à leur situation » : non appuyée. Les extraits [EDPB-07-2020-107] et [RGPD-cons109] indiquent que les CCT laissent des champs vides ou des options à choisir et que des clauses supplémentaires peuvent être ajoutées, mais ils n'autorisent pas explicitement la suppression de modules ou d'options existants. L'ajout de clauses est distinct de la suppression de celles prévues par les CCT.",
+      "« à condition que cela ne contredise pas les exigences essentielles des CCT et ne porte pas atteinte aux droits des personnes concernées » : appuyée. Cette condition est déduite directement des extraits [EDPB-07-2020-107] et [RGPD-cons109] qui imposent que les modifications (ajouts) ne contredisent pas les CCT et ne portent pas atteinte à la protection des données/droits fondamentaux. Bien que l'application à la suppression soit une extrapolation, la condition elle-même est fidèle aux sources pour toute modification du contrat.",
+      "« Les extraits ne précisent pas explicitement si une suppression totale d'un module obligatoire... est autorisée » : appuyée. C'est une constatation factuelle correcte sur le contenu des extraits fournis, qui ne traitent pas de la suppression de modules obligatoires.",
+      "« ils indiquent clairement que les parties peuvent adapter les options ou champs vides sans altérer la protection garantie par le RGPD » : appuyée. L'extrait [EDPB-07-2020-107] mentionne les champs vides et options à choisir, et impose que les clauses ajoutées ne portent pas atteinte à la protection. L'adaptation des options/champs vides est implicitement autorisée par la structure des CCT décrite."
+     ],
+     "affirmation_en_cause": "Oui, les parties peuvent supprimer ou ne pas remplir les modules ou options des **clauses contractuelles types (CCT)** qui ne s'appliquent pas à leur situation, à condition que cela ne contredise pas les exigences essentielles des CCT et ne porte pas atteinte aux droits des personnes concernées.",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond : Les parties ne devraient convenir que des clauses pertinentes pour leur situation. Présente (la réponse indique qu'elles peuvent supprimer ce qui ne s'applique pas).\nAffirmation de fond : Les modules ou options qui ne s'appliquent pas devraient être supprimés. Présente (la réponse confirme la possibilité de suppression).\nAffirmation de fond implicite (de la référence) : La suppression est la norme pour les éléments non pertinents, sans condition supplémentaire de 'non-contradiction' explicite dans le texte de référence, mais la réponse ajoute une condition ('à condition que cela ne contredise pas les exigences essentielles') qui n'est pas une contradiction directe mais une nuance. Cependant, la référence est impérative ('devraient être supprimés'), la réponse est permissive ('peuvent supprimer... à condition'). L'essentiel (suppression des non-applicables) est présent.\nAucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "limite": "signalee"
+    }
+   },
+   {
+    "id": "COM-11",
+    "faithfulness": {
+     "justification": [
+      "Les CCT peuvent être incluses dans un contrat commercial plus global : appuyée par [EDPB-07-2020-107] ('intégrées dans un accord plus large') et [RGPD-cons109] ('inclure ces clauses dans un contrat plus large').",
+      "Les clauses relatives à la protection des données doivent être identiques à celles des CCT : appuyée par [EDPB-07-2020-107] ('doivent être identiques à celles des CCT').",
+      "Les parties peuvent compléter avec des éléments comme le droit applicable ou la juridiction compétente : appuyée par [EDPB-07-2020-107] ('ajouter des clauses supplémentaires (par exemple, le droit applicable et la juridiction compétente)').",
+      "Les ajouts ne doivent pas contredire les CCT ni porter atteinte aux droits des personnes concernées : appuyée par [EDPB-07-2020-107] ('ne contredisent pas... les CCT') et [RGPD-cons109] ('ne contredisent pas... les clauses contractuelles types... et qu'elles ne portent pas atteinte aux libertés et droits fondamentaux').",
+      "Les CCT laissent souvent des champs vides ou des options à choisir : appuyée par [EDPB-07-2020-107] ('Ces dernières laissent souvent des champs vides à compléter ou des options à choisir').",
+      "Les annexes I à IV font partie intégrante des clauses : appuyée par [CCT-clause1] ('Les annexes I à IV font partie intégrante des clauses').",
+      "Les clauses supplémentaires ne doivent pas affaiblir la protection des données prévue par le RGPD ou les législations nationales : appuyée par [EDPB-07-2020-107] ('ne portent pas atteinte à la protection assurée par le RGPD et la législation de l’UE ou des États membres')."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "Affirmation de fond 1 (Signature par toutes les parties et lien juridique) : absente dans la réponse.\nAffirmation de fond 2 (Intégration dans le contrat conformément au droit civil de la juridiction choisie) : absente dans la réponse (la réponse mentionne la juridiction compétente comme élément complémentaire, mais ne lie pas l'intégration au droit civil de la juridiction choisie).\nAffirmation de fond 3 (Application à la situation des parties, ex. transferts couverts) : présente (point 3).\nAffirmation de fond 4 (Remplissage des annexes) : présente (point 3).\nAffirmation de fond 5 (Indication claire des modules/options retenus aux parties, personnes concernées, autorités et juridictions) : absente dans la réponse (la réponse parle de remplir les champs, mais omet l'obligation de transparence envers les tiers et autorités).\nAucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "limite": "signalee"
+    }
+   },
+   {
+    "id": "COM-16",
+    "faithfulness": {
+     "justification": "L'affirmation selon laquelle les instructions doivent être documentées est appuyée par [CCT-clause7.1] et [EDPB-07-2020-118]. L'affirmation selon laquelle elles peuvent être fournies sous forme écrite (ex: courrier électronique) est appuyée par [EDPB-07-2020-118]. L'affirmation selon laquelle elles peuvent être sous toute autre forme documentée permettant de conserver la trace est appuyée par [EDPB-07-2020-118]. L'affirmation selon laquelle elles peuvent être incluses dans le contrat ou un autre acte juridique (annexe) est appuyée par [EDPB-07-2020-118]. L'affirmation selon laquelle les extraits ne précisent pas d'autres formes spécifiques est une méta-affirmation correcte au regard des sources. L'affirmation selon laquelle les extraits insistent sur la nécessité de pouvoir démontrer que les instructions ont été documentées est appuyée par [EDPB-07-2020-118] qui recommande de les conserver avec le contrat pour éviter toute difficulté de démonstration.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "L'affirmation selon laquelle les instructions doivent être documentées est présente dans la réponse. L'affirmation selon laquelle le responsable peut choisir la forme appropriée (écrite, orale, outils en ligne, signaux techniques) est présente dans la réponse (qui cite l'écrit et la possibilité d'autres formes documentées). L'affirmation selon laquelle les CCT ne précisent pas de forme spécifique est présente dans la réponse (qui indique que les extraits ne précisent pas d'autres formes spécifiques). Aucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "COM-17",
+    "faithfulness": {
+     "justification": [
+      "« il n'est pas explicitement mentionné que le sous-traitant soit tenu de communiquer systématiquement au responsable du traitement le nom des sous-traitants ultérieurs » : appuyée, car les extraits fournis (EDPB-07-2020-160, CCT-clause8, CCT-clause7.1, EDPB-07-2020-116, EDPB-07-2020-122) ne contiennent effectivement aucune mention d'une obligation de communication des noms des sous-traitants ultérieurs.",
+      "« Toute la chaîne de sous-traitance doit être couverte par des accords écrits » : appuyée, par l'extrait [EDPB-07-2020-160] qui stipule que « Toute la chaîne d’activités de traitement doit être régie par des accords écrits ».",
+      "« Le sous-traitant doit respecter les obligations imposées par le responsable du traitement, y compris en matière de transparence et de collaboration » : non appuyée, car les extraits mentionnent l'assistance et le respect des instructions, mais n'utilisent pas les termes « transparence » ni « collaboration » pour décrire ces obligations, et l'extrait [CCT-clause8] porte sur l'assistance aux droits des personnes concernées et à la sécurité, sans mentionner explicitement une obligation générale de transparence ou de collaboration au sens large."
+     ],
+     "affirmation_en_cause": "Le sous-traitant doit respecter les obligations imposées par le responsable du traitement, y compris en matière de transparence et de collaboration",
+     "verdict": "affirmation_non_appuyee"
+    },
+    "accuracy": {
+     "justification": "L'affirmation selon laquelle le sous-traitant doit communiquer le nom de chacun des sous-traitants ultérieurs est absente de la réponse (qui affirme au contraire qu'il n'est pas explicitement mentionné). L'affirmation selon laquelle il ne suffit pas d'indiquer les catégories est absente. L'affirmation selon laquelle les parties doivent convenir du délai pour la demande d'autorisation ou l'information des changements est absente. La réponse contient une affirmation de fond incompatible avec la référence en niant l'obligation de communication des noms.",
+     "contradiction": "presente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-18",
+    "faithfulness": {
+     "justification": "L'affirmation selon laquelle le sous-traitant ne peut pas procéder au changement sans accord explicite est appuyée par [EDPB-07-2020-152] qui indique que le responsable a la possibilité de s'opposer et que le sous-traitant doit obtenir l'autorisation avant de confier le traitement. L'affirmation que le sous-traitant doit informer en temps utile est appuyée par [EDPB-07-2020-156]. L'affirmation que le responsable a le droit de s'opposer est appuyée par [CCT-clause7.7] (option 2) et [EDPB-07-2020-152]. L'affirmation que le sous-traitant ne peut recruter que si le responsable n'a pas formulé d'opposition dans le délai imparti est appuyée par [CCT-clause7.7] (option 2) qui mentionne le délai pour s'opposer avant le recrutement. L'affirmation finale que l'opposition bloque le changement est une déduction directe des extraits précédents.",
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "L'affirmation selon laquelle le sous-traitant doit informer le responsable du traitement est présente. L'affirmation selon laquelle le responsable du traitement a le droit de s'opposer est présente. L'affirmation selon laquelle le sous-traitant ne peut pas recruter les nouveaux sous-traitants ultérieurs en cas d'opposition est présente. Aucune affirmation de fond de la réponse n'est incompatible avec la référence.",
+     "contradiction": "absente",
+     "couverture": "complete"
+    }
+   },
+   {
+    "id": "COM-19",
+    "faithfulness": {
+     "justification": [
+      "Le sous-traitant doit notifier une violation de données à caractère personnel dans les meilleurs délais après en avoir pris connaissance : appuyée par [RGPD-art33-2] et [CCT-clause9.2].",
+      "Les extraits ne précisent pas de délai fixe (comme 72 heures) pour le sous-traitant : appuyée par l'absence de mention d'un délai numérique spécifique dans [RGPD-art33-2] et [CCT-clause9.2], qui utilisent l'expression 'dans les meilleurs délais'.",
+      "L'obligation du responsable du traitement envers l'autorité de contrôle est de 72h max : appuyée par [RGPD-art33-1] qui mentionne '72 heures au plus tard'.",
+      "Les modalités pratiques (point de contact, format) ne sont pas détaillées dans les extraits principaux mais suggérées par l'EDPB : appuyée par [EDPB-07-2020-136] qui indique qu'il peut être utile d'inclure ces éléments dans le contrat, et par [CCT-clause9.2] qui liste le contenu minimal sans imposer de format spécifique."
+     ],
+     "affirmation_en_cause": null,
+     "verdict": "appuyee"
+    },
+    "accuracy": {
+     "justification": "L'affirmation selon laquelle les CCT ne précisent pas de délai fixe est présente dans la réponse (qui indique qu'aucun délai précis n'est mentionné). L'affirmation selon laquelle la clause 9.2 des CCT impose une notification « dans les meilleurs délais » est présente. L'affirmation selon laquelle il appartient aux parties de fixer ce délai en tenant compte des circonstances particulières est absente de la réponse, qui se contente de constater l'absence de délai fixe sans mentionner la nécessité de contractualisation spécifique par les parties.",
+     "contradiction": "absente",
+     "couverture": "incomplete"
+    }
+   },
+   {
+    "id": "COM-24",
+    "faithfulness": {
+     "justification": [
+      "Affirmation : Les CCT peuvent être utilisées pour les transferts de données vers un pays tiers ou une organisation internationale. Appuyée par [CCT-clause7.8] qui mentionne explicitement les 'transferts de données vers un pays tiers ou une organisation internationale' et [RGPD-art46-2] qui situe les clauses types dans le cadre des garanties pour de tels transferts.",
+      "Affirmation : L'utilisation par le sous-traitant est conditionnée par des instructions documentées du responsable ou une exigence légale, conformément au chapitre V. Appuyée par [CCT-clause7.8] point a).",
+      "Affirmation : Pour les sous-traitants ultérieurs, les CCT de la Commission (art. 46.2) peuvent être utilisées si les conditions sont remplies. Appuyée par [CCT-clause7.8] point b).",
+      "Affirmation : Les CCT visent à garantir la conformité avec l'article 28 (RGPD) ou l'article 29 (règlement 2018/1725). Appuyée par [CCT-clause1] points a) et b).",
+      "Affirmation : Les clauses s'appliquent aux transferts internationaux décrits dans l'annexe II. Non appuyée. L'extrait [CCT-clause1] point c) indique que les clauses s'appliquent au 'traitement des données à caractère personnel tel que décrit à l'annexe II', mais ne précise pas que l'annexe II décrit spécifiquement les 'transferts internationaux' (elle décrit le traitement en général). La réponse restreint l'application aux transferts décrits dans l'annexe II, ce qui est une interprétation non directement établie par le texte fourni qui parle du traitement décrit.",
+      "Affirmation : Les CCT ne sont pas suffisantes à elles seules pour garantir la conformité aux transferts internationaux. Appuyée par [CCT-clause1] point f) qui dit que les clauses ne suffisent pas à elles seules pour assurer le respect des obligations relatives aux transferts internationaux."
+     ],
+     "affirmation_en_cause": "Elles s’appliquent **uniquement aux transferts internationaux de données à caractère personnel** décrits dans l’**annexe II** des clauses [CCT-clause1].",
+     "verdict": "affirmation_non_appuyee"
+    }
+   },
+   {
+    "id": "COM-30",
+    "faithfulness": {
+     "justification": [
+      "« Oui, les clauses contractuelles types peuvent être utilisées pour transférer des données à caractère personnel vers une organisation internationale » : non appuyée. Les extraits [CCT-cons10] indiquent explicitement que les clauses contractuelles types visées « ne peuvent servir de clauses contractuelles types aux fins du chapitre V du règlement (UE) 2016/679 » (qui couvre les transferts vers des pays tiers ou organisations internationales). L'article 46 §2 mentionne les clauses types comme garantie, mais les extraits spécifiques aux CCT 2021/915 limitent leur usage aux transferts vers des pays tiers (sous-traitants hors champ territorial), excluant implicitement ou explicitement leur usage pour les organisations internationales dans ce contexte précis. La réponse affirme une possibilité générale que les extraits ne soutiennent pas, voire contredisent pour les CCT citées.",
+      "« mais uniquement si ces clauses ont été spécifiquement adoptées pour ce type de transfert et non pour les transferts vers des pays tiers » : non appuyée. Les extraits ne contiennent aucune information sur l'existence ou l'adoption de clauses spécifiques pour les organisations internationales. Ils ne permettent pas de déduire cette condition.",
+      "« Les clauses contractuelles types adoptées par la Commission (comme celles visées dans [CCT-cons10]) sont conçues pour les transferts vers des pays tiers (et non vers des organisations internationales) » : appuyée. L'extrait [CCT-cons10] précise que ces clauses satisfont aux exigences pour les transferts vers des sous-traitants ne relevant pas du champ d'application territorial (pays tiers) et qu'elles « ne peuvent servir de clauses contractuelles types aux fins du chapitre V » (qui inclut les organisations internationales).",
+      "« Le chapitre V du RGPD (dont fait partie l’article 46) traite des transferts vers des pays tiers ou des organisations internationales » : appuyée. Le titre de l'extrait [RGPD-art46-2] est « Chapitre V (Transferts de données à caractère personnel vers des pays tiers ou à des organisations internationales) ».",
+      "« les clauses mentionnées dans [CCT-cons10] sont exclusivement liées aux transferts vers des pays tiers » : appuyée. L'extrait [CCT-cons10] limite l'application de ces clauses aux transferts vers des sous-traitants hors champ territorial et exclut leur usage pour le chapitre V (qui couvre aussi les organisations internationales).",
+      "« Ils ne précisent pas si des clauses contractuelles types spécifiques pour les organisations internationales existent ou ont été adoptées » : appuyée. Les extraits fournis ne mentionnent pas l'existence de telles clauses spécifiques.",
+      "« Ils ne détaillent pas les modalités d’utilisation des clauses pour les transferts vers des organisations internationales » : appuyée. Les extraits ne fournissent pas de modalités pour ce cas précis, limitant la description aux transferts vers des pays tiers.",
+      "« Les extraits ne permettent pas de confirmer que les clauses contractuelles types actuellement disponibles (comme celles citées dans [CCT-cons10]) sont valables pour les transferts vers des organisations internationales » : appuyée. L'extrait [CCT-cons10] indique qu'elles ne peuvent servir aux fins du chapitre V, ce qui inclut les organisations internationales."
+     ],
+     "affirmation_en_cause": "Oui, les clauses contractuelles types peuvent être utilisées pour transférer des données à caractère personnel vers une organisation internationale, mais uniquement si ces clauses ont été spécifiquement adoptées pour ce type de transfert et non pour les transferts vers des pays tiers.",
+     "verdict": "affirmation_non_appuyee"
+    }
+   }
+  ]
+ ]
+}
