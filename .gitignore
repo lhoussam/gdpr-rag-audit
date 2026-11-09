@@ -9,5 +9,9 @@ results/*
 !results/judge-dev-20261103-220539-20261105-122118.json
 !results/test-20261105-140815.json
 !results/judge-test-20261105-140815-20261105-141528.json
+!results/dev-20261107-142120.json
+!results/judge-dev-20261107-142120-20261107-143204.json
+!results/test-20261108-115338.json
+!results/judge-test-20261108-115338-20261108-123836.json
 __pycache__/
 .env

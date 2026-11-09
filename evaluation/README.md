@@ -51,6 +51,8 @@ Each pass found about half of the final passages, and each found passages the ot
 
 On the other 68 questions, I kept 209 of the 212 proposed passages, removed 3 and added 67, so that 24% of their final passages come from me; 27 questions were modified, 2 of them changing category.
 
+After the first results, I corrected the annotations of two development questions, COM-17 and COM-18, under the written rules: passages stating the answer had been missed. I noticed them because retrieval surfaced these passages, so the correction favours the system, on two questions only. The test set is not affected.
+
 ## Development and test sets
 
 The questions are split in half: 39 for development, 40 for test. Questions whose reference answers largely overlap stay on the same side, so that the test does not repeat what was tuned on development. Categories and origins are balanced between the two sets:
