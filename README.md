@@ -4,6 +4,33 @@ A retrieval-augmented assistant for GDPR compliance work, built to check data pr
 
 The first stage, answering questions on the regulation, is built and evaluated. Next comes contract analysis, then work on the quality of answers. The intent and scope of the project are described in [vision.md](vision.md).
 
+## Example
+
+One example shows the format, not the quality: measured quality is in [Results](#results).
+
+> **Dans quel délai le sous-traitant doit-il notifier une violation de données au responsable du traitement ?**
+>
+> D'après les extraits fournis, le sous-traitant doit notifier une violation de données à caractère personnel **dans les meilleurs délais après en avoir pris connaissance** :
+>
+> - [RGPD-art33-2] : *« Le sous-traitant notifie au responsable du traitement toute violation de données à caractère personnel dans les meilleurs délais après en avoir pris connaissance. »*
+> - [CCT-clause9.2] : *« En cas de violation de données à caractère personnel en rapport avec des données traitées par le sous-traitant, celui-ci en informe le responsable du traitement **dans les meilleurs délais** après en avoir pris connaissance. »*
+>
+> Les extraits ne précisent pas de délai fixe (comme 72 heures), mais insistent sur la notion de **délai le plus court possible** pour minimiser les risques pour les droits et libertés des personnes concernées.
+>
+> **Ce que les extraits ne couvrent pas** :
+> - Un délai précis (ex. : 24h, 48h) n'est pas mentionné, contrairement à l'obligation du responsable du traitement envers l'autorité de contrôle (72h max. selon [RGPD-art33-1]).
+> - Les modalités pratiques (ex. : point de contact, format) ne sont pas détaillées, bien que [EDPB-07-2020-136] suggère d’inclure ces éléments dans le contrat.
+
+<details>
+<summary>Sources cited</summary>
+
+- `CCT-clause9.2`: CCT 2021/915 › Section II (Obligations des parties) › Clause 9 (Notification de violations de données à caractère personnel) › 9.2 (Violation de données en rapport avec des données traitées par le sous-traitant)
+- `EDPB-07-2020-136`: EDPB 07/2020 › Partie II (Conséquences de l’attribution des différents rôles) › 1 (Relation entre le responsable du traitement et le sous-traitant) › 1.3 (Forme du contrat ou de l’autre acte juridique) › 1.3.6 (Le sous-traitant doit aider le responsable du traitement à garantir le respect des obligations prévues aux articles 32 à 36 [article 28, paragraphe 3, point f), du RGPD]) › §136
+- `RGPD-art33-1`: RGPD › Chapitre IV (Responsable du traitement et sous-traitant) › Section 2 (Sécurité des données à.caractère personnel) › Article 33 (Notification à l'autorité de contrôle d'une violation de données à caractère personnel) › §1
+- `RGPD-art33-2`: RGPD › Chapitre IV (Responsable du traitement et sous-traitant) › Section 2 (Sécurité des données à.caractère personnel) › Article 33 (Notification à l'autorité de contrôle d'une violation de données à caractère personnel) › §2
+
+</details>
+
 ## How it works
 
 **Corpus.** Three public texts, in French: the GDPR, the standard contractual clauses for Article 28 (Commission Implementing Decision 2021/915) and the EDPB Guidelines 07/2020 on the concepts of controller and processor. They are split into legal units (article paragraph, recital, clause, numbered paragraph), 819 passages identified by their official reference, such as `RGPD-art28-3`.
